@@ -20,6 +20,20 @@
 			remoteGlobalIDString = 9A2B1C1919E7D8CF008E2646;
 			remoteInfo = Fix;
 		};
+		9A2B1CB419EA4304008E2646 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A2B1CAF19EA4304008E2646 /* Dictionary.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9A2B1C6F19E7D968008E2646;
+			remoteInfo = Dictionary;
+		};
+		9A2B1CB619EA4304008E2646 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A2B1CAF19EA4304008E2646 /* Dictionary.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9A2B1C7A19E7D968008E2646;
+			remoteInfo = DictionaryTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +43,7 @@
 		9A2B1C2519E7D8CF008E2646 /* FixTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FixTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A2B1C2B19E7D8CF008E2646 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A2B1C2C19E7D8CF008E2646 /* FixTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixTests.swift; sourceTree = "<group>"; };
+		9A2B1CAF19EA4304008E2646 /* Dictionary.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Dictionary.xcodeproj; path = ../Dictionary/Dictionary.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +68,7 @@
 		9A2B1C1019E7D8CF008E2646 = {
 			isa = PBXGroup;
 			children = (
+				9A2B1CAF19EA4304008E2646 /* Dictionary.xcodeproj */,
 				9A2B1C1C19E7D8CF008E2646 /* Fix */,
 				9A2B1C2919E7D8CF008E2646 /* FixTests */,
 				9A2B1C1B19E7D8CF008E2646 /* Products */,
@@ -100,6 +116,15 @@
 				9A2B1C2B19E7D8CF008E2646 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9A2B1CB019EA4304008E2646 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A2B1CB519EA4304008E2646 /* Dictionary.framework */,
+				9A2B1CB719EA4304008E2646 /* DictionaryTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +204,12 @@
 			mainGroup = 9A2B1C1019E7D8CF008E2646;
 			productRefGroup = 9A2B1C1B19E7D8CF008E2646 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 9A2B1CB019EA4304008E2646 /* Products */;
+					ProjectRef = 9A2B1CAF19EA4304008E2646 /* Dictionary.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				9A2B1C1919E7D8CF008E2646 /* Fix */,
@@ -186,6 +217,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		9A2B1CB519EA4304008E2646 /* Dictionary.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Dictionary.framework;
+			remoteRef = 9A2B1CB419EA4304008E2646 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9A2B1CB719EA4304008E2646 /* DictionaryTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = DictionaryTests.xctest;
+			remoteRef = 9A2B1CB619EA4304008E2646 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		9A2B1C1819E7D8CF008E2646 /* Resources */ = {
@@ -397,6 +445,7 @@
 				9A2B1C3219E7D8CF008E2646 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9A2B1C3319E7D8CF008E2646 /* Build configuration list for PBXNativeTarget "FixTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +454,7 @@
 				9A2B1C3519E7D8CF008E2646 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

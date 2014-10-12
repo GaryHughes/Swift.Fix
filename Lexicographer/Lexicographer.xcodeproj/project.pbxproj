@@ -10,6 +10,23 @@
 		9A2B1C9819E7D9AC008E2646 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2B1C9719E7D9AC008E2646 /* main.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		9A2B1CA519EA42EF008E2646 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A2B1CA019EA42EF008E2646 /* Repository.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9A2B1C4019E7D911008E2646;
+			remoteInfo = Repository;
+		};
+		9A2B1CA719EA42EF008E2646 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A2B1CA019EA42EF008E2646 /* Repository.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9A2B1C4B19E7D912008E2646;
+			remoteInfo = RepositoryTests;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		9A2B1C9219E7D9AC008E2646 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -25,6 +42,7 @@
 /* Begin PBXFileReference section */
 		9A2B1C9419E7D9AC008E2646 /* Lexicographer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Lexicographer; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A2B1C9719E7D9AC008E2646 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		9A2B1CA019EA42EF008E2646 /* Repository.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Repository.xcodeproj; path = /Users/geh/Development/Fix/Fix/../Repository/Repository.xcodeproj; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +59,7 @@
 		9A2B1C8B19E7D9AC008E2646 = {
 			isa = PBXGroup;
 			children = (
+				9A2B1CA019EA42EF008E2646 /* Repository.xcodeproj */,
 				9A2B1C9619E7D9AC008E2646 /* Lexicographer */,
 				9A2B1C9519E7D9AC008E2646 /* Products */,
 			);
@@ -60,6 +79,15 @@
 				9A2B1C9719E7D9AC008E2646 /* main.swift */,
 			);
 			path = Lexicographer;
+			sourceTree = "<group>";
+		};
+		9A2B1CA119EA42EF008E2646 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A2B1CA619EA42EF008E2646 /* Repository.framework */,
+				9A2B1CA819EA42EF008E2646 /* RepositoryTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -106,12 +134,35 @@
 			mainGroup = 9A2B1C8B19E7D9AC008E2646;
 			productRefGroup = 9A2B1C9519E7D9AC008E2646 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 9A2B1CA119EA42EF008E2646 /* Products */;
+					ProjectRef = 9A2B1CA019EA42EF008E2646 /* Repository.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				9A2B1C9319E7D9AC008E2646 /* Lexicographer */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		9A2B1CA619EA42EF008E2646 /* Repository.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Repository.framework;
+			remoteRef = 9A2B1CA519EA42EF008E2646 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9A2B1CA819EA42EF008E2646 /* RepositoryTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RepositoryTests.xctest;
+			remoteRef = 9A2B1CA719EA42EF008E2646 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9A2B1C9019E7D9AC008E2646 /* Sources */ = {
@@ -233,6 +284,7 @@
 				9A2B1C9D19E7D9AC008E2646 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

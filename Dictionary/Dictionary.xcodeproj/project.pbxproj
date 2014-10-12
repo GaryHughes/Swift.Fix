@@ -20,6 +20,13 @@
 			remoteGlobalIDString = 9A2B1C6E19E7D968008E2646;
 			remoteInfo = Dictionary;
 		};
+		9A2B1CAD19EA42FB008E2646 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A2B1CA919EA42FB008E2646 /* Lexicographer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9A2B1C9419E7D9AC008E2646;
+			remoteInfo = Lexicographer;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +36,7 @@
 		9A2B1C7A19E7D968008E2646 /* DictionaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DictionaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A2B1C8019E7D968008E2646 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A2B1C8119E7D968008E2646 /* DictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryTests.swift; sourceTree = "<group>"; };
+		9A2B1CA919EA42FB008E2646 /* Lexicographer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Lexicographer.xcodeproj; path = ../Lexicographer/Lexicographer.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +61,7 @@
 		9A2B1C6519E7D968008E2646 = {
 			isa = PBXGroup;
 			children = (
+				9A2B1CA919EA42FB008E2646 /* Lexicographer.xcodeproj */,
 				9A2B1C7119E7D968008E2646 /* Dictionary */,
 				9A2B1C7E19E7D968008E2646 /* DictionaryTests */,
 				9A2B1C7019E7D968008E2646 /* Products */,
@@ -100,6 +109,14 @@
 				9A2B1C8019E7D968008E2646 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9A2B1CAA19EA42FB008E2646 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A2B1CAE19EA42FB008E2646 /* Lexicographer */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +196,12 @@
 			mainGroup = 9A2B1C6519E7D968008E2646;
 			productRefGroup = 9A2B1C7019E7D968008E2646 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 9A2B1CAA19EA42FB008E2646 /* Products */;
+					ProjectRef = 9A2B1CA919EA42FB008E2646 /* Lexicographer.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				9A2B1C6E19E7D968008E2646 /* Dictionary */,
@@ -186,6 +209,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		9A2B1CAE19EA42FB008E2646 /* Lexicographer */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = Lexicographer;
+			remoteRef = 9A2B1CAD19EA42FB008E2646 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		9A2B1C6D19E7D968008E2646 /* Resources */ = {
@@ -397,6 +430,7 @@
 				9A2B1C8719E7D968008E2646 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9A2B1C8819E7D968008E2646 /* Build configuration list for PBXNativeTarget "DictionaryTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +439,7 @@
 				9A2B1C8A19E7D968008E2646 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
