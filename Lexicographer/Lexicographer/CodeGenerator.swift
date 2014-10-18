@@ -11,15 +11,15 @@ import Repository
 
 class CodeGenerator {
 
-    init(repository:Repository.Root, outputPath:String) {
+    init(repository:Root, outputPath:String) {
         self.repository = repository
         self.outputPath = outputPath
     }
     
-    private(set) var repository : Repository.Root
+    private(set) var repository : Root
     private(set) var outputPath : String
     
-    public run() {
+    public run() -> Void {
     
     }
     

@@ -12,18 +12,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9AEAF22419F1EC5600E15D8D /* PBXContainerItemProxy */ = {
+		9A5AB96A19F2388100B67080 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9AEAF21F19F1EC5600E15D8D /* Repository.xcodeproj */;
+			containerPortal = 9A5AB96519F2388100B67080 /* Repository.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 9A2B1C4019E7D911008E2646;
+			remoteGlobalIDString = 9A5AB94919F2386700B67080;
 			remoteInfo = Repository;
 		};
-		9AEAF22619F1EC5600E15D8D /* PBXContainerItemProxy */ = {
+		9A5AB96C19F2388100B67080 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9AEAF21F19F1EC5600E15D8D /* Repository.xcodeproj */;
+			containerPortal = 9A5AB96519F2388100B67080 /* Repository.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 9A2B1C4B19E7D912008E2646;
+			remoteGlobalIDString = 9A5AB95419F2386700B67080;
 			remoteInfo = RepositoryTests;
 		};
 /* End PBXContainerItemProxy section */
@@ -44,7 +44,7 @@
 		9A2B1C9419E7D9AC008E2646 /* Lexicographer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Lexicographer; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A2B1C9719E7D9AC008E2646 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		9A2B1CC619EBD1D7008E2646 /* CodeGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeGenerator.swift; sourceTree = "<group>"; };
-		9AEAF21F19F1EC5600E15D8D /* Repository.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Repository.xcodeproj; path = /Users/geh/Development/Fix/Fix/../Repository/Repository.xcodeproj; sourceTree = "<absolute>"; };
+		9A5AB96519F2388100B67080 /* Repository.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Repository.xcodeproj; path = ../Repository/Repository.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +61,7 @@
 		9A2B1C8B19E7D9AC008E2646 = {
 			isa = PBXGroup;
 			children = (
-				9AEAF21F19F1EC5600E15D8D /* Repository.xcodeproj */,
+				9A5AB96519F2388100B67080 /* Repository.xcodeproj */,
 				9A2B1C9619E7D9AC008E2646 /* Lexicographer */,
 				9A2B1C9519E7D9AC008E2646 /* Products */,
 			);
@@ -84,11 +84,11 @@
 			path = Lexicographer;
 			sourceTree = "<group>";
 		};
-		9AEAF22019F1EC5600E15D8D /* Products */ = {
+		9A5AB96619F2388100B67080 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9AEAF22519F1EC5600E15D8D /* Repository.framework */,
-				9AEAF22719F1EC5600E15D8D /* RepositoryTests.xctest */,
+				9A5AB96B19F2388100B67080 /* Repository.framework */,
+				9A5AB96D19F2388100B67080 /* RepositoryTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,8 +139,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 9AEAF22019F1EC5600E15D8D /* Products */;
-					ProjectRef = 9AEAF21F19F1EC5600E15D8D /* Repository.xcodeproj */;
+					ProductGroup = 9A5AB96619F2388100B67080 /* Products */;
+					ProjectRef = 9A5AB96519F2388100B67080 /* Repository.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -151,18 +151,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		9AEAF22519F1EC5600E15D8D /* Repository.framework */ = {
+		9A5AB96B19F2388100B67080 /* Repository.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Repository.framework;
-			remoteRef = 9AEAF22419F1EC5600E15D8D /* PBXContainerItemProxy */;
+			remoteRef = 9A5AB96A19F2388100B67080 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		9AEAF22719F1EC5600E15D8D /* RepositoryTests.xctest */ = {
+		9A5AB96D19F2388100B67080 /* RepositoryTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = RepositoryTests.xctest;
-			remoteRef = 9AEAF22619F1EC5600E15D8D /* PBXContainerItemProxy */;
+			remoteRef = 9A5AB96C19F2388100B67080 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

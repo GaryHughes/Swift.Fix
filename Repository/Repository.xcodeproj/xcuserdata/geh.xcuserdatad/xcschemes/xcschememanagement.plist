@@ -7,17 +7,17 @@
 		<key>Repository.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>3</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>9A2B1C3F19E7D911008E2646</key>
+		<key>9A5AB94819F2386700B67080</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9A2B1C4A19E7D912008E2646</key>
+		<key>9A5AB95319F2386700B67080</key>
 		<dict>
 			<key>primary</key>
 			<true/>

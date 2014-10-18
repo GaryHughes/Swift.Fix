@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+public class Message {
+    
+    public init () {
+        
+    }
+    
+}

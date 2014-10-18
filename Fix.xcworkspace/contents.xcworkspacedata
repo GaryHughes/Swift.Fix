@@ -11,6 +11,6 @@
       location = "group:Fix/Fix.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Fix/../Repository/Repository.xcodeproj">
+      location = "group:Repository/Repository.xcodeproj">
    </FileRef>
 </Workspace>
