@@ -17,7 +17,7 @@
                BlueprintIdentifier = "9A2B1C3F19E7D911008E2646"
                BuildableName = "Repository.framework"
                BlueprintName = "Repository"
-               ReferencedContainer = "container:Repository.xcodeproj">
+               ReferencedContainer = "container:Fix.Repository.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -31,7 +31,7 @@
                BlueprintIdentifier = "9A2B1C4A19E7D912008E2646"
                BuildableName = "RepositoryTests.xctest"
                BlueprintName = "RepositoryTests"
-               ReferencedContainer = "container:Repository.xcodeproj">
+               ReferencedContainer = "container:Fix.Repository.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -49,7 +49,7 @@
                BlueprintIdentifier = "9A2B1C4A19E7D912008E2646"
                BuildableName = "RepositoryTests.xctest"
                BlueprintName = "RepositoryTests"
-               ReferencedContainer = "container:Repository.xcodeproj">
+               ReferencedContainer = "container:Fix.Repository.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -59,7 +59,7 @@
             BlueprintIdentifier = "9A2B1C3F19E7D911008E2646"
             BuildableName = "Repository.framework"
             BlueprintName = "Repository"
-            ReferencedContainer = "container:Repository.xcodeproj">
+            ReferencedContainer = "container:Fix.Repository.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -78,7 +78,7 @@
             BlueprintIdentifier = "9A2B1C3F19E7D911008E2646"
             BuildableName = "Repository.framework"
             BlueprintName = "Repository"
-            ReferencedContainer = "container:Repository.xcodeproj">
+            ReferencedContainer = "container:Fix.Repository.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -96,7 +96,7 @@
             BlueprintIdentifier = "9A2B1C3F19E7D911008E2646"
             BuildableName = "Repository.framework"
             BlueprintName = "Repository"
-            ReferencedContainer = "container:Repository.xcodeproj">
+            ReferencedContainer = "container:Fix.Repository.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

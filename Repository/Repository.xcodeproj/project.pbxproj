@@ -10,6 +10,13 @@
 		9A2B1C4619E7D911008E2646 /* Repository.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A2B1C4519E7D911008E2646 /* Repository.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9A2B1C4C19E7D912008E2646 /* Repository.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2B1C4019E7D911008E2646 /* Repository.framework */; };
 		9A2B1C5319E7D912008E2646 /* RepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2B1C5219E7D912008E2646 /* RepositoryTests.swift */; };
+		9A2B1CB919EA5626008E2646 /* Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2B1CB819EA5626008E2646 /* Root.swift */; };
+		9A2B1CBB19EA5632008E2646 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2B1CBA19EA5632008E2646 /* Version.swift */; };
+		9A2B1CBD19EA5642008E2646 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2B1CBC19EA5642008E2646 /* Component.swift */; };
+		9A2B1CBF19EA5650008E2646 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2B1CBE19EA5650008E2646 /* Enum.swift */; };
+		9A2B1CC119EA565E008E2646 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2B1CC019EA565E008E2646 /* Field.swift */; };
+		9A2B1CC319EA5668008E2646 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2B1CC219EA5668008E2646 /* Message.swift */; };
+		9A2B1CC519EA5677008E2646 /* MsgContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2B1CC419EA5677008E2646 /* MsgContent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +36,13 @@
 		9A2B1C4B19E7D912008E2646 /* RepositoryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RepositoryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A2B1C5119E7D912008E2646 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A2B1C5219E7D912008E2646 /* RepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTests.swift; sourceTree = "<group>"; };
+		9A2B1CB819EA5626008E2646 /* Root.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Root.swift; sourceTree = "<group>"; };
+		9A2B1CBA19EA5632008E2646 /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
+		9A2B1CBC19EA5642008E2646 /* Component.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
+		9A2B1CBE19EA5650008E2646 /* Enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
+		9A2B1CC019EA565E008E2646 /* Field.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
+		9A2B1CC219EA5668008E2646 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		9A2B1CC419EA5677008E2646 /* MsgContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MsgContent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +87,13 @@
 			children = (
 				9A2B1C4519E7D911008E2646 /* Repository.h */,
 				9A2B1C4319E7D911008E2646 /* Supporting Files */,
+				9A2B1CB819EA5626008E2646 /* Root.swift */,
+				9A2B1CBA19EA5632008E2646 /* Version.swift */,
+				9A2B1CBC19EA5642008E2646 /* Component.swift */,
+				9A2B1CBE19EA5650008E2646 /* Enum.swift */,
+				9A2B1CC019EA565E008E2646 /* Field.swift */,
+				9A2B1CC219EA5668008E2646 /* Message.swift */,
+				9A2B1CC419EA5677008E2646 /* MsgContent.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -209,6 +230,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A2B1CC119EA565E008E2646 /* Field.swift in Sources */,
+				9A2B1CBB19EA5632008E2646 /* Version.swift in Sources */,
+				9A2B1CBD19EA5642008E2646 /* Component.swift in Sources */,
+				9A2B1CC319EA5668008E2646 /* Message.swift in Sources */,
+				9A2B1CBF19EA5650008E2646 /* Enum.swift in Sources */,
+				9A2B1CC519EA5677008E2646 /* MsgContent.swift in Sources */,
+				9A2B1CB919EA5626008E2646 /* Root.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +343,7 @@
 		9A2B1C5719E7D912008E2646 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -326,12 +355,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		9A2B1C5819E7D912008E2646 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -397,6 +428,7 @@
 				9A2B1C5819E7D912008E2646 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9A2B1C5919E7D912008E2646 /* Build configuration list for PBXNativeTarget "RepositoryTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +437,7 @@
 				9A2B1C5B19E7D912008E2646 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
