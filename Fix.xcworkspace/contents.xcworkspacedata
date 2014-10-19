@@ -13,4 +13,7 @@
    <FileRef
       location = "group:Repository/Repository.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Repository/Repository/../../Common/Common.xcodeproj">
+   </FileRef>
 </Workspace>

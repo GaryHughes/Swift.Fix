@@ -19,7 +19,7 @@ class CodeGenerator {
     private(set) var repository : Root
     private(set) var outputPath : String
     
-    public run() -> Void {
+    func run() {
     
     }
     

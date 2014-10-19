@@ -26,6 +26,27 @@
 			remoteGlobalIDString = 9A5AB95419F2386700B67080;
 			remoteInfo = RepositoryTests;
 		};
+		9A8C96BB19F3811F005C99AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A5AB96519F2388100B67080 /* Repository.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A5AB94819F2386700B67080;
+			remoteInfo = Repository;
+		};
+		9AB6EAA119F36F49000EFC99 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9AB6EA9C19F36F49000EFC99 /* Common.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9AB6EA7719F36F23000EFC99;
+			remoteInfo = Common;
+		};
+		9AB6EAA319F36F49000EFC99 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9AB6EA9C19F36F49000EFC99 /* Common.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9AB6EA8219F36F23000EFC99;
+			remoteInfo = CommonTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +66,7 @@
 		9A2B1C9719E7D9AC008E2646 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		9A2B1CC619EBD1D7008E2646 /* CodeGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeGenerator.swift; sourceTree = "<group>"; };
 		9A5AB96519F2388100B67080 /* Repository.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Repository.xcodeproj; path = ../Repository/Repository.xcodeproj; sourceTree = "<group>"; };
+		9AB6EA9C19F36F49000EFC99 /* Common.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Common.xcodeproj; path = /Users/geh/Development/Fix/Repository/Repository/../../Common/Common.xcodeproj; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +83,7 @@
 		9A2B1C8B19E7D9AC008E2646 = {
 			isa = PBXGroup;
 			children = (
+				9AB6EA9C19F36F49000EFC99 /* Common.xcodeproj */,
 				9A5AB96519F2388100B67080 /* Repository.xcodeproj */,
 				9A2B1C9619E7D9AC008E2646 /* Lexicographer */,
 				9A2B1C9519E7D9AC008E2646 /* Products */,
@@ -93,6 +116,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		9AB6EA9D19F36F49000EFC99 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9AB6EAA219F36F49000EFC99 /* Common.framework */,
+				9AB6EAA419F36F49000EFC99 /* CommonTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -107,6 +139,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				9A8C96BC19F3811F005C99AD /* PBXTargetDependency */,
 			);
 			name = Lexicographer;
 			productName = Lexicographer;
@@ -139,6 +172,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 9AB6EA9D19F36F49000EFC99 /* Products */;
+					ProjectRef = 9AB6EA9C19F36F49000EFC99 /* Common.xcodeproj */;
+				},
+				{
 					ProductGroup = 9A5AB96619F2388100B67080 /* Products */;
 					ProjectRef = 9A5AB96519F2388100B67080 /* Repository.xcodeproj */;
 				},
@@ -165,6 +202,20 @@
 			remoteRef = 9A5AB96C19F2388100B67080 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		9AB6EAA219F36F49000EFC99 /* Common.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Common.framework;
+			remoteRef = 9AB6EAA119F36F49000EFC99 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9AB6EAA419F36F49000EFC99 /* CommonTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CommonTests.xctest;
+			remoteRef = 9AB6EAA319F36F49000EFC99 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -178,6 +229,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9A8C96BC19F3811F005C99AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Repository;
+			targetProxy = 9A8C96BB19F3811F005C99AD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		9A2B1C9919E7D9AC008E2646 /* Debug */ = {
@@ -258,6 +317,7 @@
 		9A2B1C9C19E7D9AC008E2646 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LD_RUNPATH_SEARCH_PATHS = .;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -265,6 +325,7 @@
 		9A2B1C9D19E7D9AC008E2646 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LD_RUNPATH_SEARCH_PATHS = .;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

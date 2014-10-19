@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Common
 
 public class Root {
     
@@ -19,13 +20,11 @@ public class Root {
     var versions : [Version] = [Version]()
     
     func scan() {
-     
-        //let fileManager = NSFileManager().defaultManager()
-    
-    
-    
-        //_versions = from directory in Directory.EnumerateDirectories(Path, "FIX*")
-        //select new Version(directory, System.IO.Path.GetFileName(directory));
+        for entry in Directory.enumerateDirectories(path) {
+            if entry.hasPrefix("FIX") {
+                versions.append(Version(path:entry, beginString:Path.getFileName(entry)))
+            }
+        }
     }
 
 }

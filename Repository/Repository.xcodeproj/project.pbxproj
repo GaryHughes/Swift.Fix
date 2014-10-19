@@ -27,6 +27,27 @@
 			remoteGlobalIDString = 9A5AB94819F2386700B67080;
 			remoteInfo = Repository;
 		};
+		9A8C96B319F3703C005C99AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9AB6EA9319F36F23000EFC99 /* Common.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9AB6EA7719F36F23000EFC99;
+			remoteInfo = Common;
+		};
+		9A8C96B519F3703C005C99AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9AB6EA9319F36F23000EFC99 /* Common.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9AB6EA8219F36F23000EFC99;
+			remoteInfo = CommonTests;
+		};
+		9A8C96C119F38132005C99AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9AB6EA9319F36F23000EFC99 /* Common.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9AB6EA7619F36F23000EFC99;
+			remoteInfo = Common;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +64,7 @@
 		9A5AB97219F238A700B67080 /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
 		9A5AB97319F238A700B67080 /* Field.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
 		9A5AB97419F238A700B67080 /* Enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
+		9AB6EA9319F36F23000EFC99 /* Common.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Common.xcodeproj; path = ../Common/Common.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +89,7 @@
 		9A5AB93F19F2386700B67080 = {
 			isa = PBXGroup;
 			children = (
+				9AB6EA9319F36F23000EFC99 /* Common.xcodeproj */,
 				9A5AB94B19F2386700B67080 /* Repository */,
 				9A5AB95819F2386700B67080 /* RepositoryTests */,
 				9A5AB94A19F2386700B67080 /* Products */,
@@ -123,6 +146,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		9A8C96AF19F3703C005C99AD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A8C96B419F3703C005C99AD /* Common.framework */,
+				9A8C96B619F3703C005C99AD /* CommonTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -149,6 +181,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				9A8C96C219F38132005C99AD /* PBXTargetDependency */,
 			);
 			name = Repository;
 			productName = Repository;
@@ -200,6 +233,12 @@
 			mainGroup = 9A5AB93F19F2386700B67080;
 			productRefGroup = 9A5AB94A19F2386700B67080 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 9A8C96AF19F3703C005C99AD /* Products */;
+					ProjectRef = 9AB6EA9319F36F23000EFC99 /* Common.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				9A5AB94819F2386700B67080 /* Repository */,
@@ -207,6 +246,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		9A8C96B419F3703C005C99AD /* Common.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Common.framework;
+			remoteRef = 9A8C96B319F3703C005C99AD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9A8C96B619F3703C005C99AD /* CommonTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CommonTests.xctest;
+			remoteRef = 9A8C96B519F3703C005C99AD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		9A5AB94719F2386700B67080 /* Resources */ = {
@@ -255,6 +311,11 @@
 			isa = PBXTargetDependency;
 			target = 9A5AB94819F2386700B67080 /* Repository */;
 			targetProxy = 9A5AB95619F2386700B67080 /* PBXContainerItemProxy */;
+		};
+		9A8C96C219F38132005C99AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Common;
+			targetProxy = 9A8C96C119F38132005C99AD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -425,6 +486,7 @@
 				9A5AB96119F2386700B67080 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9A5AB96219F2386700B67080 /* Build configuration list for PBXNativeTarget "RepositoryTests" */ = {
 			isa = XCConfigurationList;
@@ -433,6 +495,7 @@
 				9A5AB96419F2386700B67080 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
