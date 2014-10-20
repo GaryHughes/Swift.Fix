@@ -20,10 +20,8 @@ public class Root {
     var versions : [Version] = [Version]()
     
     func scan() {
-        for entry in Directory.enumerateDirectories(path) {
-            if entry.hasPrefix("FIX") {
-                versions.append(Version(path:entry, beginString:Path.getFileName(entry)))
-            }
+        for entry in Directory.enumerateDirectories(path, { $0.hasPrefix("FIX") }) {
+            versions.append(Version(path:path + "/" + entry, beginString:Path.getFileName(entry)))
         }
     }
 

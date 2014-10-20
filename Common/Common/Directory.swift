@@ -30,13 +30,17 @@ public class Directory {
         return true
     }
     
-    public class func enumerateDirectories(path:String) -> [String] {
+    public typealias predicate = String -> Bool
+    
+    public class func enumerateDirectories(path:String, filter: predicate? = nil) -> [String] {
         var entries = [String]()
         let fileManager = NSFileManager.defaultManager()
         if let contents : [AnyObject]? = fileManager.contentsOfDirectoryAtPath(path, error: nil) {
             for item in contents! {
                 if let filename = item as? String {
-                    entries.append(filename)
+                    if filter == nil || filter!(filename) {
+                        entries.append(filename)
+                    }
                 }
             }
         }

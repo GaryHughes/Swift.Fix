@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Common
 
 public class Version {
     
@@ -25,25 +26,25 @@ public class Version {
     private(set) var enums = [Enum]()
     private(set) var dataTypes = [String]()
     
-    /*
-    private class DirectoryComparer : IComparer<string>
-    {
-    public int Compare(string x, string y)
-    {
-    int left = Convert.ToInt32(x.Substring(2));
-    int right = Convert.ToInt32(y.Substring(2));
-    return left.CompareTo(right);
-    }
-    }
-    */
-    
     func scan() {
         
-        let directory = path;
-        let ext = "Base"
+        var subdirectory = "Base"
         
-        println("SCAN VERSION \(directory)")
- 
+        var extensionPacks = Directory.enumerateDirectories(path, { $0.uppercaseString.hasPrefix("EP")})
+        
+        if extensionPacks.count > 0 {
+            extensionPacks.sort( { (left, right) in
+                let leftInt = left.substringWithRange(Range<String.Index>(start: advance(left.startIndex, 2), end: left.endIndex)).toInt()
+                let rightInt = right.substringWithRange(Range<String.Index>(start: advance(right.startIndex, 2), end: right.endIndex)).toInt()
+                return leftInt > rightInt
+            })
+            subdirectory = extensionPacks[0]
+        }
+        
+        let directory = path + "/" + subdirectory
+        
+        println("SCAN " + directory)
+        
         /*
     string mostRecent = (from entry in Directory.EnumerateDirectories(Root)
     where Path.GetFileName(entry).ToUpper().StartsWith("EP")
