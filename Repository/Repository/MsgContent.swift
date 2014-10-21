@@ -8,10 +8,23 @@
 
 import Foundation
 
+//
+//<MsgContent added="FIX.2.7">
+//    <ComponentID>1</ComponentID>
+//    <TagText>StandardHeader</TagText>
+//    <Indent>0</Indent>
+//    <Position>1</Position>
+//    <Reqd>1</Reqd>
+//    <Description>MsgType = 0</Description>
+//</MsgContent>
+//
 public class MsgContent {
     
-    public init () {
-        
-    }
+    public var ComponentID : String? = nil
+    public var TagText : String? = nil
+    public var Indent : String? = nil
+    public var Position : String? = nil
+    public var Reqd : String? = nil
+    public var Description : String? = nil
     
 }

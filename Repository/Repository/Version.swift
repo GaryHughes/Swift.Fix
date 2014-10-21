@@ -44,19 +44,10 @@ public class Version {
         let directory = path + "/" + subdirectory
         
         println("SCAN " + directory)
+  
+        
         
         /*
-    string mostRecent = (from entry in Directory.EnumerateDirectories(Root)
-    where Path.GetFileName(entry).ToUpper().StartsWith("EP")
-    select Path.GetFileName(entry)).OrderByDescending(entry => entry, new DirectoryComparer()).FirstOrDefault();
-    
-    if(!string.IsNullOrEmpty(mostRecent))
-    {
-    extension = mostRecent;
-    }
-    
-    directory += "/" + extension;
-    
     List<Message> customMessages = new List<Message>();
     
     using (FileStream fs = new FileStream(directory + "/Messages.xml", FileMode.Open))
