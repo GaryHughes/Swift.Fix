@@ -55,6 +55,21 @@ public class Version {
         
         println("ENUMS = \(enums.count)")
         
+        let fieldsParser = FieldsParser()
+        fields = fieldsParser.parse(directory + "/Fields.xml")
+        
+        println("FIELDS = \(fields.count)")
+        
+        let msgContentsParser = MsgContentsParser()
+        msgContents = msgContentsParser.parse(directory + "/MsgContents.xml")
+        
+        println("MSGCONTENTS = \(msgContents.count)")
+        
+        let componentsParser = ComponentsParser()
+        components = componentsParser.parse(directory + "/Components.xml")
+        
+        println("COMPONENTS = \(components.count)")
+        
         /*
     using (FileStream fs = new FileStream(directory + "/Enums.xml", FileMode.Open))
     {
