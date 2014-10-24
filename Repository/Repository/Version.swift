@@ -50,64 +50,12 @@ public class Version {
         
         println("MESSAGES = \(messages.count)")
         
+        let enumsParser = EnumsParser()
+        enums = enumsParser.parse(directory + "/Enums.xml")
         
-        
+        println("ENUMS = \(enums.count)")
         
         /*
-    List<Message> customMessages = new List<Message>();
-    
-    using (FileStream fs = new FileStream(directory + "/Messages.xml", FileMode.Open))
-    {
-    XmlSerializer ser = new XmlSerializer(typeof(Messages));
-    Messages m = (Messages)ser.Deserialize(fs);
-    foreach(Message message in m.Items)
-    {
-    Messages.Add((Message)message.Clone());
-    
-    // Add ITG extensions
-    if (BeginString == "FIX.4.0")
-    {
-    if (message.MsgType == "E")
-    {
-    Message kodiakWaveOrder = (Message)message.Clone();
-    kodiakWaveOrder.MsgType = "UWO";
-    kodiakWaveOrder.Name = "KodiakWaveOrder";
-    customMessages.Add(kodiakWaveOrder);
-    }
-    else if (message.MsgType == "G")
-    {
-    Message kodiakWaveOrderCorrectionRequest = (Message)message.Clone();
-    kodiakWaveOrderCorrectionRequest.MsgType = "UWOCorrR";
-    kodiakWaveOrderCorrectionRequest.Name = "KodiakWaveOrderCorrectionRequest";
-    customMessages.Add(kodiakWaveOrderCorrectionRequest);
-    }
-    else if (message.MsgType == "F")
-    {
-    Message kodiakWaveOrderCancelRequest = (Message)message.Clone();
-    kodiakWaveOrderCancelRequest.MsgType = "UWOCanR";
-    kodiakWaveOrderCancelRequest.Name = "KodiakWaveOrderCancelRequest";
-    customMessages.Add(kodiakWaveOrderCancelRequest);
-    }
-    else if (message.MsgType == "H")
-    {
-    Message kodiakWaveOrderStatusRequest = (Message)message.Clone();
-    kodiakWaveOrderStatusRequest.MsgType = "UWOSR";
-    kodiakWaveOrderStatusRequest.Name = "KodiakWaveOrderStatusRequest";
-    customMessages.Add(kodiakWaveOrderStatusRequest);
-    }
-    else if (message.MsgType == "J")
-    {
-    Message kodiakWaveAllocation = (Message)message.Clone();
-    kodiakWaveAllocation.MsgType = "UWALLOC";
-    kodiakWaveAllocation.Name = "KodiakWaveAllocation";
-    customMessages.Add(kodiakWaveAllocation);
-    }
-    }
-    }
-    }
-    
-    Messages.AddRange(customMessages);
-    
     using (FileStream fs = new FileStream(directory + "/Enums.xml", FileMode.Open))
     {
     XmlSerializer ser = new XmlSerializer(typeof(Enums));
@@ -174,5 +122,62 @@ public class Version {
     }
     }
     */
+        
+        /*
+        List<Message> customMessages = new List<Message>();
+        
+        using (FileStream fs = new FileStream(directory + "/Messages.xml", FileMode.Open))
+        {
+        XmlSerializer ser = new XmlSerializer(typeof(Messages));
+        Messages m = (Messages)ser.Deserialize(fs);
+        foreach(Message message in m.Items)
+        {
+        Messages.Add((Message)message.Clone());
+        
+        // Add ITG extensions
+        if (BeginString == "FIX.4.0")
+        {
+        if (message.MsgType == "E")
+        {
+        Message kodiakWaveOrder = (Message)message.Clone();
+        kodiakWaveOrder.MsgType = "UWO";
+        kodiakWaveOrder.Name = "KodiakWaveOrder";
+        customMessages.Add(kodiakWaveOrder);
+        }
+        else if (message.MsgType == "G")
+        {
+        Message kodiakWaveOrderCorrectionRequest = (Message)message.Clone();
+        kodiakWaveOrderCorrectionRequest.MsgType = "UWOCorrR";
+        kodiakWaveOrderCorrectionRequest.Name = "KodiakWaveOrderCorrectionRequest";
+        customMessages.Add(kodiakWaveOrderCorrectionRequest);
+        }
+        else if (message.MsgType == "F")
+        {
+        Message kodiakWaveOrderCancelRequest = (Message)message.Clone();
+        kodiakWaveOrderCancelRequest.MsgType = "UWOCanR";
+        kodiakWaveOrderCancelRequest.Name = "KodiakWaveOrderCancelRequest";
+        customMessages.Add(kodiakWaveOrderCancelRequest);
+        }
+        else if (message.MsgType == "H")
+        {
+        Message kodiakWaveOrderStatusRequest = (Message)message.Clone();
+        kodiakWaveOrderStatusRequest.MsgType = "UWOSR";
+        kodiakWaveOrderStatusRequest.Name = "KodiakWaveOrderStatusRequest";
+        customMessages.Add(kodiakWaveOrderStatusRequest);
+        }
+        else if (message.MsgType == "J")
+        {
+        Message kodiakWaveAllocation = (Message)message.Clone();
+        kodiakWaveAllocation.MsgType = "UWALLOC";
+        kodiakWaveAllocation.Name = "KodiakWaveAllocation";
+        customMessages.Add(kodiakWaveAllocation);
+        }
+        }
+        }
+        }
+        
+        Messages.AddRange(customMessages);
+        */
+
     }
 }

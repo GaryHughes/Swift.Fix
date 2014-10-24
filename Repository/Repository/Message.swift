@@ -34,7 +34,7 @@ public class Message {
 
 public class MessagesParser : NSObject, NSXMLParserDelegate {
 
-    private var messages = [Message]()
+    private var values = [Message]()
   
     public func parse(filename:String) -> [Message] {
         
@@ -48,12 +48,12 @@ public class MessagesParser : NSObject, NSXMLParserDelegate {
         var error = parser.parserError
         assert(error == nil, "Parse error: \(error)")
         
-        return messages;
+        return values;
     }
     
     // MARK: NSXMLParserDelegate
     
-    var message : Message?
+    var value : Message?
     var characters = ""
     
     public func parser(parser: NSXMLParser!, didEndElement: String!, namespaceURI: String!, qualifiedName: String!) {
@@ -61,37 +61,37 @@ public class MessagesParser : NSObject, NSXMLParserDelegate {
         switch didEndElement {
             
             case "Message":
-                assert(message != nil)
-                messages.append(message!)
-                message = nil
+                assert(value != nil)
+                values.append(value!)
+                value = nil
                 break
             
             case "ComponentID":
-                message?.ComponentID = characters
+                value?.ComponentID = characters
                 break
             
             case "MsgType":
-                message?.MsgType = characters
+                value?.MsgType = characters
                 break
             
             case "Name":
-                message?.Name = characters
+                value?.Name = characters
                 break
             
             case "CategoryID":
-                message?.CategoryID = characters
+                value?.CategoryID = characters
                 break
             
             case "SectionID":
-                message?.SectionID = characters
+                value?.SectionID = characters
                 break
             
             case "NotReqXML":
-                message?.NotReqXML = characters
+                value?.NotReqXML = characters
                 break
             
             case "Description":
-                message?.Description = characters
+                value?.Description = characters
                 break
             
             default:
@@ -103,8 +103,8 @@ public class MessagesParser : NSObject, NSXMLParserDelegate {
     public func parser(parser: NSXMLParser!, didStartElement: String!, namespaceURI: String!, qualifiedName: String!, attributes: [NSObject : AnyObject]!) {
                         
         if didStartElement == "Message" {
-            assert(message == nil)
-            message = Message()
+            assert(value == nil)
+            value = Message()
             return
         }
    
