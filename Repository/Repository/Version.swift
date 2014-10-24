@@ -45,6 +45,12 @@ public class Version {
         
         println("SCAN " + directory)
   
+        let messagesParser = MessagesParser()
+        messages = messagesParser.parse(directory + "/Messages.xml")
+        
+        println("MESSAGES = \(messages.count)")
+        
+        
         
         
         /*

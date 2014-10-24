@@ -20,11 +20,11 @@ import Foundation
 //
 public class Component {
     
-    public var ComponentID : String? = nil
-    public var ComponentType : String? = nil
-    public var CategoryID : String? = nil
-    public var Name : String? = nil
-    public var NotReqXML : String? = nil
-    public var Description : String? = nil
+    public var ComponentID : String?
+    public var ComponentType : String?
+    public var CategoryID : String?
+    public var Name : String?
+    public var NotReqXML : String?
+    public var Description : String?
     
 }

@@ -18,9 +18,9 @@ import Foundation
 //
 public class Enum {
 
-    public var Tag : Int? = nil
-    public var Value : String? = nil
-    public var SymbolicName : String? = nil
-    public var Description : String? = nil
+    public var Tag : Int?
+    public var Value : String?
+    public var SymbolicName : String?
+    public var Description : String?
     
 }

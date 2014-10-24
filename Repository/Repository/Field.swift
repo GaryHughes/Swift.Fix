@@ -19,10 +19,10 @@ import Foundation
 //
 public class Field {
     
-    public var Tag : Int? = nil
-    public var Name : String? = nil
-    public var Type : String? = nil
-    public var NotReqXML : String? = nil
-    public var Description : String? = nil
+    public var Tag : Int?
+    public var Name : String?
+    public var Type : String?
+    public var NotReqXML : String?
+    public var Description : String?
     
 }

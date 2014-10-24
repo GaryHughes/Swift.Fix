@@ -20,11 +20,11 @@ import Foundation
 //
 public class MsgContent {
     
-    public var ComponentID : String? = nil
-    public var TagText : String? = nil
-    public var Indent : String? = nil
-    public var Position : String? = nil
-    public var Reqd : String? = nil
-    public var Description : String? = nil
+    public var ComponentID : String?
+    public var TagText : String?
+    public var Indent : String?
+    public var Position : String?
+    public var Reqd : String?
+    public var Description : String?
     
 }

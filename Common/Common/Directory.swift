@@ -16,7 +16,7 @@ public class Directory {
         if !fileManager.fileExistsAtPath(path, isDirectory: &directory) {
             return false
         }
-        return true
+        return directory.boolValue
     }
 
     public class func create(path:String) -> Bool {
