@@ -45,29 +45,16 @@ public class Version {
         
         println("SCAN " + directory)
   
-        let messagesParser = MessagesParser()
-        messages = messagesParser.parse(directory + "/Messages.xml")
+        messages = parseMessages(directory + "/Messages.xml")
+        enums = parseEnums(directory + "/Enums.xml")
+        fields = parseFields(directory + "/Fields.xml")
+        msgContents = parseMsgContents(directory + "/MsgContents.xml")
+        components = parseComponents(directory + "/Components.xml")
         
         println("MESSAGES = \(messages.count)")
-        
-        let enumsParser = EnumsParser()
-        enums = enumsParser.parse(directory + "/Enums.xml")
-        
         println("ENUMS = \(enums.count)")
-        
-        let fieldsParser = FieldsParser()
-        fields = fieldsParser.parse(directory + "/Fields.xml")
-        
         println("FIELDS = \(fields.count)")
-        
-        let msgContentsParser = MsgContentsParser()
-        msgContents = msgContentsParser.parse(directory + "/MsgContents.xml")
-        
         println("MSGCONTENTS = \(msgContents.count)")
-        
-        let componentsParser = ComponentsParser()
-        components = componentsParser.parse(directory + "/Components.xml")
-        
         println("COMPONENTS = \(components.count)")
         
         /*

@@ -16,7 +16,10 @@ import Foundation
 //      <Description>Buy</Description>
 //  </Enum>
 //
-public class Enum {
+public class Enum : Initable {
+    
+    public required init() {
+    }
 
     public var Tag : String?
     public var Value : String?
@@ -25,77 +28,25 @@ public class Enum {
     
 }
 
-public class EnumsParser : NSObject, NSXMLParserDelegate {
-    
-    private var values = [Enum]()
-    
-    public func parse(filename:String) -> [Enum] {
-        
-        var stream: NSInputStream? = NSInputStream(fileAtPath:filename)
-        assert(stream != nil)
-        
-        var parser = NSXMLParser(stream: stream!)
-        parser.delegate = self
-        assert(parser.parse())
-        
-        var error = parser.parserError
-        assert(error == nil, "Parse error: \(error)")
-        
-        return values;
+func parse(value:Enum, property:String, data:String) {
+    switch property {
+    case "Tag":
+        value.Tag = data
+        break
+    case "Value":
+        value.Value = data
+        break
+    case "SymbolicName":
+        value.SymbolicName = data
+        break
+    case "Description":
+        value.Description = data
+        break
+    default:
+        break
     }
-    
-    // MARK: NSXMLParserDelegate
-    
-    var value : Enum?
-    var characters = ""
-    
-    public func parser(parser: NSXMLParser!, didEndElement: String!, namespaceURI: String!, qualifiedName: String!) {
-        
-        switch didEndElement {
-            
-        case "Enum":
-            assert(value != nil)
-            values.append(value!)
-            value = nil
-            break
-            
-        case "Tag":
-            value?.Tag = characters
-            break
-            
-        case "Value":
-            value?.Value = characters
-            break
-            
-        case "SymbolicName":
-            value?.SymbolicName = characters
-            break
-            
-        case "Description":
-            value?.Description = characters
-            break
-            
-        default:
-            break
-        }
-        
-    }
-    
-    public func parser(parser: NSXMLParser!, didStartElement: String!, namespaceURI: String!, qualifiedName: String!, attributes: [NSObject : AnyObject]!) {
-        
-        if didStartElement == "Enum" {
-            assert(value == nil)
-            value = Enum()
-            return
-        }
-        
-        characters = ""
-    }
-    
-    public func parser(parser: NSXMLParser!, foundCharacters: String!) {
-        
-        characters += foundCharacters
-        
-    }
-    
+}
+
+func parseEnums(filename:String) -> [Enum] {
+    return Parser<Enum>(elementName: "Enum", parse).parse(filename)
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A3FC21D19FA66EE00A8E432 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3FC21C19FA66EE00A8E432 /* Parser.swift */; };
 		9A5AB94F19F2386700B67080 /* Repository.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A5AB94E19F2386700B67080 /* Repository.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9A5AB95519F2386700B67080 /* Repository.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5AB94919F2386700B67080 /* Repository.framework */; };
 		9A5AB95C19F2386700B67080 /* RepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5AB95B19F2386700B67080 /* RepositoryTests.swift */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9A3FC21C19FA66EE00A8E432 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		9A5AB94919F2386700B67080 /* Repository.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Repository.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A5AB94D19F2386700B67080 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A5AB94E19F2386700B67080 /* Repository.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Repository.h; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 		9A5AB94B19F2386700B67080 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				9A3FC21C19FA66EE00A8E432 /* Parser.swift */,
 				9A5AB96E19F238A700B67080 /* Root.swift */,
 				9A5AB96F19F238A700B67080 /* MsgContent.swift */,
 				9A5AB97019F238A700B67080 /* Component.swift */,
@@ -290,6 +293,7 @@
 				9A5AB97919F238A700B67080 /* Version.swift in Sources */,
 				9A5AB97A19F238A700B67080 /* Field.swift in Sources */,
 				9A5AB97819F238A700B67080 /* Message.swift in Sources */,
+				9A3FC21D19FA66EE00A8E432 /* Parser.swift in Sources */,
 				9A5AB97B19F238A700B67080 /* Enum.swift in Sources */,
 				9A5AB97719F238A700B67080 /* Component.swift in Sources */,
 				9A5AB97619F238A700B67080 /* MsgContent.swift in Sources */,

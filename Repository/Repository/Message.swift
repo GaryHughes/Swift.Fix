@@ -20,7 +20,10 @@ import Common
 //    <Description>The Heartbeat monitors the status of the communication link and identifies when the last of a string of messages was not received.</Description>
 //</Message>
 //
-public class Message {
+public class Message : Initable {
+    
+    public required init() {
+    }
     
     public var ComponentID : String?
     public var MsgType : String?
@@ -32,89 +35,34 @@ public class Message {
     
 }
 
-public class MessagesParser : NSObject, NSXMLParserDelegate {
+func parse(value:Message, property:String, data:String) {
+    switch property {
+    case "ComponentID":
+        value.ComponentID = data
+        break
+    case "MsgType":
+        value.MsgType = data
+        break
+    case "Name":
+        value.Name = data
+        break
+    case "CategoryID":
+        value.CategoryID = data
+        break
+    case "SectionID":
+        value.SectionID = data
+        break
+    case "NotReqXML":
+        value.NotReqXML = data
+        break
+    case "Description":
+        value.Description = data
+        break
+    default:
+        break
+    }
+}
 
-    private var values = [Message]()
-  
-    public func parse(filename:String) -> [Message] {
-        
-        var stream: NSInputStream? = NSInputStream(fileAtPath:filename)
-        assert(stream != nil)
-        
-        var parser = NSXMLParser(stream: stream!)
-        parser.delegate = self
-        assert(parser.parse())
-        
-        var error = parser.parserError
-        assert(error == nil, "Parse error: \(error)")
-        
-        return values;
-    }
-    
-    // MARK: NSXMLParserDelegate
-    
-    var value : Message?
-    var characters = ""
-    
-    public func parser(parser: NSXMLParser!, didEndElement: String!, namespaceURI: String!, qualifiedName: String!) {
-        
-        switch didEndElement {
-            
-            case "Message":
-                assert(value != nil)
-                values.append(value!)
-                value = nil
-                break
-            
-            case "ComponentID":
-                value?.ComponentID = characters
-                break
-            
-            case "MsgType":
-                value?.MsgType = characters
-                break
-            
-            case "Name":
-                value?.Name = characters
-                break
-            
-            case "CategoryID":
-                value?.CategoryID = characters
-                break
-            
-            case "SectionID":
-                value?.SectionID = characters
-                break
-            
-            case "NotReqXML":
-                value?.NotReqXML = characters
-                break
-            
-            case "Description":
-                value?.Description = characters
-                break
-            
-            default:
-                break
-        }
-        
-    }
-    
-    public func parser(parser: NSXMLParser!, didStartElement: String!, namespaceURI: String!, qualifiedName: String!, attributes: [NSObject : AnyObject]!) {
-                        
-        if didStartElement == "Message" {
-            assert(value == nil)
-            value = Message()
-            return
-        }
-   
-        characters = ""
-    }
-    
-    public func parser(parser: NSXMLParser!, foundCharacters: String!) {
-        
-        characters += foundCharacters
-        
-    }
-
+func parseMessages(filename:String) -> [Message] {
+    return Parser<Message>(elementName: "Message", parse).parse(filename)
 }
