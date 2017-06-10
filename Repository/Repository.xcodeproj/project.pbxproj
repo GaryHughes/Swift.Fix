@@ -220,7 +220,7 @@
 				TargetAttributes = {
 					9A5AB94819F2386700B67080 = {
 						CreatedOnToolsVersion = 6.1;
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 0900;
 					};
 					9A5AB95319F2386700B67080 = {
 						CreatedOnToolsVersion = 6.1;
@@ -429,7 +429,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.geh.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -448,7 +449,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.geh.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
