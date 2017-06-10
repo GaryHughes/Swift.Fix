@@ -18,21 +18,21 @@ import Foundation
 //    <Description>The standard FIX message header</Description>
 //</Component>
 //
-public class Component : Initable {
+open class Component : Initable {
     
     public required init() {
     }
     
-    public var ComponentID : String?
-    public var ComponentType : String?
-    public var CategoryID : String?
-    public var Name : String?
-    public var NotReqXML : String?
-    public var Description : String?
+    open var ComponentID : String?
+    open var ComponentType : String?
+    open var CategoryID : String?
+    open var Name : String?
+    open var NotReqXML : String?
+    open var Description : String?
     
 }
 
-func parse(value:Component, property:String, data:String) {
+func parse(_ value:Component, property:String, data:String) {
     switch property {
     case "ComponentID":
         value.ComponentID = data
@@ -57,8 +57,8 @@ func parse(value:Component, property:String, data:String) {
     }
 }
 
-func parseComponents(filename:String) -> [Component] {
-    return Parser<Component>(elementName: "Component", parse).parse(filename)
+func parseComponents(_ filename:String) -> [Component] {
+    return Parser<Component>(elementName: "Component", parser: parse).parse(filename)
 }
 
 

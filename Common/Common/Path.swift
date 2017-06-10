@@ -8,10 +8,11 @@
 
 import Foundation
 
-public class Path {
+open class Path {
     
-    public class func getFileName(path:String) -> String {
-        return path.lastPathComponent
+    open class func getFileName(_ path:String) -> String {
+        let url = URL(fileURLWithPath:path)
+        return url.lastPathComponent
     }
     
 }

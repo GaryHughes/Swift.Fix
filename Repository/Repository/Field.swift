@@ -17,20 +17,20 @@ import Foundation
 //    <Description>Account mnemonic as agreed between broker and institution.</Description>
 //</Field>
 //
-public class Field : Initable {
+open class Field : Initable {
     
     public required init() {
     }
 
-    public var Tag : String?
-    public var Name : String?
-    public var Type : String?
-    public var NotReqXML : String?
-    public var Description : String?
+    open var Tag : String?
+    open var Name : String?
+    open var `Type` : String?
+    open var NotReqXML : String?
+    open var Description : String?
     
 }
 
-func parse(value:Field, property:String, data:String) {
+func parse(_ value:Field, property:String, data:String) {
     switch property {
     case "Tag":
         value.Tag = data
@@ -52,6 +52,6 @@ func parse(value:Field, property:String, data:String) {
     }
 }
 
-func parseFields(filename:String) -> [Field] {
-    return Parser<Field>(elementName: "Field", parse).parse(filename)
+func parseFields(_ filename:String) -> [Field] {
+    return Parser<Field>(elementName: "Field", parser: parse).parse(filename)
 }

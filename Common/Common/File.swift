@@ -8,12 +8,12 @@
 
 import Foundation
 
-public class File {
+open class File {
     
-    public class func exists(path:String) -> Bool {
+    open class func exists(_ path:String) -> Bool {
         var directory : ObjCBool = false
-        let fileManager = NSFileManager.defaultManager()
-        if !fileManager.fileExistsAtPath(path, isDirectory: &directory) {
+        let fileManager = FileManager.default
+        if !fileManager.fileExists(atPath: path, isDirectory: &directory) {
             return false
         }
         return !directory.boolValue

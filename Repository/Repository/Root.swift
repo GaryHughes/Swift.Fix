@@ -9,7 +9,7 @@
 import Foundation
 import Common
 
-public class Root {
+open class Root {
     
     public init(path:String) {
         self.path = path
@@ -20,7 +20,7 @@ public class Root {
     var versions : [Version] = [Version]()
     
     func scan() {
-        for entry in Directory.enumerateDirectories(path, { $0.hasPrefix("FIX") }) {
+        for entry in Directory.enumerateDirectories(path, filter: { $0.hasPrefix("FIX") }) {
             versions.append(Version(path:path + "/" + entry, beginString:Path.getFileName(entry)))
         }
     }

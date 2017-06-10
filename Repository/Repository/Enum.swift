@@ -16,19 +16,19 @@ import Foundation
 //      <Description>Buy</Description>
 //  </Enum>
 //
-public class Enum : Initable {
+open class Enum : Initable {
     
     public required init() {
     }
 
-    public var Tag : String?
-    public var Value : String?
-    public var SymbolicName : String?
-    public var Description : String?
+    open var Tag : String?
+    open var Value : String?
+    open var SymbolicName : String?
+    open var Description : String?
     
 }
 
-func parse(value:Enum, property:String, data:String) {
+func parse(_ value:Enum, property:String, data:String) {
     switch property {
     case "Tag":
         value.Tag = data
@@ -47,6 +47,6 @@ func parse(value:Enum, property:String, data:String) {
     }
 }
 
-func parseEnums(filename:String) -> [Enum] {
-    return Parser<Enum>(elementName: "Enum", parse).parse(filename)
+func parseEnums(_ filename:String) -> [Enum] {
+    return Parser<Enum>(elementName: "Enum", parser: parse).parse(filename)
 }

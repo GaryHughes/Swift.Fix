@@ -20,22 +20,22 @@ import Common
 //    <Description>The Heartbeat monitors the status of the communication link and identifies when the last of a string of messages was not received.</Description>
 //</Message>
 //
-public class Message : Initable {
+open class Message : Initable {
     
     public required init() {
     }
     
-    public var ComponentID : String?
-    public var MsgType : String?
-    public var Name : String?
-    public var CategoryID : String?
-    public var SectionID : String?
-    public var NotReqXML : String?
-    public var Description : String?
+    open var ComponentID : String?
+    open var MsgType : String?
+    open var Name : String?
+    open var CategoryID : String?
+    open var SectionID : String?
+    open var NotReqXML : String?
+    open var Description : String?
     
 }
 
-func parse(value:Message, property:String, data:String) {
+func parse(_ value:Message, property:String, data:String) {
     switch property {
     case "ComponentID":
         value.ComponentID = data
@@ -63,6 +63,6 @@ func parse(value:Message, property:String, data:String) {
     }
 }
 
-func parseMessages(filename:String) -> [Message] {
-    return Parser<Message>(elementName: "Message", parse).parse(filename)
+func parseMessages(_ filename:String) -> [Message] {
+    return Parser<Message>(elementName: "Message", parser: parse).parse(filename)
 }

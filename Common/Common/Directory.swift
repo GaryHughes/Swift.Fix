@@ -8,39 +8,39 @@
 
 import Foundation
 
-public class Directory {
+open class Directory {
 
-    public class func exists(path:String) -> Bool {
+    open class func exists(_ path:String) -> Bool {
         var directory : ObjCBool = false
-        let fileManager = NSFileManager.defaultManager()
-        if !fileManager.fileExistsAtPath(path, isDirectory: &directory) {
+        let fileManager = FileManager.default
+        if !fileManager.fileExists(atPath: path, isDirectory: &directory) {
             return false
         }
         return directory.boolValue
     }
 
-    public class func create(path:String) -> Bool {
+    open class func create(_ path:String) -> Bool {
         if !exists(path) {
-            var error : NSError?
-            let fileManager = NSFileManager.defaultManager()
-            if !fileManager.createDirectoryAtPath(path, withIntermediateDirectories: true, attributes: nil, error: &error) {
+            let fileManager = FileManager.default
+            do {
+                try fileManager.createDirectory(atPath:path, withIntermediateDirectories: true)
+            }
+            catch {
                 return false
             }
         }
         return true
     }
     
-    public typealias predicate = String -> Bool
+    public typealias predicate = (String) -> Bool
     
-    public class func enumerateDirectories(path:String, filter: predicate? = nil) -> [String] {
+    open class func enumerateDirectories(_ path:String, filter: predicate? = nil) -> [String] {
         var entries = [String]()
-        let fileManager = NSFileManager.defaultManager()
-        if let contents : [AnyObject]? = fileManager.contentsOfDirectoryAtPath(path, error: nil) {
-            for item in contents! {
-                if let filename = item as? String {
-                    if filter == nil || filter!(filename) {
-                        entries.append(filename)
-                    }
+        let fileManager = FileManager.default
+        if let contents = try? fileManager.contentsOfDirectory(atPath:path) {
+            for filename in contents {
+                if filter == nil || filter!(filename) {
+                    entries.append(filename)
                 }
             }
         }

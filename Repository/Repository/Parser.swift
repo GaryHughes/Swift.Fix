@@ -13,31 +13,31 @@ public protocol Initable {
 }
 
 
-public class Parser<ValueType : Initable> : NSObject, NSXMLParserDelegate {
+open class Parser<ValueType : Initable> : NSObject, XMLParserDelegate {
 
-    typealias ValueParser = (value:ValueType, property:String, data:String) -> Void
+    typealias ValueParser = (_ value:ValueType, _ property:String, _ data:String) -> Void
     
     var values = [ValueType]()
     
     let valueElementName : String
     let valueParser : ValueParser
    
-    public init(elementName:String, parser:ValueParser) {
+    internal init(elementName:String, parser:@escaping ValueParser) {
         valueElementName = elementName
         valueParser = parser
     }
     
-    public func parse(filename:String) -> [ValueType] {
+    open func parse(_ filename:String) -> [ValueType] {
         
-        var stream: NSInputStream? = NSInputStream(fileAtPath:filename)
+        let stream: InputStream? = InputStream(fileAtPath:filename)
         assert(stream != nil)
         
-        var parser = NSXMLParser(stream: stream!)
+        let parser = XMLParser(stream: stream!)
         parser.delegate = self
         assert(parser.parse())
         
-        var error = parser.parserError
-        assert(error == nil, "Parse error: \(error)")
+        let error = parser.parserError
+        assert(error == nil, "Parse error: \(String(describing: error))")
         
         return values;
     }
@@ -47,24 +47,24 @@ public class Parser<ValueType : Initable> : NSObject, NSXMLParserDelegate {
     var value : Any? // TODO: using ValueType here segfaults the compiler
     var characters = ""
     
-    public func parser(parser: NSXMLParser!, didEndElement: String!, namespaceURI: String!, qualifiedName: String!) {
+    open func parser(_ parser: XMLParser, didEndElement: String, namespaceURI: String?, qualifiedName: String?) {
         
         switch didEndElement {
             
         case valueElementName:
             assert(value != nil)
-            values.append(value! as ValueType)
+            values.append(value! as! ValueType)
             value = nil
             break
             
         default:
-            valueParser(value: value as ValueType, property: didEndElement, data: characters)
+            valueParser(value as! ValueType, didEndElement, characters)
             break
         }
         
     }
    
-    public func parser(parser: NSXMLParser!, didStartElement: String!, namespaceURI: String!, qualifiedName: String!, attributes: [NSObject : AnyObject]!) {
+    @nonobjc open func parser(_ parser: XMLParser!, didStartElement: String!, namespaceURI: String!, qualifiedName: String!, attributes: [AnyHashable: Any]!) {
         
         if didStartElement == valueElementName {
             assert(value == nil)
@@ -75,7 +75,7 @@ public class Parser<ValueType : Initable> : NSObject, NSXMLParserDelegate {
         characters = ""
     }
     
-    public func parser(parser: NSXMLParser!, foundCharacters: String!) {
+    open func parser(_ parser: XMLParser, foundCharacters: String) {
         characters += foundCharacters
     }
 }
