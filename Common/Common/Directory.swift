@@ -8,9 +8,9 @@
 
 import Foundation
 
-open class Directory {
+public class Directory {
 
-    open class func exists(_ path:String) -> Bool {
+    public class func exists(_ path:String) -> Bool {
         var directory : ObjCBool = false
         let fileManager = FileManager.default
         if !fileManager.fileExists(atPath: path, isDirectory: &directory) {
@@ -19,7 +19,7 @@ open class Directory {
         return directory.boolValue
     }
 
-    open class func create(_ path:String) -> Bool {
+    public class func create(_ path:String) -> Bool {
         if !exists(path) {
             let fileManager = FileManager.default
             do {
@@ -34,7 +34,7 @@ open class Directory {
     
     public typealias predicate = (String) -> Bool
     
-    open class func enumerateDirectories(_ path:String, filter: predicate? = nil) -> [String] {
+    public class func enumerateDirectories(_ path:String, filter: predicate? = nil) -> [String] {
         var entries = [String]()
         let fileManager = FileManager.default
         if let contents = try? fileManager.contentsOfDirectory(atPath:path) {

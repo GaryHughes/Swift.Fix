@@ -9,15 +9,15 @@
 import Foundation
 import Common
 
-open class Root {
+public class Root {
     
     public init(path:String) {
         self.path = path
         scan()
     }
     
-    var path : String
-    var versions : [Version] = [Version]()
+    public var path : String
+    public var versions : [Version] = [Version]()
     
     func scan() {
         for entry in Directory.enumerateDirectories(path, filter: { $0.hasPrefix("FIX") }) {

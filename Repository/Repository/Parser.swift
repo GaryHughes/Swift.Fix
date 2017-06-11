@@ -13,7 +13,7 @@ public protocol Initable {
 }
 
 
-open class Parser<ValueType : Initable> : NSObject, XMLParserDelegate {
+internal class Parser<ValueType : Initable> : NSObject, XMLParserDelegate {
 
     typealias ValueParser = (_ value:ValueType, _ property:String, _ data:String) -> Void
     
@@ -27,7 +27,7 @@ open class Parser<ValueType : Initable> : NSObject, XMLParserDelegate {
         valueParser = parser
     }
     
-    open func parse(_ filename:String) -> [ValueType] {
+    public func parse(_ filename:String) -> [ValueType] {
         
         let stream: InputStream? = InputStream(fileAtPath:filename)
         assert(stream != nil)
@@ -47,7 +47,7 @@ open class Parser<ValueType : Initable> : NSObject, XMLParserDelegate {
     var value : Any? // TODO: using ValueType here segfaults the compiler
     var characters = ""
     
-    open func parser(_ parser: XMLParser, didEndElement: String, namespaceURI: String?, qualifiedName: String?) {
+    public func parser(_ parser: XMLParser, didEndElement: String, namespaceURI: String?, qualifiedName: String?) {
         
         switch didEndElement {
             
@@ -75,7 +75,7 @@ open class Parser<ValueType : Initable> : NSObject, XMLParserDelegate {
         characters = ""
     }
     
-    open func parser(_ parser: XMLParser, foundCharacters: String) {
+    public func parser(_ parser: XMLParser, foundCharacters: String) {
         characters += foundCharacters
     }
 }

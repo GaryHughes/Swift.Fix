@@ -9,7 +9,7 @@
 import Foundation
 import Common
 
-open class Version {
+public class Version {
     
     public init (path:String, beginString:String) {
         self.path = path
@@ -17,14 +17,14 @@ open class Version {
         scan()
     }
     
-    fileprivate(set) var path : String
-    fileprivate(set) var beginString : String
-    fileprivate(set) var messages = [Message]()
-    fileprivate(set) var fields = [Field]()
-    fileprivate(set) var msgContents = [MsgContent]()
-    fileprivate(set) var components = [Component]()
-    fileprivate(set) var enums = [Enum]()
-    fileprivate(set) var dataTypes = [String]()
+    public var path : String
+    public var beginString : String
+    public var messages = [Message]()
+    public var fields = Dictionary<Int, Field>()
+    public var msgContents = Dictionary<String, [MsgContent]>()
+    public var components = Dictionary<String, Component>()
+    public var enums = Dictionary<Int, [Enum]>()
+    public var dataTypes = [String]()
     
     func scan() {
         
@@ -46,10 +46,37 @@ open class Version {
         print("SCAN " + directory)
   
         messages = parseMessages(directory + "/Messages.xml")
-        enums = parseEnums(directory + "/Enums.xml")
-        fields = parseFields(directory + "/Fields.xml")
-        msgContents = parseMsgContents(directory + "/MsgContents.xml")
-        components = parseComponents(directory + "/Components.xml")
+        
+        for entry in parseEnums(directory + "/Enums.xml") {
+            var values = enums[entry.Tag!]
+            if values == nil {
+                values = [Enum]()
+                enums[entry.Tag!] = values
+            }
+            // why doesn't this work
+            //values?.append(entry)
+            enums[entry.Tag!]?.append(entry)
+        }
+        
+        for entry in parseFields(directory + "/Fields.xml") {
+            fields[entry.Tag!] = entry
+            if !dataTypes.contains(entry.Type!) {
+                dataTypes.append(entry.Type!)
+            }
+        }
+        
+        for entry in parseMsgContents(directory + "/MsgContents.xml") {
+            var values = msgContents[entry.ComponentID!]
+            if values == nil {
+                values = [MsgContent]()
+                msgContents[entry.ComponentID!] = values
+            }
+            values!.append(entry)
+        }
+        
+        for entry in parseComponents(directory + "/Components.xml") {
+            components[entry.Name!] = entry
+        }
         
         print("MESSAGES = \(messages.count)")
         print("ENUMS = \(enums.count)")

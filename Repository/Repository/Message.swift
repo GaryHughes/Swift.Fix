@@ -20,7 +20,7 @@ import Common
 //    <Description>The Heartbeat monitors the status of the communication link and identifies when the last of a string of messages was not received.</Description>
 //</Message>
 //
-open class Message : Initable {
+public class Message : Initable {
     
     public required init() {
     }

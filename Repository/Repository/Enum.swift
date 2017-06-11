@@ -16,12 +16,12 @@ import Foundation
 //      <Description>Buy</Description>
 //  </Enum>
 //
-open class Enum : Initable {
+public class Enum : Initable {
     
     public required init() {
     }
 
-    open var Tag : String?
+    open var Tag : Int?
     open var Value : String?
     open var SymbolicName : String?
     open var Description : String?
@@ -31,7 +31,7 @@ open class Enum : Initable {
 func parse(_ value:Enum, property:String, data:String) {
     switch property {
     case "Tag":
-        value.Tag = data
+        value.Tag = Int(data)
         break
     case "Value":
         value.Value = data

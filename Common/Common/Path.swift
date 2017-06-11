@@ -8,9 +8,9 @@
 
 import Foundation
 
-open class Path {
+public class Path {
     
-    open class func getFileName(_ path:String) -> String {
+    public class func getFileName(_ path:String) -> String {
         let url = URL(fileURLWithPath:path)
         return url.lastPathComponent
     }

@@ -8,9 +8,9 @@
 
 import Foundation
 
-open class File {
+public class File {
     
-    open class func exists(_ path:String) -> Bool {
+    public class func exists(_ path:String) -> Bool {
         var directory : ObjCBool = false
         let fileManager = FileManager.default
         if !fileManager.fileExists(atPath: path, isDirectory: &directory) {

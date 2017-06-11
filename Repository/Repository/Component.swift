@@ -18,7 +18,7 @@ import Foundation
 //    <Description>The standard FIX message header</Description>
 //</Component>
 //
-open class Component : Initable {
+public class Component : Initable {
     
     public required init() {
     }
