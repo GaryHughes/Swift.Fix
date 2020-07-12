@@ -2,16 +2,10 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Lexicographer/Lexicographer.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:Dictionary/Dictionary.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Fix/Fix.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Repository/Repository.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Repository/Repository/../../Common/Common.xcodeproj">
