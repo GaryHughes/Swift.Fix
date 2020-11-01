@@ -9,7 +9,6 @@ path = os.path.join(os.path.dirname(__file__), '../fixorchestra')
 sys.path.append(path)
 from fixorchestra.orchestration import *
 
-from orchestration_enums_generator import *
 from orchestration_fields_generator import *
 from orchestration_messages_generator import *
 
@@ -25,7 +24,6 @@ if __name__ == '__main__':
 
     orchestration = Orchestration(args.orchestration)
 
-    generate_orchestration_enums(args.prefix, orchestration, args.outdir, args.namespace)
     generate_orchestration_fields(args.prefix, orchestration, args.outdir, args.namespace)
     generate_orchestration_messages(args.prefix, orchestration, args.outdir, args.namespace)
 

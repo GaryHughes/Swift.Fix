@@ -1,1626 +1,6581 @@
-extension Fix42 {
+public struct Fix42 {
 
-public struct Field {
+    public enum Account : RawRepresentable {
 
-    public class Account {
-        public let tag = 1
-    }
+        public typealias RawValue = String
 
-    public class AdvId {
-        public let tag = 2
-    }
+        public static var tag: Int {
+            1
+        }
 
-    public class AdvRefID {
-        public let tag = 3
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class AdvSide {
-        public let tag = 4
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class AdvTransType {
-        public let tag = 5
     }
 
-    public class AvgPx {
-        public let tag = 6
-    }
+    public enum AdvId : RawRepresentable {
 
-    public class BeginSeqNo {
-        public let tag = 7
-    }
+        public typealias RawValue = String
 
-    public class BeginString {
-        public let tag = 8
-    }
+        public static var tag: Int {
+            2
+        }
 
-    public class BodyLength {
-        public let tag = 9
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class CheckSum {
-        public let tag = 10
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class ClOrdID {
-        public let tag = 11
     }
 
-    public class Commission {
-        public let tag = 12
-    }
+    public enum AdvRefID : RawRepresentable {
 
-    public class CommType {
-        public let tag = 13
-    }
+        public typealias RawValue = String
 
-    public class CumQty {
-        public let tag = 14
-    }
+        public static var tag: Int {
+            3
+        }
 
-    public class Currency {
-        public let tag = 15
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class EndSeqNo {
-        public let tag = 16
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class ExecID {
-        public let tag = 17
     }
 
-    public class ExecInst {
-        public let tag = 18
-    }
+    public enum AdvSide : String {
 
-    public class ExecRefID {
-        public let tag = 19
-    }
+        public static var tag: Int {
+            4
+        }
 
-    public class ExecTransType {
-        public let tag = 20
+        case Buy = "B"
+        case Sell = "S"
+        case Trade = "T"
+        case Cross = "X"
     }
 
-    public class HandlInst {
-        public let tag = 21
-    }
+    public enum AdvTransType : String {
 
-    public class IDSource {
-        public let tag = 22
-    }
+        public static var tag: Int {
+            5
+        }
 
-    public class IOIid {
-        public let tag = 23
+        case Cancel = "C"
+        case New = "N"
+        case Replace = "R"
     }
 
-    public class IOIOthSvc {
-        public let tag = 24
-    }
+    public enum AvgPx : RawRepresentable {
 
-    public class IOIQltyInd {
-        public let tag = 25
-    }
+        public typealias RawValue = String
 
-    public class IOIRefID {
-        public let tag = 26
-    }
+        public static var tag: Int {
+            6
+        }
 
-    public class IOIShares {
-        public let tag = 27
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class IOITransType {
-        public let tag = 28
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class LastCapacity {
-        public let tag = 29
     }
 
-    public class LastMkt {
-        public let tag = 30
-    }
+    public enum BeginSeqNo : RawRepresentable {
 
-    public class LastPx {
-        public let tag = 31
-    }
+        public typealias RawValue = String
 
-    public class LastShares {
-        public let tag = 32
-    }
+        public static var tag: Int {
+            7
+        }
 
-    public class LinesOfText {
-        public let tag = 33
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class MsgSeqNum {
-        public let tag = 34
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class MsgType {
-        public let tag = 35
     }
 
-    public class NewSeqNo {
-        public let tag = 36
-    }
+    public enum BeginString : RawRepresentable {
 
-    public class OrderID {
-        public let tag = 37
-    }
+        public typealias RawValue = String
 
-    public class OrderQty {
-        public let tag = 38
-    }
+        public static var tag: Int {
+            8
+        }
 
-    public class OrdStatus {
-        public let tag = 39
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class OrdType {
-        public let tag = 40
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class OrigClOrdID {
-        public let tag = 41
     }
 
-    public class OrigTime {
-        public let tag = 42
-    }
+    public enum BodyLength : RawRepresentable {
 
-    public class PossDupFlag {
-        public let tag = 43
-    }
+        public typealias RawValue = String
 
-    public class Price {
-        public let tag = 44
-    }
+        public static var tag: Int {
+            9
+        }
 
-    public class RefSeqNum {
-        public let tag = 45
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class RelatdSym {
-        public let tag = 46
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class Rule80A {
-        public let tag = 47
     }
 
-    public class SecurityID {
-        public let tag = 48
-    }
+    public enum CheckSum : RawRepresentable {
 
-    public class SenderCompID {
-        public let tag = 49
-    }
+        public typealias RawValue = String
 
-    public class SenderSubID {
-        public let tag = 50
-    }
+        public static var tag: Int {
+            10
+        }
 
-    public class SendingDate {
-        public let tag = 51
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class SendingTime {
-        public let tag = 52
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class Shares {
-        public let tag = 53
     }
 
-    public class Side {
-        public let tag = 54
-    }
+    public enum ClOrdID : RawRepresentable {
 
-    public class Symbol {
-        public let tag = 55
-    }
+        public typealias RawValue = String
 
-    public class TargetCompID {
-        public let tag = 56
-    }
+        public static var tag: Int {
+            11
+        }
 
-    public class TargetSubID {
-        public let tag = 57
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class Text {
-        public let tag = 58
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class TimeInForce {
-        public let tag = 59
     }
 
-    public class TransactTime {
-        public let tag = 60
-    }
+    public enum Commission : RawRepresentable {
 
-    public class Urgency {
-        public let tag = 61
-    }
+        public typealias RawValue = String
 
-    public class ValidUntilTime {
-        public let tag = 62
-    }
+        public static var tag: Int {
+            12
+        }
 
-    public class SettlmntTyp {
-        public let tag = 63
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class FutSettDate {
-        public let tag = 64
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class SymbolSfx {
-        public let tag = 65
     }
 
-    public class ListID {
-        public let tag = 66
-    }
+    public enum CommType : String {
 
-    public class ListSeqNo {
-        public let tag = 67
-    }
+        public static var tag: Int {
+            13
+        }
 
-    public class TotNoOrders {
-        public let tag = 68
+        case PerUnit = "1"
+        case Percent = "2"
+        case Absolute = "3"
     }
 
-    public class ListExecInst {
-        public let tag = 69
-    }
+    public enum CumQty : RawRepresentable {
 
-    public class AllocID {
-        public let tag = 70
-    }
+        public typealias RawValue = String
 
-    public class AllocTransType {
-        public let tag = 71
-    }
+        public static var tag: Int {
+            14
+        }
 
-    public class RefAllocID {
-        public let tag = 72
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class NoOrders {
-        public let tag = 73
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class AvgPrxPrecision {
-        public let tag = 74
     }
 
-    public class TradeDate {
-        public let tag = 75
-    }
+    public enum Currency : RawRepresentable {
 
-    public class ExecBroker {
-        public let tag = 76
-    }
+        public typealias RawValue = String
 
-    public class OpenClose {
-        public let tag = 77
-    }
+        public static var tag: Int {
+            15
+        }
 
-    public class NoAllocs {
-        public let tag = 78
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class AllocAccount {
-        public let tag = 79
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class AllocShares {
-        public let tag = 80
     }
 
-    public class ProcessCode {
-        public let tag = 81
-    }
+    public enum EndSeqNo : RawRepresentable {
 
-    public class NoRpts {
-        public let tag = 82
-    }
+        public typealias RawValue = String
 
-    public class RptSeq {
-        public let tag = 83
-    }
+        public static var tag: Int {
+            16
+        }
 
-    public class CxlQty {
-        public let tag = 84
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class NoDlvyInst {
-        public let tag = 85
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class DlvyInst {
-        public let tag = 86
     }
 
-    public class AllocStatus {
-        public let tag = 87
-    }
+    public enum ExecID : RawRepresentable {
 
-    public class AllocRejCode {
-        public let tag = 88
-    }
+        public typealias RawValue = String
 
-    public class Signature {
-        public let tag = 89
-    }
+        public static var tag: Int {
+            17
+        }
 
-    public class SecureDataLen {
-        public let tag = 90
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class SecureData {
-        public let tag = 91
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class BrokerOfCredit {
-        public let tag = 92
     }
 
-    public class SignatureLength {
-        public let tag = 93
-    }
+    public enum ExecInst : String {
 
-    public class EmailType {
-        public let tag = 94
-    }
+        public static var tag: Int {
+            18
+        }
 
-    public class RawDataLength {
-        public let tag = 95
+        case StayOnOfferSide = "0"
+        case NotHeld = "1"
+        case Work = "2"
+        case GoAlong = "3"
+        case OverTheDay = "4"
+        case Held = "5"
+        case ParticipateDoNotInitiate = "6"
+        case StrictScale = "7"
+        case TryToScale = "8"
+        case StayOnBidSide = "9"
+        case NoCross = "A"
+        case OKToCross = "B"
+        case CallFirst = "C"
+        case PercentOfVolume = "D"
+        case DoNotIncrease = "E"
+        case DoNotReduce = "F"
+        case AllOrNone = "G"
+        case InstitutionsOnly = "I"
+        case LastPeg = "L"
+        case MidPricePeg = "M"
+        case NonNegotiable = "N"
+        case OpeningPeg = "O"
+        case MarketPeg = "P"
+        case PrimaryPeg = "R"
+        case Suspend = "S"
+        case FixedPegToLocalBestBidOrOfferAtTimeOfOrder = "T"
+        case CustomerDisplayInstruction = "U"
+        case Netting = "V"
+        case PegToVWAP = "W"
     }
 
-    public class RawData {
-        public let tag = 96
-    }
+    public enum ExecRefID : RawRepresentable {
 
-    public class PossResend {
-        public let tag = 97
-    }
+        public typealias RawValue = String
 
-    public class EncryptMethod {
-        public let tag = 98
-    }
+        public static var tag: Int {
+            19
+        }
 
-    public class StopPx {
-        public let tag = 99
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class ExDestination {
-        public let tag = 100
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class CxlRejReason {
-        public let tag = 102
     }
 
-    public class OrdRejReason {
-        public let tag = 103
-    }
+    public enum ExecTransType : String {
 
-    public class IOIQualifier {
-        public let tag = 104
-    }
+        public static var tag: Int {
+            20
+        }
 
-    public class WaveNo {
-        public let tag = 105
+        case New = "0"
+        case Cancel = "1"
+        case Correct = "2"
+        case Status = "3"
     }
 
-    public class Issuer {
-        public let tag = 106
-    }
+    public enum HandlInst : String {
 
-    public class SecurityDesc {
-        public let tag = 107
-    }
+        public static var tag: Int {
+            21
+        }
 
-    public class HeartBtInt {
-        public let tag = 108
+        case AutomatedExecutionNoIntervention = "1"
+        case AutomatedExecutionInterventionOK = "2"
+        case ManualOrder = "3"
     }
 
-    public class ClientID {
-        public let tag = 109
-    }
+    public enum IDSource : String {
 
-    public class MinQty {
-        public let tag = 110
-    }
+        public static var tag: Int {
+            22
+        }
 
-    public class MaxFloor {
-        public let tag = 111
+        case CUSIP = "1"
+        case SEDOL = "2"
+        case QUIK = "3"
+        case ISINNumber = "4"
+        case RICCode = "5"
+        case ISOCurrencyCode = "6"
+        case ISOCountryCode = "7"
+        case ExchangeSymbol = "8"
+        case ConsolidatedTapeAssociation = "9"
     }
 
-    public class TestReqID {
-        public let tag = 112
-    }
+    public enum IOIid : RawRepresentable {
 
-    public class ReportToExch {
-        public let tag = 113
-    }
+        public typealias RawValue = String
 
-    public class LocateReqd {
-        public let tag = 114
-    }
+        public static var tag: Int {
+            23
+        }
 
-    public class OnBehalfOfCompID {
-        public let tag = 115
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class OnBehalfOfSubID {
-        public let tag = 116
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class QuoteID {
-        public let tag = 117
     }
 
-    public class NetMoney {
-        public let tag = 118
-    }
+    public enum IOIOthSvc : RawRepresentable {
 
-    public class SettlCurrAmt {
-        public let tag = 119
-    }
+        public typealias RawValue = String
 
-    public class SettlCurrency {
-        public let tag = 120
-    }
+        public static var tag: Int {
+            24
+        }
 
-    public class ForexReq {
-        public let tag = 121
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class OrigSendingTime {
-        public let tag = 122
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class GapFillFlag {
-        public let tag = 123
     }
 
-    public class NoExecs {
-        public let tag = 124
-    }
+    public enum IOIQltyInd : String {
 
-    public class CxlType {
-        public let tag = 125
-    }
+        public static var tag: Int {
+            25
+        }
 
-    public class ExpireTime {
-        public let tag = 126
+        case High = "H"
+        case Low = "L"
+        case Medium = "M"
     }
 
-    public class DKReason {
-        public let tag = 127
-    }
+    public enum IOIRefID : RawRepresentable {
 
-    public class DeliverToCompID {
-        public let tag = 128
-    }
+        public typealias RawValue = String
 
-    public class DeliverToSubID {
-        public let tag = 129
-    }
+        public static var tag: Int {
+            26
+        }
 
-    public class IOINaturalFlag {
-        public let tag = 130
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class QuoteReqID {
-        public let tag = 131
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class BidPx {
-        public let tag = 132
     }
 
-    public class OfferPx {
-        public let tag = 133
-    }
+    public enum IOIShares : String {
 
-    public class BidSize {
-        public let tag = 134
-    }
+        public static var tag: Int {
+            27
+        }
 
-    public class OfferSize {
-        public let tag = 135
+        case Large = "L"
+        case Medium = "M"
+        case Small = "S"
     }
 
-    public class NoMiscFees {
-        public let tag = 136
-    }
+    public enum IOITransType : String {
 
-    public class MiscFeeAmt {
-        public let tag = 137
-    }
+        public static var tag: Int {
+            28
+        }
 
-    public class MiscFeeCurr {
-        public let tag = 138
+        case Cancel = "C"
+        case New = "N"
+        case Replace = "R"
     }
 
-    public class MiscFeeType {
-        public let tag = 139
-    }
+    public enum LastCapacity : String {
 
-    public class PrevClosePx {
-        public let tag = 140
-    }
+        public static var tag: Int {
+            29
+        }
 
-    public class ResetSeqNumFlag {
-        public let tag = 141
+        case Agent = "1"
+        case CrossAsAgent = "2"
+        case CrossAsPrincipal = "3"
+        case Principal = "4"
     }
 
-    public class SenderLocationID {
-        public let tag = 142
-    }
+    public enum LastMkt : RawRepresentable {
 
-    public class TargetLocationID {
-        public let tag = 143
-    }
+        public typealias RawValue = String
 
-    public class OnBehalfOfLocationID {
-        public let tag = 144
-    }
+        public static var tag: Int {
+            30
+        }
 
-    public class DeliverToLocationID {
-        public let tag = 145
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class NoRelatedSym {
-        public let tag = 146
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class Subject {
-        public let tag = 147
     }
 
-    public class Headline {
-        public let tag = 148
-    }
+    public enum LastPx : RawRepresentable {
 
-    public class URLLink {
-        public let tag = 149
-    }
+        public typealias RawValue = String
 
-    public class ExecType {
-        public let tag = 150
-    }
+        public static var tag: Int {
+            31
+        }
 
-    public class LeavesQty {
-        public let tag = 151
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class CashOrderQty {
-        public let tag = 152
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class AllocAvgPx {
-        public let tag = 153
     }
 
-    public class AllocNetMoney {
-        public let tag = 154
-    }
+    public enum LastShares : RawRepresentable {
 
-    public class SettlCurrFxRate {
-        public let tag = 155
-    }
+        public typealias RawValue = String
 
-    public class SettlCurrFxRateCalc {
-        public let tag = 156
-    }
+        public static var tag: Int {
+            32
+        }
 
-    public class NumDaysInterest {
-        public let tag = 157
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class AccruedInterestRate {
-        public let tag = 158
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class AccruedInterestAmt {
-        public let tag = 159
     }
 
-    public class SettlInstMode {
-        public let tag = 160
-    }
+    public enum LinesOfText : RawRepresentable {
 
-    public class AllocText {
-        public let tag = 161
-    }
+        public typealias RawValue = String
 
-    public class SettlInstID {
-        public let tag = 162
-    }
+        public static var tag: Int {
+            33
+        }
 
-    public class SettlInstTransType {
-        public let tag = 163
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class EmailThreadID {
-        public let tag = 164
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class SettlInstSource {
-        public let tag = 165
     }
 
-    public class SettlLocation {
-        public let tag = 166
-    }
+    public enum MsgSeqNum : RawRepresentable {
 
-    public class SecurityType {
-        public let tag = 167
-    }
+        public typealias RawValue = String
 
-    public class EffectiveTime {
-        public let tag = 168
-    }
+        public static var tag: Int {
+            34
+        }
 
-    public class StandInstDbType {
-        public let tag = 169
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class StandInstDbName {
-        public let tag = 170
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class StandInstDbID {
-        public let tag = 171
     }
 
-    public class SettlDeliveryType {
-        public let tag = 172
-    }
+    public enum MsgType : String {
 
-    public class SettlDepositoryCode {
-        public let tag = 173
-    }
+        public static var tag: Int {
+            35
+        }
 
-    public class SettlBrkrCode {
-        public let tag = 174
+        case Heartbeat = "0"
+        case TestRequest = "1"
+        case ResendRequest = "2"
+        case Reject = "3"
+        case SequenceReset = "4"
+        case Logout = "5"
+        case IOI = "6"
+        case Advertisement = "7"
+        case ExecutionReport = "8"
+        case OrderCancelReject = "9"
+        case Logon = "A"
+        case News = "B"
+        case Email = "C"
+        case NewOrderSingle = "D"
+        case NewOrderList = "E"
+        case OrderCancelRequest = "F"
+        case OrderCancelReplaceRequest = "G"
+        case OrderStatusRequest = "H"
+        case AllocationInstruction = "J"
+        case ListCancelRequest = "K"
+        case ListExecute = "L"
+        case ListStatusRequest = "M"
+        case ListStatus = "N"
+        case AllocationInstructionAck = "P"
+        case DontKnowTrade = "Q"
+        case QuoteRequest = "R"
+        case Quote = "S"
+        case SettlementInstructions = "T"
+        case MarketDataRequest = "V"
+        case MarketDataSnapshotFullRefresh = "W"
+        case MarketDataIncrementalRefresh = "X"
+        case MarketDataRequestReject = "Y"
+        case QuoteCancel = "Z"
+        case QuoteStatusRequest = "a"
+        case MassQuoteAcknowledgement = "b"
+        case SecurityDefinitionRequest = "c"
+        case SecurityDefinition = "d"
+        case SecurityStatusRequest = "e"
+        case SecurityStatus = "f"
+        case TradingSessionStatusRequest = "g"
+        case TradingSessionStatus = "h"
+        case MassQuote = "i"
+        case BusinessMessageReject = "j"
+        case BidRequest = "k"
+        case BidResponse = "l"
+        case ListStrikePrice = "m"
     }
 
-    public class SettlInstCode {
-        public let tag = 175
-    }
+    public enum NewSeqNo : RawRepresentable {
 
-    public class SecuritySettlAgentName {
-        public let tag = 176
-    }
+        public typealias RawValue = String
 
-    public class SecuritySettlAgentCode {
-        public let tag = 177
-    }
+        public static var tag: Int {
+            36
+        }
 
-    public class SecuritySettlAgentAcctNum {
-        public let tag = 178
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class SecuritySettlAgentAcctName {
-        public let tag = 179
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class SecuritySettlAgentContactName {
-        public let tag = 180
     }
 
-    public class SecuritySettlAgentContactPhone {
-        public let tag = 181
-    }
+    public enum OrderID : RawRepresentable {
 
-    public class CashSettlAgentName {
-        public let tag = 182
-    }
+        public typealias RawValue = String
 
-    public class CashSettlAgentCode {
-        public let tag = 183
-    }
+        public static var tag: Int {
+            37
+        }
 
-    public class CashSettlAgentAcctNum {
-        public let tag = 184
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class CashSettlAgentAcctName {
-        public let tag = 185
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class CashSettlAgentContactName {
-        public let tag = 186
     }
 
-    public class CashSettlAgentContactPhone {
-        public let tag = 187
-    }
+    public enum OrderQty : RawRepresentable {
 
-    public class BidSpotRate {
-        public let tag = 188
-    }
+        public typealias RawValue = String
 
-    public class BidForwardPoints {
-        public let tag = 189
-    }
+        public static var tag: Int {
+            38
+        }
 
-    public class OfferSpotRate {
-        public let tag = 190
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class OfferForwardPoints {
-        public let tag = 191
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class OrderQty2 {
-        public let tag = 192
     }
 
-    public class FutSettDate2 {
-        public let tag = 193
-    }
+    public enum OrdStatus : String {
 
-    public class LastSpotRate {
-        public let tag = 194
-    }
+        public static var tag: Int {
+            39
+        }
 
-    public class LastForwardPoints {
-        public let tag = 195
+        case New = "0"
+        case PartiallyFilled = "1"
+        case Filled = "2"
+        case DoneForDay = "3"
+        case Canceled = "4"
+        case Replaced = "5"
+        case PendingCancel = "6"
+        case Stopped = "7"
+        case Rejected = "8"
+        case Suspended = "9"
+        case PendingNew = "A"
+        case Calculated = "B"
+        case Expired = "C"
+        case AcceptedForBidding = "D"
+        case PendingReplace = "E"
     }
 
-    public class AllocLinkID {
-        public let tag = 196
-    }
+    public enum OrdType : String {
 
-    public class AllocLinkType {
-        public let tag = 197
-    }
+        public static var tag: Int {
+            40
+        }
 
-    public class SecondaryOrderID {
-        public let tag = 198
+        case Market = "1"
+        case Limit = "2"
+        case Stop = "3"
+        case StopLimit = "4"
+        case MarketOnClose = "5"
+        case WithOrWithout = "6"
+        case LimitOrBetter = "7"
+        case LimitWithOrWithout = "8"
+        case OnBasis = "9"
+        case OnClose = "A"
+        case LimitOnClose = "B"
+        case ForexMarket = "C"
+        case PreviouslyQuoted = "D"
+        case PreviouslyIndicated = "E"
+        case ForexLimit = "F"
+        case ForexSwap = "G"
+        case ForexPreviouslyQuoted = "H"
+        case Funari = "I"
+        case Pegged = "P"
     }
 
-    public class NoIOIQualifiers {
-        public let tag = 199
-    }
+    public enum OrigClOrdID : RawRepresentable {
 
-    public class MaturityMonthYear {
-        public let tag = 200
-    }
+        public typealias RawValue = String
 
-    public class PutOrCall {
-        public let tag = 201
-    }
+        public static var tag: Int {
+            41
+        }
 
-    public class StrikePrice {
-        public let tag = 202
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class CoveredOrUncovered {
-        public let tag = 203
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class CustomerOrFirm {
-        public let tag = 204
     }
 
-    public class MaturityDay {
-        public let tag = 205
-    }
+    public enum OrigTime : RawRepresentable {
 
-    public class OptAttribute {
-        public let tag = 206
-    }
+        public typealias RawValue = String
 
-    public class SecurityExchange {
-        public let tag = 207
-    }
+        public static var tag: Int {
+            42
+        }
 
-    public class NotifyBrokerOfCredit {
-        public let tag = 208
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class AllocHandlInst {
-        public let tag = 209
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class MaxShow {
-        public let tag = 210
     }
 
-    public class PegDifference {
-        public let tag = 211
-    }
+    public enum PossDupFlag : String {
 
-    public class XmlDataLen {
-        public let tag = 212
-    }
+        public static var tag: Int {
+            43
+        }
 
-    public class XmlData {
-        public let tag = 213
+        case OriginalTransmission = "N"
+        case PossibleDuplicate = "Y"
     }
 
-    public class SettlInstRefID {
-        public let tag = 214
-    }
+    public enum Price : RawRepresentable {
 
-    public class NoRoutingIDs {
-        public let tag = 215
-    }
+        public typealias RawValue = String
 
-    public class RoutingType {
-        public let tag = 216
-    }
+        public static var tag: Int {
+            44
+        }
 
-    public class RoutingID {
-        public let tag = 217
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class SpreadToBenchmark {
-        public let tag = 218
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class Benchmark {
-        public let tag = 219
     }
 
-    public class CouponRate {
-        public let tag = 223
-    }
+    public enum RefSeqNum : RawRepresentable {
 
-    public class ContractMultiplier {
-        public let tag = 231
-    }
+        public typealias RawValue = String
 
-    public class MDReqID {
-        public let tag = 262
-    }
+        public static var tag: Int {
+            45
+        }
 
-    public class SubscriptionRequestType {
-        public let tag = 263
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class MarketDepth {
-        public let tag = 264
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class MDUpdateType {
-        public let tag = 265
     }
 
-    public class AggregatedBook {
-        public let tag = 266
-    }
+    public enum RelatdSym : RawRepresentable {
 
-    public class NoMDEntryTypes {
-        public let tag = 267
-    }
+        public typealias RawValue = String
 
-    public class NoMDEntries {
-        public let tag = 268
-    }
+        public static var tag: Int {
+            46
+        }
 
-    public class MDEntryType {
-        public let tag = 269
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class MDEntryPx {
-        public let tag = 270
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class MDEntrySize {
-        public let tag = 271
     }
 
-    public class MDEntryDate {
-        public let tag = 272
-    }
+    public enum Rule80A : String {
 
-    public class MDEntryTime {
-        public let tag = 273
-    }
+        public static var tag: Int {
+            47
+        }
 
-    public class TickDirection {
-        public let tag = 274
+        case AgencySingleOrder = "A"
+        case ShortExemptTransactionAType = "B"
+        case ProprietaryNonAlgo = "C"
+        case ProgramOrderMember = "D"
+        case ShortExemptTransactionForPrincipal = "E"
+        case ShortExemptTransactionWType = "F"
+        case ShortExemptTransactionIType = "H"
+        case IndividualInvestor = "I"
+        case ProprietaryAlgo = "J"
+        case AgencyAlgo = "K"
+        case ShortExemptTransactionMemberAffliated = "L"
+        case ProgramOrderOtherMember = "M"
+        case AgentForOtherMember = "N"
+        case ProprietaryTransactionAffiliated = "O"
+        case Principal = "P"
+        case TransactionNonMember = "R"
+        case SpecialistTrades = "S"
+        case TransactionUnaffiliatedMember = "T"
+        case AgencyIndexArb = "U"
+        case AllOtherOrdersAsAgentForOtherMember = "W"
+        case ShortExemptTransactionMemberNotAffliated = "X"
+        case AgencyNonAlgo = "Y"
+        case ShortExemptTransactionNonMember = "Z"
     }
 
-    public class MDMkt {
-        public let tag = 275
-    }
+    public enum SecurityID : RawRepresentable {
 
-    public class QuoteCondition {
-        public let tag = 276
-    }
+        public typealias RawValue = String
 
-    public class TradeCondition {
-        public let tag = 277
-    }
+        public static var tag: Int {
+            48
+        }
 
-    public class MDEntryID {
-        public let tag = 278
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class MDUpdateAction {
-        public let tag = 279
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class MDEntryRefID {
-        public let tag = 280
     }
 
-    public class MDReqRejReason {
-        public let tag = 281
-    }
+    public enum SenderCompID : RawRepresentable {
 
-    public class MDEntryOriginator {
-        public let tag = 282
-    }
+        public typealias RawValue = String
 
-    public class LocationID {
-        public let tag = 283
-    }
+        public static var tag: Int {
+            49
+        }
 
-    public class DeskID {
-        public let tag = 284
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class DeleteReason {
-        public let tag = 285
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class OpenCloseSettleFlag {
-        public let tag = 286
     }
 
-    public class SellerDays {
-        public let tag = 287
-    }
+    public enum SenderSubID : RawRepresentable {
 
-    public class MDEntryBuyer {
-        public let tag = 288
-    }
+        public typealias RawValue = String
 
-    public class MDEntrySeller {
-        public let tag = 289
-    }
+        public static var tag: Int {
+            50
+        }
 
-    public class MDEntryPositionNo {
-        public let tag = 290
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class FinancialStatus {
-        public let tag = 291
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class CorporateAction {
-        public let tag = 292
     }
 
-    public class DefBidSize {
-        public let tag = 293
-    }
+    public enum SendingDate : RawRepresentable {
 
-    public class DefOfferSize {
-        public let tag = 294
-    }
+        public typealias RawValue = String
 
-    public class NoQuoteEntries {
-        public let tag = 295
-    }
+        public static var tag: Int {
+            51
+        }
 
-    public class NoQuoteSets {
-        public let tag = 296
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class QuoteAckStatus {
-        public let tag = 297
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class QuoteCancelType {
-        public let tag = 298
     }
 
-    public class QuoteEntryID {
-        public let tag = 299
-    }
+    public enum SendingTime : RawRepresentable {
 
-    public class QuoteRejectReason {
-        public let tag = 300
-    }
+        public typealias RawValue = String
 
-    public class QuoteResponseLevel {
-        public let tag = 301
-    }
+        public static var tag: Int {
+            52
+        }
 
-    public class QuoteSetID {
-        public let tag = 302
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class QuoteRequestType {
-        public let tag = 303
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class TotQuoteEntries {
-        public let tag = 304
     }
 
-    public class UnderlyingIDSource {
-        public let tag = 305
-    }
+    public enum Shares : RawRepresentable {
 
-    public class UnderlyingIssuer {
-        public let tag = 306
-    }
+        public typealias RawValue = String
 
-    public class UnderlyingSecurityDesc {
-        public let tag = 307
-    }
+        public static var tag: Int {
+            53
+        }
 
-    public class UnderlyingSecurityExchange {
-        public let tag = 308
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class UnderlyingSecurityID {
-        public let tag = 309
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class UnderlyingSecurityType {
-        public let tag = 310
     }
 
-    public class UnderlyingSymbol {
-        public let tag = 311
-    }
+    public enum Side : String {
 
-    public class UnderlyingSymbolSfx {
-        public let tag = 312
-    }
+        public static var tag: Int {
+            54
+        }
 
-    public class UnderlyingMaturityMonthYear {
-        public let tag = 313
+        case Buy = "1"
+        case Sell = "2"
+        case BuyMinus = "3"
+        case SellPlus = "4"
+        case SellShort = "5"
+        case SellShortExempt = "6"
+        case Undisclosed = "7"
+        case Cross = "8"
+        case CrossShort = "9"
     }
 
-    public class UnderlyingMaturityDay {
-        public let tag = 314
-    }
+    public enum Symbol : RawRepresentable {
 
-    public class UnderlyingPutOrCall {
-        public let tag = 315
-    }
+        public typealias RawValue = String
 
-    public class UnderlyingStrikePrice {
-        public let tag = 316
-    }
+        public static var tag: Int {
+            55
+        }
 
-    public class UnderlyingOptAttribute {
-        public let tag = 317
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class UnderlyingCurrency {
-        public let tag = 318
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class RatioQty {
-        public let tag = 319
     }
 
-    public class SecurityReqID {
-        public let tag = 320
-    }
+    public enum TargetCompID : RawRepresentable {
 
-    public class SecurityRequestType {
-        public let tag = 321
-    }
+        public typealias RawValue = String
 
-    public class SecurityResponseID {
-        public let tag = 322
-    }
+        public static var tag: Int {
+            56
+        }
 
-    public class SecurityResponseType {
-        public let tag = 323
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class SecurityStatusReqID {
-        public let tag = 324
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class UnsolicitedIndicator {
-        public let tag = 325
     }
 
-    public class SecurityTradingStatus {
-        public let tag = 326
-    }
+    public enum TargetSubID : RawRepresentable {
 
-    public class HaltReason {
-        public let tag = 327
-    }
+        public typealias RawValue = String
 
-    public class InViewOfCommon {
-        public let tag = 328
-    }
+        public static var tag: Int {
+            57
+        }
 
-    public class DueToRelated {
-        public let tag = 329
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class BuyVolume {
-        public let tag = 330
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class SellVolume {
-        public let tag = 331
     }
 
-    public class HighPx {
-        public let tag = 332
-    }
+    public enum Text : RawRepresentable {
 
-    public class LowPx {
-        public let tag = 333
-    }
+        public typealias RawValue = String
 
-    public class Adjustment {
-        public let tag = 334
-    }
+        public static var tag: Int {
+            58
+        }
 
-    public class TradSesReqID {
-        public let tag = 335
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class TradingSessionID {
-        public let tag = 336
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class ContraTrader {
-        public let tag = 337
     }
 
-    public class TradSesMethod {
-        public let tag = 338
-    }
+    public enum TimeInForce : String {
 
-    public class TradSesMode {
-        public let tag = 339
-    }
+        public static var tag: Int {
+            59
+        }
 
-    public class TradSesStatus {
-        public let tag = 340
+        case Day = "0"
+        case GoodTillCancel = "1"
+        case AtTheOpening = "2"
+        case ImmediateOrCancel = "3"
+        case FillOrKill = "4"
+        case GoodTillCrossing = "5"
+        case GoodTillDate = "6"
     }
 
-    public class TradSesStartTime {
-        public let tag = 341
-    }
+    public enum TransactTime : RawRepresentable {
 
-    public class TradSesOpenTime {
-        public let tag = 342
-    }
+        public typealias RawValue = String
 
-    public class TradSesPreCloseTime {
-        public let tag = 343
-    }
+        public static var tag: Int {
+            60
+        }
 
-    public class TradSesCloseTime {
-        public let tag = 344
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class TradSesEndTime {
-        public let tag = 345
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class NumberOfOrders {
-        public let tag = 346
     }
 
-    public class MessageEncoding {
-        public let tag = 347
-    }
+    public enum Urgency : String {
 
-    public class EncodedIssuerLen {
-        public let tag = 348
-    }
+        public static var tag: Int {
+            61
+        }
 
-    public class EncodedIssuer {
-        public let tag = 349
+        case Normal = "0"
+        case Flash = "1"
+        case Background = "2"
     }
 
-    public class EncodedSecurityDescLen {
-        public let tag = 350
-    }
+    public enum ValidUntilTime : RawRepresentable {
 
-    public class EncodedSecurityDesc {
-        public let tag = 351
-    }
+        public typealias RawValue = String
 
-    public class EncodedListExecInstLen {
-        public let tag = 352
-    }
+        public static var tag: Int {
+            62
+        }
 
-    public class EncodedListExecInst {
-        public let tag = 353
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class EncodedTextLen {
-        public let tag = 354
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class EncodedText {
-        public let tag = 355
     }
 
-    public class EncodedSubjectLen {
-        public let tag = 356
-    }
+    public enum SettlmntTyp : String {
 
-    public class EncodedSubject {
-        public let tag = 357
-    }
+        public static var tag: Int {
+            63
+        }
 
-    public class EncodedHeadlineLen {
-        public let tag = 358
+        case Regular = "0"
+        case Cash = "1"
+        case NextDay = "2"
+        case TPlus2 = "3"
+        case TPlus3 = "4"
+        case TPlus4 = "5"
+        case Future = "6"
+        case WhenAndIfIssued = "7"
+        case SellersOption = "8"
+        case TPlus5 = "9"
     }
 
-    public class EncodedHeadline {
-        public let tag = 359
-    }
+    public enum FutSettDate : RawRepresentable {
 
-    public class EncodedAllocTextLen {
-        public let tag = 360
-    }
+        public typealias RawValue = String
 
-    public class EncodedAllocText {
-        public let tag = 361
-    }
+        public static var tag: Int {
+            64
+        }
 
-    public class EncodedUnderlyingIssuerLen {
-        public let tag = 362
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class EncodedUnderlyingIssuer {
-        public let tag = 363
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class EncodedUnderlyingSecurityDescLen {
-        public let tag = 364
     }
 
-    public class EncodedUnderlyingSecurityDesc {
-        public let tag = 365
-    }
+    public enum SymbolSfx : RawRepresentable {
 
-    public class AllocPrice {
-        public let tag = 366
-    }
+        public typealias RawValue = String
 
-    public class QuoteSetValidUntilTime {
-        public let tag = 367
-    }
+        public static var tag: Int {
+            65
+        }
 
-    public class QuoteEntryRejectReason {
-        public let tag = 368
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class LastMsgSeqNumProcessed {
-        public let tag = 369
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class OnBehalfOfSendingTime {
-        public let tag = 370
     }
 
-    public class RefTagID {
-        public let tag = 371
-    }
+    public enum ListID : RawRepresentable {
 
-    public class RefMsgType {
-        public let tag = 372
-    }
+        public typealias RawValue = String
 
-    public class SessionRejectReason {
-        public let tag = 373
-    }
+        public static var tag: Int {
+            66
+        }
 
-    public class BidRequestTransType {
-        public let tag = 374
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class ContraBroker {
-        public let tag = 375
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class ComplianceID {
-        public let tag = 376
     }
 
-    public class SolicitedFlag {
-        public let tag = 377
-    }
+    public enum ListSeqNo : RawRepresentable {
 
-    public class ExecRestatementReason {
-        public let tag = 378
-    }
+        public typealias RawValue = String
 
-    public class BusinessRejectRefID {
-        public let tag = 379
-    }
+        public static var tag: Int {
+            67
+        }
 
-    public class BusinessRejectReason {
-        public let tag = 380
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class GrossTradeAmt {
-        public let tag = 381
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class NoContraBrokers {
-        public let tag = 382
     }
 
-    public class MaxMessageSize {
-        public let tag = 383
-    }
+    public enum TotNoOrders : RawRepresentable {
 
-    public class NoMsgTypes {
-        public let tag = 384
-    }
+        public typealias RawValue = String
 
-    public class MsgDirection {
-        public let tag = 385
-    }
+        public static var tag: Int {
+            68
+        }
 
-    public class NoTradingSessions {
-        public let tag = 386
-    }
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class TotalVolumeTraded {
-        public let tag = 387
-    }
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class DiscretionInst {
-        public let tag = 388
     }
 
-    public class DiscretionOffset {
-        public let tag = 389
-    }
+    public enum ListExecInst : RawRepresentable {
+
+        public typealias RawValue = String
 
-    public class BidID {
-        public let tag = 390
+        public static var tag: Int {
+            69
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
     }
+
+    public enum AllocID : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            70
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class ClientBidID {
-        public let tag = 391
     }
 
-    public class ListName {
-        public let tag = 392
+    public enum AllocTransType : String {
+
+        public static var tag: Int {
+            71
+        }
+
+        case New = "0"
+        case Replace = "1"
+        case Cancel = "2"
+        case Preliminary = "3"
+        case Calculated = "4"
+        case CalculatedWithoutPreliminary = "5"
     }
+
+    public enum RefAllocID : RawRepresentable {
+
+        public typealias RawValue = String
 
-    public class TotalNumSecurities {
-        public let tag = 393
+        public static var tag: Int {
+            72
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
     }
+
+    public enum NoOrders : RawRepresentable {
 
-    public class BidType {
-        public let tag = 394
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            73
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
     }
+
+    public enum AvgPrxPrecision : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            74
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class NumTickets {
-        public let tag = 395
+        public var rawValue: RawValue {
+            return ""
+        }
+
     }
+
+    public enum TradeDate : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            75
+        }
 
-    public class SideValue1 {
-        public let tag = 396
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
     }
+
+    public enum ExecBroker : RawRepresentable {
+
+        public typealias RawValue = String
 
-    public class SideValue2 {
-        public let tag = 397
+        public static var tag: Int {
+            76
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
     }
+
+    public enum OpenClose : String {
 
-    public class NoBidDescriptors {
-        public let tag = 398
+        public static var tag: Int {
+            77
+        }
+
+        case Close = "C"
+        case Open = "O"
     }
+
+    public enum NoAllocs : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            78
+        }
 
-    public class BidDescriptorType {
-        public let tag = 399
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
     }
+
+    public enum AllocAccount : RawRepresentable {
+
+        public typealias RawValue = String
 
-    public class BidDescriptor {
-        public let tag = 400
+        public static var tag: Int {
+            79
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
     }
+
+    public enum AllocShares : RawRepresentable {
 
-    public class SideValueInd {
-        public let tag = 401
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            80
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
     }
 
-    public class LiquidityPctLow {
-        public let tag = 402
+    public enum ProcessCode : String {
+
+        public static var tag: Int {
+            81
+        }
+
+        case Regular = "0"
+        case SoftDollar = "1"
+        case StepIn = "2"
+        case StepOut = "3"
+        case SoftDollarStepIn = "4"
+        case SoftDollarStepOut = "5"
+        case PlanSponsor = "6"
     }
+
+    public enum NoRpts : RawRepresentable {
+
+        public typealias RawValue = String
 
-    public class LiquidityPctHigh {
-        public let tag = 403
+        public static var tag: Int {
+            82
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
     }
+
+    public enum RptSeq : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            83
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class LiquidityValue {
-        public let tag = 404
     }
 
-    public class EFPTrackingError {
-        public let tag = 405
+    public enum CxlQty : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            84
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
     }
+
+    public enum NoDlvyInst : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            85
+        }
 
-    public class FairValue {
-        public let tag = 406
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
     }
+
+    public enum DlvyInst : RawRepresentable {
+
+        public typealias RawValue = String
 
-    public class OutsideIndexPct {
-        public let tag = 407
+        public static var tag: Int {
+            86
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
     }
+
+    public enum AllocStatus : String {
 
-    public class ValueOfFutures {
-        public let tag = 408
+        public static var tag: Int {
+            87
+        }
+
+        case Accepted = "0"
+        case BlockLevelReject = "1"
+        case AccountLevelReject = "2"
+        case Received = "3"
     }
+
+    public enum AllocRejCode : String {
 
-    public class LiquidityIndType {
-        public let tag = 409
+        public static var tag: Int {
+            88
+        }
+
+        case UnknownAccount = "0"
+        case IncorrectQuantity = "1"
+        case IncorrectAveragegPrice = "2"
+        case UnknownExecutingBrokerMnemonic = "3"
+        case CommissionDifference = "4"
+        case UnknownOrderID = "5"
+        case UnknownListID = "6"
+        case OtherSeeText = "7"
     }
+
+    public enum Signature : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            89
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class WtAverageLiquidity {
-        public let tag = 410
     }
 
-    public class ExchangeForPhysical {
-        public let tag = 411
+    public enum SecureDataLen : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            90
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
     }
+
+    public enum SecureData : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            91
+        }
 
-    public class OutMainCntryUIndex {
-        public let tag = 412
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
     }
+
+    public enum BrokerOfCredit : RawRepresentable {
+
+        public typealias RawValue = String
 
-    public class CrossPercent {
-        public let tag = 413
+        public static var tag: Int {
+            92
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
     }
+
+    public enum SignatureLength : RawRepresentable {
 
-    public class ProgRptReqs {
-        public let tag = 414
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            93
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
     }
 
-    public class ProgPeriodInterval {
-        public let tag = 415
+    public enum EmailType : String {
+
+        public static var tag: Int {
+            94
+        }
+
+        case New = "0"
+        case Reply = "1"
+        case AdminReply = "2"
     }
+
+    public enum RawDataLength : RawRepresentable {
+
+        public typealias RawValue = String
 
-    public class IncTaxInd {
-        public let tag = 416
+        public static var tag: Int {
+            95
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
     }
+
+    public enum RawData : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            96
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class NumBidders {
-        public let tag = 417
     }
 
-    public class TradeType {
-        public let tag = 418
+    public enum PossResend : String {
+
+        public static var tag: Int {
+            97
+        }
+
+        case OriginalTransmission = "N"
+        case PossibleResend = "Y"
     }
+
+    public enum EncryptMethod : String {
+
+        public static var tag: Int {
+            98
+        }
 
-    public class BasisPxType {
-        public let tag = 419
+        case None = "0"
+        case PKCS = "1"
+        case DES = "2"
+        case PKCSDES = "3"
+        case PGPDES = "4"
+        case PGPDESMD5 = "5"
+        case PEM = "6"
     }
+
+    public enum StopPx : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            99
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class NoBidComponents {
-        public let tag = 420
+        public var rawValue: RawValue {
+            return ""
+        }
+
     }
+
+    public enum ExDestination : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            100
+        }
 
-    public class Country {
-        public let tag = 421
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
     }
+
+    public enum CxlRejReason : String {
+
+        public static var tag: Int {
+            102
+        }
 
-    public class TotNoStrikes {
-        public let tag = 422
+        case TooLateToCancel = "0"
+        case UnknownOrder = "1"
+        case BrokerCredit = "2"
+        case OrderAlreadyInPendingStatus = "3"
     }
 
-    public class PriceType {
-        public let tag = 423
+    public enum OrdRejReason : String {
+
+        public static var tag: Int {
+            103
+        }
+
+        case BrokerCredit = "0"
+        case UnknownSymbol = "1"
+        case ExchangeClosed = "2"
+        case OrderExceedsLimit = "3"
+        case TooLateToEnter = "4"
+        case UnknownOrder = "5"
+        case DuplicateOrder = "6"
+        case DuplicateOfAVerballyCommunicatedOrder = "7"
+        case StaleOrder = "8"
     }
+
+    public enum IOIQualifier : String {
+
+        public static var tag: Int {
+            104
+        }
 
-    public class DayOrderQty {
-        public let tag = 424
+        case AllOrNone = "A"
+        case AtTheClose = "C"
+        case InTouchWith = "I"
+        case Limit = "L"
+        case MoreBehind = "M"
+        case AtTheOpen = "O"
+        case TakingAPosition = "P"
+        case AtTheMarket = "Q"
+        case ReadyToTrade = "R"
+        case PortfolioShown = "S"
+        case ThroughTheDay = "T"
+        case Versus = "V"
+        case Indication = "W"
+        case CrossingOpportunity = "X"
+        case AtTheMidpoint = "Y"
+        case PreOpen = "Z"
     }
+
+    public enum WaveNo : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            105
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class DayCumQty {
-        public let tag = 425
+        public var rawValue: RawValue {
+            return ""
+        }
+
     }
+
+    public enum Issuer : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            106
+        }
 
-    public class DayAvgPx {
-        public let tag = 426
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
     }
+
+    public enum SecurityDesc : RawRepresentable {
+
+        public typealias RawValue = String
 
-    public class GTBookingInst {
-        public let tag = 427
+        public static var tag: Int {
+            107
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
     }
+
+    public enum HeartBtInt : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            108
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class NoStrikes {
-        public let tag = 428
     }
 
-    public class ListStatusType {
-        public let tag = 429
+    public enum ClientID : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            109
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
     }
+
+    public enum MinQty : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            110
+        }
 
-    public class NetGrossInd {
-        public let tag = 430
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
     }
+
+    public enum MaxFloor : RawRepresentable {
+
+        public typealias RawValue = String
 
-    public class ListOrderStatus {
-        public let tag = 431
+        public static var tag: Int {
+            111
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
     }
+
+    public enum TestReqID : RawRepresentable {
 
-    public class ExpireDate {
-        public let tag = 432
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            112
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
     }
 
-    public class ListExecInstType {
-        public let tag = 433
+    public enum ReportToExch : String {
+
+        public static var tag: Int {
+            113
+        }
+
+        case SenderReports = "N"
+        case ReceiverReports = "Y"
     }
+
+    public enum LocateReqd : String {
+
+        public static var tag: Int {
+            114
+        }
 
-    public class CxlRejResponseTo {
-        public let tag = 434
+        case No = "N"
+        case Yes = "Y"
     }
 
-    public class UnderlyingCouponRate {
-        public let tag = 435
+    public enum OnBehalfOfCompID : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            115
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
     }
+
+    public enum OnBehalfOfSubID : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            116
+        }
 
-    public class UnderlyingContractMultiplier {
-        public let tag = 436
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
     }
+
+    public enum QuoteID : RawRepresentable {
+
+        public typealias RawValue = String
 
-    public class ContraTradeQty {
-        public let tag = 437
+        public static var tag: Int {
+            117
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
     }
+
+    public enum NetMoney : RawRepresentable {
 
-    public class ContraTradeTime {
-        public let tag = 438
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            118
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
     }
+
+    public enum SettlCurrAmt : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            119
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
 
-    public class ClearingFirm {
-        public let tag = 439
+        public var rawValue: RawValue {
+            return ""
+        }
+
     }
+
+    public enum SettlCurrency : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            120
+        }
 
-    public class ClearingAccount {
-        public let tag = 440
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
     }
+
+    public enum ForexReq : String {
+
+        public static var tag: Int {
+            121
+        }
 
-    public class LiquidityNumSecurities {
-        public let tag = 441
+        case DoNotExecuteForexAfterSecurityTrade = "N"
+        case ExecuteForexAfterSecurityTrade = "Y"
     }
 
-    public class MultiLegReportingType {
-        public let tag = 442
+    public enum OrigSendingTime : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            122
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
     }
+
+    public enum GapFillFlag : String {
 
-    public class StrikeTime {
-        public let tag = 443
+        public static var tag: Int {
+            123
+        }
+
+        case SequenceReset = "N"
+        case GapFillMessage = "Y"
     }
+
+    public enum NoExecs : RawRepresentable {
 
-    public class ListStatusText {
-        public let tag = 444
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            124
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
     }
+
+    public enum CxlType : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            125
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class EncodedListStatusTextLen {
-        public let tag = 445
     }
+
+    public enum ExpireTime : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            126
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum DKReason : String {
+
+        public static var tag: Int {
+            127
+        }
+
+        case UnknownSymbol = "A"
+        case WrongSide = "B"
+        case QuantityExceedsOrder = "C"
+        case NoMatchingOrder = "D"
+        case PriceExceedsLimit = "E"
+        case Other = "Z"
+    }
+
+    public enum DeliverToCompID : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            128
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum DeliverToSubID : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            129
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum IOINaturalFlag : String {
+
+        public static var tag: Int {
+            130
+        }
+
+        case NotNatural = "N"
+        case Natural = "Y"
+    }
+
+    public enum QuoteReqID : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            131
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum BidPx : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            132
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum OfferPx : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            133
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum BidSize : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            134
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum OfferSize : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            135
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum NoMiscFees : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            136
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum MiscFeeAmt : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            137
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum MiscFeeCurr : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            138
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum MiscFeeType : String {
+
+        public static var tag: Int {
+            139
+        }
+
+        case Regulatory = "1"
+        case Tax = "2"
+        case LocalCommission = "3"
+        case ExchangeFees = "4"
+        case Stamp = "5"
+        case Levy = "6"
+        case Other = "7"
+        case Markup = "8"
+        case ConsumptionTax = "9"
+    }
+
+    public enum PrevClosePx : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            140
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum ResetSeqNumFlag : String {
+
+        public static var tag: Int {
+            141
+        }
+
+        case No = "N"
+        case Yes = "Y"
+    }
+
+    public enum SenderLocationID : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            142
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum TargetLocationID : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            143
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum OnBehalfOfLocationID : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            144
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum DeliverToLocationID : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            145
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum NoRelatedSym : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            146
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum Subject : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            147
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum Headline : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            148
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum URLLink : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            149
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum ExecType : String {
+
+        public static var tag: Int {
+            150
+        }
+
+        case New = "0"
+        case PartialFill = "1"
+        case Fill = "2"
+        case DoneForDay = "3"
+        case Canceled = "4"
+        case Replaced = "5"
+        case PendingCancel = "6"
+        case Stopped = "7"
+        case Rejected = "8"
+        case Suspended = "9"
+        case PendingNew = "A"
+        case Calculated = "B"
+        case Expired = "C"
+        case Restated = "D"
+        case PendingReplace = "E"
+    }
+
+    public enum LeavesQty : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            151
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum CashOrderQty : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            152
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum AllocAvgPx : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            153
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum AllocNetMoney : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            154
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum SettlCurrFxRate : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            155
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum SettlCurrFxRateCalc : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            156
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum NumDaysInterest : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            157
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum AccruedInterestRate : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            158
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum AccruedInterestAmt : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            159
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum SettlInstMode : String {
+
+        public static var tag: Int {
+            160
+        }
+
+        case Default = "0"
+        case StandingInstructionsProvided = "1"
+        case SpecificAllocationAccountOverriding = "2"
+        case SpecificAllocationAccountStanding = "3"
+    }
+
+    public enum AllocText : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            161
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum SettlInstID : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            162
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum SettlInstTransType : String {
+
+        public static var tag: Int {
+            163
+        }
+
+        case Cancel = "C"
+        case New = "N"
+        case Replace = "R"
+    }
+
+    public enum EmailThreadID : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            164
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum SettlInstSource : String {
+
+        public static var tag: Int {
+            165
+        }
+
+        case BrokerCredit = "1"
+        case Institution = "2"
+    }
+
+    public enum SettlLocation : String {
+
+        public static var tag: Int {
+            166
+        }
+
+        case CEDEL = "CED"
+        case DepositoryTrustCompany = "DTC"
+        case EuroClear = "EUR"
+        case FederalBookEntry = "FED"
+        case LocalMarketSettleLocation = "ISO Country Code"
+        case Physical = "PNY"
+        case ParticipantTrustCompany = "PTC"
+    }
+
+    public enum SecurityType : String {
+
+        public static var tag: Int {
+            167
+        }
+
+        case Wildcard = "?"
+        case BankersAcceptance = "BA"
+        case ConvertibleBond = "CB"
+        case CertificateOfDeposit = "CD"
+        case CollateralizedMortgageObligation = "CMO"
+        case CorporateBond = "CORP"
+        case CommercialPaper = "CP"
+        case CorporatePrivatePlacement = "CPP"
+        case CommonStock = "CS"
+        case FederalHousingAuthority = "FHA"
+        case FederalHomeLoan = "FHL"
+        case FederalNationalMortgageAssociation = "FN"
+        case ForeignExchangeContract = "FOR"
+        case Future = "FUT"
+        case GovernmentNationalMortgageAssociation = "GN"
+        case TreasuriesAgencyDebenture = "GOVT"
+        case IOETTEMortgage = "IET"
+        case MutualFund = "MF"
+        case MortgageInterestOnly = "MIO"
+        case MortgagePrincipalOnly = "MPO"
+        case MortgagePrivatePlacement = "MPP"
+        case MiscellaneousPassThrough = "MPT"
+        case MunicipalBond = "MUNI"
+        case NoSecurityType = "NONE"
+        case Option = "OPT"
+        case PreferredStock = "PS"
+        case RepurchaseAgreement = "RP"
+        case ReverseRepurchaseAgreement = "RVRP"
+        case StudentLoanMarketingAssociation = "SL"
+        case TimeDeposit = "TD"
+        case USTreasuryBillOld = "USTB"
+        case Warrant = "WAR"
+        case CatsTigersAndLions = "ZOO"
+    }
+
+    public enum EffectiveTime : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            168
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum StandInstDbType : String {
+
+        public static var tag: Int {
+            169
+        }
+
+        case Other = "0"
+        case DTCSID = "1"
+        case ThomsonALERT = "2"
+        case AGlobalCustodian = "3"
+    }
+
+    public enum StandInstDbName : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            170
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum StandInstDbID : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            171
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum SettlDeliveryType : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            172
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum SettlDepositoryCode : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            173
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum SettlBrkrCode : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            174
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum SettlInstCode : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            175
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum SecuritySettlAgentName : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            176
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum SecuritySettlAgentCode : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            177
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum SecuritySettlAgentAcctNum : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            178
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum SecuritySettlAgentAcctName : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            179
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum SecuritySettlAgentContactName : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            180
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum SecuritySettlAgentContactPhone : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            181
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum CashSettlAgentName : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            182
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum CashSettlAgentCode : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            183
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum CashSettlAgentAcctNum : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            184
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum CashSettlAgentAcctName : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            185
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum CashSettlAgentContactName : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            186
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum CashSettlAgentContactPhone : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            187
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum BidSpotRate : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            188
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum BidForwardPoints : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            189
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum OfferSpotRate : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            190
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum OfferForwardPoints : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            191
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum OrderQty2 : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            192
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum FutSettDate2 : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            193
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum LastSpotRate : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            194
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum LastForwardPoints : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            195
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum AllocLinkID : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            196
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum AllocLinkType : String {
+
+        public static var tag: Int {
+            197
+        }
+
+        case FXNetting = "0"
+        case FXSwap = "1"
+    }
+
+    public enum SecondaryOrderID : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            198
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum NoIOIQualifiers : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            199
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum MaturityMonthYear : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            200
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum PutOrCall : String {
+
+        public static var tag: Int {
+            201
+        }
+
+        case Put = "0"
+        case Call = "1"
+    }
+
+    public enum StrikePrice : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            202
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum CoveredOrUncovered : String {
+
+        public static var tag: Int {
+            203
+        }
+
+        case Covered = "0"
+        case Uncovered = "1"
+    }
+
+    public enum CustomerOrFirm : String {
+
+        public static var tag: Int {
+            204
+        }
+
+        case Customer = "0"
+        case Firm = "1"
+    }
+
+    public enum MaturityDay : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            205
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum OptAttribute : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            206
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum SecurityExchange : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            207
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum NotifyBrokerOfCredit : String {
+
+        public static var tag: Int {
+            208
+        }
+
+        case DetailsShouldNotBeCommunicated = "N"
+        case DetailsShouldBeCommunicated = "Y"
+    }
+
+    public enum AllocHandlInst : String {
+
+        public static var tag: Int {
+            209
+        }
+
+        case Match = "1"
+        case Forward = "2"
+        case ForwardAndMatch = "3"
+    }
+
+    public enum MaxShow : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            210
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum PegDifference : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            211
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum XmlDataLen : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            212
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum XmlData : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            213
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum SettlInstRefID : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            214
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum NoRoutingIDs : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            215
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum RoutingType : String {
+
+        public static var tag: Int {
+            216
+        }
+
+        case TargetFirm = "1"
+        case TargetList = "2"
+        case BlockFirm = "3"
+        case BlockList = "4"
+    }
+
+    public enum RoutingID : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            217
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum SpreadToBenchmark : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            218
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum Benchmark : String {
+
+        public static var tag: Int {
+            219
+        }
+
+        case CURVE = "1"
+        case FiveYR = "2"
+        case OLD5 = "3"
+        case TenYR = "4"
+        case OLD10 = "5"
+        case ThirtyYR = "6"
+        case OLD30 = "7"
+        case ThreeMOLIBOR = "8"
+        case SixMOLIBOR = "9"
+    }
+
+    public enum CouponRate : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            223
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum ContractMultiplier : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            231
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum MDReqID : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            262
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum SubscriptionRequestType : String {
+
+        public static var tag: Int {
+            263
+        }
+
+        case Snapshot = "0"
+        case SnapshotAndUpdates = "1"
+        case DisablePreviousSnapshot = "2"
+    }
+
+    public enum MarketDepth : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            264
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum MDUpdateType : String {
+
+        public static var tag: Int {
+            265
+        }
+
+        case FullRefresh = "0"
+        case IncrementalRefresh = "1"
+    }
+
+    public enum AggregatedBook : String {
+
+        public static var tag: Int {
+            266
+        }
+
+        case BookEntriesShouldNotBeAggregated = "N"
+        case BookEntriesToBeAggregated = "Y"
+    }
+
+    public enum NoMDEntryTypes : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            267
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum NoMDEntries : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            268
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum MDEntryType : String {
+
+        public static var tag: Int {
+            269
+        }
+
+        case Bid = "0"
+        case Offer = "1"
+        case Trade = "2"
+        case IndexValue = "3"
+        case OpeningPrice = "4"
+        case ClosingPrice = "5"
+        case SettlementPrice = "6"
+        case TradingSessionHighPrice = "7"
+        case TradingSessionLowPrice = "8"
+        case TradingSessionVWAPPrice = "9"
+    }
+
+    public enum MDEntryPx : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            270
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum MDEntrySize : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            271
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum MDEntryDate : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            272
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum MDEntryTime : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            273
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum TickDirection : String {
+
+        public static var tag: Int {
+            274
+        }
+
+        case PlusTick = "0"
+        case ZeroPlusTick = "1"
+        case MinusTick = "2"
+        case ZeroMinusTick = "3"
+    }
+
+    public enum MDMkt : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            275
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum QuoteCondition : String {
+
+        public static var tag: Int {
+            276
+        }
+
+        case Open = "A"
+        case Closed = "B"
+        case ExchangeBest = "C"
+        case ConsolidatedBest = "D"
+        case Locked = "E"
+        case Crossed = "F"
+        case Depth = "G"
+        case FastTrading = "H"
+        case NonFirm = "I"
+    }
+
+    public enum TradeCondition : String {
+
+        public static var tag: Int {
+            277
+        }
+
+        case Cash = "A"
+        case AveragePriceTrade = "B"
+        case CashTrade = "C"
+        case NextDay = "D"
+        case Opening = "E"
+        case IntradayTradeDetail = "F"
+        case Rule127Trade = "G"
+        case Rule155Trade = "H"
+        case SoldLast = "I"
+        case NextDayTrade = "J"
+        case Opened = "K"
+        case Seller = "L"
+        case Sold = "M"
+        case StoppedStock = "N"
+    }
+
+    public enum MDEntryID : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            278
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum MDUpdateAction : String {
+
+        public static var tag: Int {
+            279
+        }
+
+        case New = "0"
+        case Change = "1"
+        case Delete = "2"
+    }
+
+    public enum MDEntryRefID : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            280
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum MDReqRejReason : String {
+
+        public static var tag: Int {
+            281
+        }
+
+        case UnknownSymbol = "0"
+        case DuplicateMDReqID = "1"
+        case InsufficientBandwidth = "2"
+        case InsufficientPermissions = "3"
+        case UnsupportedSubscriptionRequestType = "4"
+        case UnsupportedMarketDepth = "5"
+        case UnsupportedMDUpdateType = "6"
+        case UnsupportedAggregatedBook = "7"
+        case UnsupportedMDEntryType = "8"
+    }
+
+    public enum MDEntryOriginator : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            282
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum LocationID : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            283
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum DeskID : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            284
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum DeleteReason : String {
+
+        public static var tag: Int {
+            285
+        }
+
+        case Cancellation = "0"
+        case Error = "1"
+    }
+
+    public enum OpenCloseSettleFlag : String {
+
+        public static var tag: Int {
+            286
+        }
+
+        case DailyOpen = "0"
+        case SessionOpen = "1"
+        case DeliverySettlementEntry = "2"
+    }
+
+    public enum SellerDays : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            287
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum MDEntryBuyer : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            288
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum MDEntrySeller : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            289
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum MDEntryPositionNo : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            290
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum FinancialStatus : String {
+
+        public static var tag: Int {
+            291
+        }
+
+        case Bankrupt = "1"
+    }
+
+    public enum CorporateAction : String {
+
+        public static var tag: Int {
+            292
+        }
+
+        case ExDividend = "A"
+        case ExDistribution = "B"
+        case ExRights = "C"
+        case New = "D"
+        case ExInterest = "E"
+    }
+
+    public enum DefBidSize : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            293
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum DefOfferSize : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            294
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum NoQuoteEntries : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            295
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum NoQuoteSets : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            296
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum QuoteAckStatus : String {
+
+        public static var tag: Int {
+            297
+        }
+
+        case Accepted = "0"
+        case CancelForSymbol = "1"
+        case CanceledForSecurityType = "2"
+        case CanceledForUnderlying = "3"
+        case CanceledAll = "4"
+        case Rejected = "5"
+    }
+
+    public enum QuoteCancelType : String {
+
+        public static var tag: Int {
+            298
+        }
+
+        case CancelForOneOrMoreSecurities = "1"
+        case CancelForSecurityType = "2"
+        case CancelForUnderlyingSecurity = "3"
+        case CancelAllQuotes = "4"
+    }
+
+    public enum QuoteEntryID : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            299
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum QuoteRejectReason : String {
+
+        public static var tag: Int {
+            300
+        }
+
+        case UnknownSymbol = "1"
+        case Exchange = "2"
+        case QuoteRequestExceedsLimit = "3"
+        case TooLateToEnter = "4"
+        case UnknownQuote = "5"
+        case DuplicateQuote = "6"
+        case InvalidBid = "7"
+        case InvalidPrice = "8"
+        case NotAuthorizedToQuoteSecurity = "9"
+    }
+
+    public enum QuoteResponseLevel : String {
+
+        public static var tag: Int {
+            301
+        }
+
+        case NoAcknowledgement = "0"
+        case AcknowledgeOnlyNegativeOrErroneousQuotes = "1"
+        case AcknowledgeEachQuoteMessage = "2"
+    }
+
+    public enum QuoteSetID : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            302
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum QuoteRequestType : String {
+
+        public static var tag: Int {
+            303
+        }
+
+        case Manual = "1"
+        case Automatic = "2"
+    }
+
+    public enum TotQuoteEntries : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            304
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum UnderlyingIDSource : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            305
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum UnderlyingIssuer : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            306
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum UnderlyingSecurityDesc : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            307
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum UnderlyingSecurityExchange : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            308
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum UnderlyingSecurityID : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            309
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum UnderlyingSecurityType : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            310
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum UnderlyingSymbol : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            311
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum UnderlyingSymbolSfx : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            312
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum UnderlyingMaturityMonthYear : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            313
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum UnderlyingMaturityDay : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            314
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum UnderlyingPutOrCall : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            315
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum UnderlyingStrikePrice : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            316
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum UnderlyingOptAttribute : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            317
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum UnderlyingCurrency : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            318
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum RatioQty : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            319
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum SecurityReqID : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            320
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum SecurityRequestType : String {
+
+        public static var tag: Int {
+            321
+        }
+
+        case RequestSecurityIdentityAndSpecifications = "0"
+        case RequestSecurityIdentityForSpecifications = "1"
+        case RequestListSecurityTypes = "2"
+        case RequestListSecurities = "3"
+    }
+
+    public enum SecurityResponseID : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            322
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum SecurityResponseType : String {
+
+        public static var tag: Int {
+            323
+        }
+
+        case AcceptAsIs = "1"
+        case AcceptWithRevisions = "2"
+        case ListOfSecurityTypesReturnedPerRequest = "3"
+        case ListOfSecuritiesReturnedPerRequest = "4"
+        case RejectSecurityProposal = "5"
+        case CannotMatchSelectionCriteria = "6"
+    }
+
+    public enum SecurityStatusReqID : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            324
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum UnsolicitedIndicator : String {
+
+        public static var tag: Int {
+            325
+        }
+
+        case MessageIsBeingSentAsAResultOfAPriorRequest = "N"
+        case MessageIsBeingSentUnsolicited = "Y"
+    }
+
+    public enum SecurityTradingStatus : String {
+
+        public static var tag: Int {
+            326
+        }
+
+        case OpeningDelay = "1"
+        case MarketOnCloseImbalanceSell = "10"
+        case NoMarketImbalance = "12"
+        case NoMarketOnCloseImbalance = "13"
+        case ITSPreOpening = "14"
+        case NewPriceIndication = "15"
+        case TradeDisseminationTime = "16"
+        case ReadyToTrade = "17"
+        case NotAvailableForTrading = "18"
+        case NotTradedOnThisMarket = "19"
+        case TradingHalt = "2"
+        case UnknownOrInvalid = "20"
+        case Resume = "3"
+        case NoOpen = "4"
+        case PriceIndication = "5"
+        case TradingRangeIndication = "6"
+        case MarketImbalanceBuy = "7"
+        case MarketImbalanceSell = "8"
+        case MarketOnCloseImbalanceBuy = "9"
+    }
+
+    public enum HaltReason : String {
+
+        public static var tag: Int {
+            327
+        }
+
+        case NewsDissemination = "D"
+        case OrderInflux = "E"
+        case OrderImbalance = "I"
+        case AdditionalInformation = "M"
+        case NewsPending = "P"
+        case EquipmentChangeover = "X"
+    }
+
+    public enum InViewOfCommon : String {
+
+        public static var tag: Int {
+            328
+        }
+
+        case HaltWasNotRelatedToAHaltOfTheCommonStock = "N"
+        case HaltWasDueToCommonStockBeingHalted = "Y"
+    }
+
+    public enum DueToRelated : String {
+
+        public static var tag: Int {
+            329
+        }
+
+        case NotRelatedToSecurityHalt = "N"
+        case RelatedToSecurityHalt = "Y"
+    }
+
+    public enum BuyVolume : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            330
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum SellVolume : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            331
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum HighPx : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            332
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum LowPx : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            333
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum Adjustment : String {
+
+        public static var tag: Int {
+            334
+        }
+
+        case Cancel = "1"
+        case Error = "2"
+        case Correction = "3"
+    }
+
+    public enum TradSesReqID : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            335
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum TradingSessionID : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            336
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum ContraTrader : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            337
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum TradSesMethod : String {
+
+        public static var tag: Int {
+            338
+        }
+
+        case Electronic = "1"
+        case OpenOutcry = "2"
+        case TwoParty = "3"
+    }
+
+    public enum TradSesMode : String {
+
+        public static var tag: Int {
+            339
+        }
+
+        case Testing = "1"
+        case Simulated = "2"
+        case Production = "3"
+    }
+
+    public enum TradSesStatus : String {
+
+        public static var tag: Int {
+            340
+        }
+
+        case Halted = "1"
+        case Open = "2"
+        case Closed = "3"
+        case PreOpen = "4"
+        case PreClose = "5"
+    }
+
+    public enum TradSesStartTime : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            341
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum TradSesOpenTime : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            342
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum TradSesPreCloseTime : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            343
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum TradSesCloseTime : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            344
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum TradSesEndTime : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            345
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum NumberOfOrders : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            346
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum MessageEncoding : String {
+
+        public static var tag: Int {
+            347
+        }
+
+        case EUCJP = "EUC-JP"
+        case ISO2022JP = "ISO-2022-JP"
+        case ShiftJIS = "Shift_JIS"
+        case UTF8 = "UTF-8"
+    }
+
+    public enum EncodedIssuerLen : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            348
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum EncodedIssuer : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            349
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum EncodedSecurityDescLen : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            350
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum EncodedSecurityDesc : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            351
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum EncodedListExecInstLen : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            352
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum EncodedListExecInst : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            353
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum EncodedTextLen : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            354
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum EncodedText : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            355
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum EncodedSubjectLen : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            356
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum EncodedSubject : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            357
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum EncodedHeadlineLen : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            358
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum EncodedHeadline : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            359
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum EncodedAllocTextLen : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            360
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum EncodedAllocText : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            361
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum EncodedUnderlyingIssuerLen : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            362
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum EncodedUnderlyingIssuer : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            363
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum EncodedUnderlyingSecurityDescLen : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            364
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum EncodedUnderlyingSecurityDesc : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            365
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum AllocPrice : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            366
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum QuoteSetValidUntilTime : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            367
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum QuoteEntryRejectReason : String {
+
+        public static var tag: Int {
+            368
+        }
+
+        case UnknownSymbol = "1"
+        case Exchange = "2"
+        case QuoteExceedsLimit = "3"
+        case TooLateToEnter = "4"
+        case UnknownQuote = "5"
+        case DuplicateQuote = "6"
+        case InvalidBidAskSpread = "7"
+        case InvalidPrice = "8"
+        case NotAuthorizedToQuoteSecurity = "9"
+    }
+
+    public enum LastMsgSeqNumProcessed : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            369
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum OnBehalfOfSendingTime : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            370
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum RefTagID : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            371
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum RefMsgType : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            372
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum SessionRejectReason : String {
+
+        public static var tag: Int {
+            373
+        }
+
+        case InvalidTagNumber = "0"
+        case RequiredTagMissing = "1"
+        case SendingTimeAccuracyProblem = "10"
+        case InvalidMsgType = "11"
+        case TagNotDefinedForThisMessageType = "2"
+        case UndefinedTag = "3"
+        case TagSpecifiedWithoutAValue = "4"
+        case ValueIsIncorrect = "5"
+        case IncorrectDataFormatForValue = "6"
+        case DecryptionProblem = "7"
+        case SignatureProblem = "8"
+        case CompIDProblem = "9"
+    }
+
+    public enum BidRequestTransType : String {
+
+        public static var tag: Int {
+            374
+        }
+
+        case Cancel = "C"
+        case New = "N"
+    }
+
+    public enum ContraBroker : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            375
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum ComplianceID : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            376
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum SolicitedFlag : String {
+
+        public static var tag: Int {
+            377
+        }
+
+        case WasNotSolicited = "N"
+        case WasSolicited = "Y"
+    }
+
+    public enum ExecRestatementReason : String {
+
+        public static var tag: Int {
+            378
+        }
+
+        case GTCorporateAction = "0"
+        case GTRenewal = "1"
+        case VerbalChange = "2"
+        case RepricingOfOrder = "3"
+        case BrokerOption = "4"
+        case PartialDeclineOfOrderQty = "5"
+    }
+
+    public enum BusinessRejectRefID : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            379
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum BusinessRejectReason : String {
+
+        public static var tag: Int {
+            380
+        }
+
+        case Other = "0"
+        case UnknownID = "1"
+        case UnknownSecurity = "2"
+        case UnsupportedMessageType = "3"
+        case ApplicationNotAvailable = "4"
+        case ConditionallyRequiredFieldMissing = "5"
+    }
+
+    public enum GrossTradeAmt : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            381
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum NoContraBrokers : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            382
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum MaxMessageSize : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            383
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum NoMsgTypes : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            384
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum MsgDirection : String {
+
+        public static var tag: Int {
+            385
+        }
+
+        case Receive = "R"
+        case Send = "S"
+    }
+
+    public enum NoTradingSessions : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            386
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum TotalVolumeTraded : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            387
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum DiscretionInst : String {
+
+        public static var tag: Int {
+            388
+        }
+
+        case RelatedToDisplayedPrice = "0"
+        case RelatedToMarketPrice = "1"
+        case RelatedToPrimaryPrice = "2"
+        case RelatedToLocalPrimaryPrice = "3"
+        case RelatedToMidpointPrice = "4"
+        case RelatedToLastTradePrice = "5"
+    }
+
+    public enum DiscretionOffset : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            389
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum BidID : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            390
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum ClientBidID : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            391
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum ListName : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            392
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum TotalNumSecurities : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            393
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum BidType : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            394
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum NumTickets : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            395
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum SideValue1 : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            396
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum SideValue2 : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            397
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum NoBidDescriptors : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            398
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum BidDescriptorType : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            399
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum BidDescriptor : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            400
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum SideValueInd : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            401
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum LiquidityPctLow : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            402
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum LiquidityPctHigh : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            403
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum LiquidityValue : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            404
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum EFPTrackingError : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            405
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum FairValue : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            406
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum OutsideIndexPct : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            407
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum ValueOfFutures : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            408
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum LiquidityIndType : String {
+
+        public static var tag: Int {
+            409
+        }
+
+        case FiveDayMovingAverage = "1"
+        case TwentyDayMovingAverage = "2"
+        case NormalMarketSize = "3"
+        case Other = "4"
+    }
+
+    public enum WtAverageLiquidity : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            410
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum ExchangeForPhysical : String {
+
+        public static var tag: Int {
+            411
+        }
+
+        case False = "N"
+        case True = "Y"
+    }
+
+    public enum OutMainCntryUIndex : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            412
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum CrossPercent : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            413
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum ProgRptReqs : String {
+
+        public static var tag: Int {
+            414
+        }
+
+        case BuySideRequests = "1"
+        case SellSideSends = "2"
+        case RealTimeExecutionReports = "3"
+    }
+
+    public enum ProgPeriodInterval : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            415
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum IncTaxInd : String {
+
+        public static var tag: Int {
+            416
+        }
+
+        case Net = "1"
+        case Gross = "2"
+    }
+
+    public enum NumBidders : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            417
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum TradeType : String {
+
+        public static var tag: Int {
+            418
+        }
+
+        case Agency = "A"
+        case VWAPGuarantee = "G"
+        case GuaranteedClose = "J"
+        case RiskTrade = "R"
+    }
+
+    public enum BasisPxType : String {
+
+        public static var tag: Int {
+            419
+        }
+
+        case ClosingPriceAtMorningSession = "2"
+        case ClosingPrice = "3"
+        case CurrentPrice = "4"
+        case SQ = "5"
+        case VWAPThroughADay = "6"
+        case VWAPThroughAMorningSession = "7"
+        case VWAPThroughAnAfternoonSession = "8"
+        case VWAPThroughADayExcept = "9"
+        case VWAPThroughAMorningSessionExcept = "A"
+        case VWAPThroughAnAfternoonSessionExcept = "B"
+        case Strike = "C"
+        case Open = "D"
+        case Others = "Z"
+    }
+
+    public enum NoBidComponents : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            420
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum Country : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            421
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum TotNoStrikes : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            422
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum PriceType : String {
+
+        public static var tag: Int {
+            423
+        }
+
+        case Percentage = "1"
+        case PerUnit = "2"
+        case FixedAmount = "3"
+    }
+
+    public enum DayOrderQty : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            424
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum DayCumQty : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            425
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum DayAvgPx : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            426
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum GTBookingInst : String {
+
+        public static var tag: Int {
+            427
+        }
+
+        case BookOutAllTradesOnDayOfExecution = "0"
+        case AccumulateUntilFilledOrExpired = "1"
+        case AccumulateUntilVerballlyNotifiedOtherwise = "2"
+    }
+
+    public enum NoStrikes : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            428
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum ListStatusType : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            429
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum NetGrossInd : String {
+
+        public static var tag: Int {
+            430
+        }
+
+        case Net = "1"
+        case Gross = "2"
+    }
+
+    public enum ListOrderStatus : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            431
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum ExpireDate : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            432
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum ListExecInstType : String {
+
+        public static var tag: Int {
+            433
+        }
+
+        case Immediate = "1"
+        case WaitForInstruction = "2"
+    }
+
+    public enum CxlRejResponseTo : String {
+
+        public static var tag: Int {
+            434
+        }
+
+        case OrderCancelRequest = "1"
+        case OrderCancel = "2"
+    }
+
+    public enum UnderlyingCouponRate : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            435
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum UnderlyingContractMultiplier : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            436
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum ContraTradeQty : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            437
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum ContraTradeTime : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            438
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum ClearingFirm : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            439
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum ClearingAccount : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            440
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum LiquidityNumSecurities : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            441
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum MultiLegReportingType : String {
+
+        public static var tag: Int {
+            442
+        }
+
+        case SingleSecurity = "1"
+        case IndividualLegOfAMultiLegSecurity = "2"
+        case MultiLegSecurity = "3"
+    }
+
+    public enum StrikeTime : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            443
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum ListStatusText : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            444
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum EncodedListStatusTextLen : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            445
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
+
+    }
+
+    public enum EncodedListStatusText : RawRepresentable {
+
+        public typealias RawValue = String
+
+        public static var tag: Int {
+            446
+        }
+
+        public init?(rawValue: RawValue) {
+            return nil        }
+
+        public var rawValue: RawValue {
+            return ""
+        }
 
-    public class EncodedListStatusText {
-        public let tag = 446
     }
 
-}
 }

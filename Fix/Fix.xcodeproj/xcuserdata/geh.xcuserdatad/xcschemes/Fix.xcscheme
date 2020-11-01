@@ -52,6 +52,26 @@
                ReferencedContainer = "container:Fix.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9AB6EA8119F36F23000EFC99"
+               BuildableName = "CommonTests.xctest"
+               BlueprintName = "CommonTests"
+               ReferencedContainer = "container:../Common/Common.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9A2B1C7919E7D968008E2646"
+               BuildableName = "DictionaryTests.xctest"
+               BlueprintName = "DictionaryTests"
+               ReferencedContainer = "container:../Dictionary/Dictionary.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
