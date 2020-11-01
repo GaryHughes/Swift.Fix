@@ -1,13 +1,14 @@
 #!/usr/bin/python3
 
 import os
-from sanitise import *
+from datetime import datetime, timedelta
 
 def generate_orchestration_enums(prefix, orchestration, outdir, namespace):
-    sorted_fields = sorted(orchestration.fields.values(), key=lambda x: int(x.id))
-    sane_prefix = sanitise_for_include_guard(prefix)
     filename = '{}Enums.swift'.format(prefix)
-    with open(os.path.join(outdir, filename), 'w') as file:
+    path = os.path.join(outdir, filename)
+    print('regenerating ' + path)
+    sorted_fields = sorted(orchestration.fields.values(), key=lambda x: int(x.id))
+    with open(path, 'w') as file:
         file.write('public struct {} {{\n\n'.format(namespace))
         for field in sorted_fields:
             try:

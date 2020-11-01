@@ -158,7 +158,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9A2B1C8519E7D968008E2646 /* Build configuration list for PBXNativeTarget "Dictionary" */;
 			buildPhases = (
-				9A6DC5E524DE346C006583D5 /* ShellScript */,
+				9A6DC5E524DE346C006583D5 /* Generate FIX dictionary */,
 				9A2B1C6A19E7D968008E2646 /* Sources */,
 				9A2B1C6B19E7D968008E2646 /* Frameworks */,
 				9A2B1C6C19E7D968008E2646 /* Headers */,
@@ -246,7 +246,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		9A6DC5E524DE346C006583D5 /* ShellScript */ = {
+		9A6DC5E524DE346C006583D5 /* Generate FIX dictionary */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -254,10 +254,23 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/../orchestrations/FIX Standard/FixRepository42.xml",
+				"$(SRCROOT)/../orchestrations/FIX Standard/FixRepository44.xml",
+				"$(SRCROOT)/../orchestrations/FIX Standard/OrchestraFIXLatest.xml",
 			);
+			name = "Generate FIX dictionary";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"$(PROJECT_DIR)/Dictionary/Generated/FIX_4_2_Enums.swift",
+				"$(PROJECT_DIR)/Dictionary/Generated/FIX_4_4_Enums.swift",
+				"$(PROJECT_DIR)/Dictionary/Generated/FIX_Enums.swift",
+				"$(PROJECT_DIR)/Dictionary/Generated/FIX_4_2_Fields.swift",
+				"$(PROJECT_DIR)/Dictionary/Generated/FIX_4_4_Fields.swift",
+				"$(PROJECT_DIR)/Dictionary/Generated/FIX_Fields.swift",
+				"$(PROJECT_DIR)/Dictionary/Generated/FIX_4_2_Messages.swift",
+				"$(PROJECT_DIR)/Dictionary/Generated/FIX_4_4_Messages.swift",
+				"$(PROJECT_DIR)/Dictionary/Generated/FIX_Messages.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

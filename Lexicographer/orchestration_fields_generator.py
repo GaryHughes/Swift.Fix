@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 
 import os
-from sanitise import *
 
 def generate_orchestration_fields(prefix, orchestration, outdir, namespace):
-    sorted_fields = sorted(orchestration.fields.values(), key=lambda x: int(x.id))
-    sane_prefix = sanitise_for_include_guard(prefix)
     filename = '{}Fields.swift'.format(prefix)
-    with open(os.path.join(outdir, filename), 'w') as file:
+    path = os.path.join(outdir, filename)
+    print('regenerating ' + path)
+    sorted_fields = sorted(orchestration.fields.values(), key=lambda x: int(x.id))
+    with open(path, 'w') as file:
         file.write('extension {} {{\n\n'.format(namespace))
         file.write('public struct Field {\n\n')
         for field in sorted_fields:
