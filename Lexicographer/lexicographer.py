@@ -9,6 +9,7 @@ path = os.path.join(os.path.dirname(__file__), '../fixorchestra')
 sys.path.append(path)
 from fixorchestra.orchestration import *
 
+from orchestration_enums_generator import *
 from orchestration_fields_generator import *
 from orchestration_messages_generator import *
 
@@ -18,11 +19,13 @@ if __name__ == '__main__':
     parser.add_argument('--prefix', required=True, help='The prefix for the generated filenames')
     parser.add_argument('--orchestration', required=True, help='The orchestration filename to generate code for')
     parser.add_argument('--outdir', required=True, help='The directory to write the generated files to')
+    parser.add_argument('--namespace', required=True, help='Generate the types in a struct with this name')
 
     args = parser.parse_args()
 
     orchestration = Orchestration(args.orchestration)
 
-    generate_orchestration_fields(args.prefix, orchestration, args.outdir)
-    generate_orchestration_messages(args.prefix, orchestration, args.outdir)
+    generate_orchestration_enums(args.prefix, orchestration, args.outdir, args.namespace)
+    generate_orchestration_fields(args.prefix, orchestration, args.outdir, args.namespace)
+    generate_orchestration_messages(args.prefix, orchestration, args.outdir, args.namespace)
 
