@@ -51,7 +51,7 @@ public struct Fix42 {
 
     }
 
-    public enum AdvSide : String {
+    public enum AdvSide : String, CaseIterable {
 
         public static var tag: Int {
             4
@@ -63,7 +63,7 @@ public struct Fix42 {
         case Cross = "X"
     }
 
-    public enum AdvTransType : String {
+    public enum AdvTransType : String, CaseIterable {
 
         public static var tag: Int {
             5
@@ -193,7 +193,7 @@ public struct Fix42 {
 
     }
 
-    public enum CommType : String {
+    public enum CommType : String, CaseIterable {
 
         public static var tag: Int {
             13
@@ -272,7 +272,7 @@ public struct Fix42 {
 
     }
 
-    public enum ExecInst : String {
+    public enum ExecInst : String, CaseIterable {
 
         public static var tag: Int {
             18
@@ -326,7 +326,7 @@ public struct Fix42 {
 
     }
 
-    public enum ExecTransType : String {
+    public enum ExecTransType : String, CaseIterable {
 
         public static var tag: Int {
             20
@@ -338,7 +338,7 @@ public struct Fix42 {
         case Status = "3"
     }
 
-    public enum HandlInst : String {
+    public enum HandlInst : String, CaseIterable {
 
         public static var tag: Int {
             21
@@ -349,7 +349,7 @@ public struct Fix42 {
         case ManualOrder = "3"
     }
 
-    public enum IDSource : String {
+    public enum IDSource : String, CaseIterable {
 
         public static var tag: Int {
             22
@@ -400,7 +400,7 @@ public struct Fix42 {
 
     }
 
-    public enum IOIQltyInd : String {
+    public enum IOIQltyInd : String, CaseIterable {
 
         public static var tag: Int {
             25
@@ -428,7 +428,7 @@ public struct Fix42 {
 
     }
 
-    public enum IOIShares : String {
+    public enum IOIShares : String, CaseIterable {
 
         public static var tag: Int {
             27
@@ -439,7 +439,7 @@ public struct Fix42 {
         case Small = "S"
     }
 
-    public enum IOITransType : String {
+    public enum IOITransType : String, CaseIterable {
 
         public static var tag: Int {
             28
@@ -450,7 +450,7 @@ public struct Fix42 {
         case Replace = "R"
     }
 
-    public enum LastCapacity : String {
+    public enum LastCapacity : String, CaseIterable {
 
         public static var tag: Int {
             29
@@ -547,7 +547,7 @@ public struct Fix42 {
 
     }
 
-    public enum MsgType : String {
+    public enum MsgType : String, CaseIterable {
 
         public static var tag: Int {
             35
@@ -652,7 +652,7 @@ public struct Fix42 {
 
     }
 
-    public enum OrdStatus : String {
+    public enum OrdStatus : String, CaseIterable {
 
         public static var tag: Int {
             39
@@ -675,7 +675,7 @@ public struct Fix42 {
         case PendingReplace = "E"
     }
 
-    public enum OrdType : String {
+    public enum OrdType : String, CaseIterable {
 
         public static var tag: Int {
             40
@@ -736,7 +736,7 @@ public struct Fix42 {
 
     }
 
-    public enum PossDupFlag : String {
+    public enum PossDupFlag : String, CaseIterable {
 
         public static var tag: Int {
             43
@@ -797,7 +797,7 @@ public struct Fix42 {
 
     }
 
-    public enum Rule80A : String {
+    public enum Rule80A : String, CaseIterable {
 
         public static var tag: Int {
             47
@@ -930,7 +930,7 @@ public struct Fix42 {
 
     }
 
-    public enum Side : String {
+    public enum Side : String, CaseIterable {
 
         public static var tag: Int {
             54
@@ -1015,7 +1015,7 @@ public struct Fix42 {
 
     }
 
-    public enum TimeInForce : String {
+    public enum TimeInForce : String, CaseIterable {
 
         public static var tag: Int {
             59
@@ -1047,7 +1047,7 @@ public struct Fix42 {
 
     }
 
-    public enum Urgency : String {
+    public enum Urgency : String, CaseIterable {
 
         public static var tag: Int {
             61
@@ -1075,7 +1075,7 @@ public struct Fix42 {
 
     }
 
-    public enum SettlmntTyp : String {
+    public enum SettlmntTyp : String, CaseIterable {
 
         public static var tag: Int {
             63
@@ -1212,7 +1212,7 @@ public struct Fix42 {
 
     }
 
-    public enum AllocTransType : String {
+    public enum AllocTransType : String, CaseIterable {
 
         public static var tag: Int {
             71
@@ -1311,7 +1311,7 @@ public struct Fix42 {
 
     }
 
-    public enum OpenClose : String {
+    public enum OpenClose : String, CaseIterable {
 
         public static var tag: Int {
             77
@@ -1372,7 +1372,7 @@ public struct Fix42 {
 
     }
 
-    public enum ProcessCode : String {
+    public enum ProcessCode : String, CaseIterable {
 
         public static var tag: Int {
             81
@@ -1472,7 +1472,7 @@ public struct Fix42 {
 
     }
 
-    public enum AllocStatus : String {
+    public enum AllocStatus : String, CaseIterable {
 
         public static var tag: Int {
             87
@@ -1484,7 +1484,7 @@ public struct Fix42 {
         case Received = "3"
     }
 
-    public enum AllocRejCode : String {
+    public enum AllocRejCode : String, CaseIterable {
 
         public static var tag: Int {
             88
@@ -1585,7 +1585,7 @@ public struct Fix42 {
 
     }
 
-    public enum EmailType : String {
+    public enum EmailType : String, CaseIterable {
 
         public static var tag: Int {
             94
@@ -1630,7 +1630,7 @@ public struct Fix42 {
 
     }
 
-    public enum PossResend : String {
+    public enum PossResend : String, CaseIterable {
 
         public static var tag: Int {
             97
@@ -1640,7 +1640,7 @@ public struct Fix42 {
         case PossibleResend = "Y"
     }
 
-    public enum EncryptMethod : String {
+    public enum EncryptMethod : String, CaseIterable {
 
         public static var tag: Int {
             98
@@ -1689,7 +1689,7 @@ public struct Fix42 {
 
     }
 
-    public enum CxlRejReason : String {
+    public enum CxlRejReason : String, CaseIterable {
 
         public static var tag: Int {
             102
@@ -1701,7 +1701,7 @@ public struct Fix42 {
         case OrderAlreadyInPendingStatus = "3"
     }
 
-    public enum OrdRejReason : String {
+    public enum OrdRejReason : String, CaseIterable {
 
         public static var tag: Int {
             103
@@ -1718,7 +1718,7 @@ public struct Fix42 {
         case StaleOrder = "8"
     }
 
-    public enum IOIQualifier : String {
+    public enum IOIQualifier : String, CaseIterable {
 
         public static var tag: Int {
             104
@@ -1878,7 +1878,7 @@ public struct Fix42 {
 
     }
 
-    public enum ReportToExch : String {
+    public enum ReportToExch : String, CaseIterable {
 
         public static var tag: Int {
             113
@@ -1888,7 +1888,7 @@ public struct Fix42 {
         case ReceiverReports = "Y"
     }
 
-    public enum LocateReqd : String {
+    public enum LocateReqd : String, CaseIterable {
 
         public static var tag: Int {
             114
@@ -2000,7 +2000,7 @@ public struct Fix42 {
 
     }
 
-    public enum ForexReq : String {
+    public enum ForexReq : String, CaseIterable {
 
         public static var tag: Int {
             121
@@ -2027,7 +2027,7 @@ public struct Fix42 {
 
     }
 
-    public enum GapFillFlag : String {
+    public enum GapFillFlag : String, CaseIterable {
 
         public static var tag: Int {
             123
@@ -2088,7 +2088,7 @@ public struct Fix42 {
 
     }
 
-    public enum DKReason : String {
+    public enum DKReason : String, CaseIterable {
 
         public static var tag: Int {
             127
@@ -2136,7 +2136,7 @@ public struct Fix42 {
 
     }
 
-    public enum IOINaturalFlag : String {
+    public enum IOINaturalFlag : String, CaseIterable {
 
         public static var tag: Int {
             130
@@ -2282,7 +2282,7 @@ public struct Fix42 {
 
     }
 
-    public enum MiscFeeType : String {
+    public enum MiscFeeType : String, CaseIterable {
 
         public static var tag: Int {
             139
@@ -2316,7 +2316,7 @@ public struct Fix42 {
 
     }
 
-    public enum ResetSeqNumFlag : String {
+    public enum ResetSeqNumFlag : String, CaseIterable {
 
         public static var tag: Int {
             141
@@ -2462,7 +2462,7 @@ public struct Fix42 {
 
     }
 
-    public enum ExecType : String {
+    public enum ExecType : String, CaseIterable {
 
         public static var tag: Int {
             150
@@ -2638,7 +2638,7 @@ public struct Fix42 {
 
     }
 
-    public enum SettlInstMode : String {
+    public enum SettlInstMode : String, CaseIterable {
 
         public static var tag: Int {
             160
@@ -2684,7 +2684,7 @@ public struct Fix42 {
 
     }
 
-    public enum SettlInstTransType : String {
+    public enum SettlInstTransType : String, CaseIterable {
 
         public static var tag: Int {
             163
@@ -2712,7 +2712,7 @@ public struct Fix42 {
 
     }
 
-    public enum SettlInstSource : String {
+    public enum SettlInstSource : String, CaseIterable {
 
         public static var tag: Int {
             165
@@ -2722,7 +2722,7 @@ public struct Fix42 {
         case Institution = "2"
     }
 
-    public enum SettlLocation : String {
+    public enum SettlLocation : String, CaseIterable {
 
         public static var tag: Int {
             166
@@ -2737,7 +2737,7 @@ public struct Fix42 {
         case ParticipantTrustCompany = "PTC"
     }
 
-    public enum SecurityType : String {
+    public enum SecurityType : String, CaseIterable {
 
         public static var tag: Int {
             167
@@ -2795,7 +2795,7 @@ public struct Fix42 {
 
     }
 
-    public enum StandInstDbType : String {
+    public enum StandInstDbType : String, CaseIterable {
 
         public static var tag: Int {
             169
@@ -3266,7 +3266,7 @@ public struct Fix42 {
 
     }
 
-    public enum AllocLinkType : String {
+    public enum AllocLinkType : String, CaseIterable {
 
         public static var tag: Int {
             197
@@ -3327,7 +3327,7 @@ public struct Fix42 {
 
     }
 
-    public enum PutOrCall : String {
+    public enum PutOrCall : String, CaseIterable {
 
         public static var tag: Int {
             201
@@ -3354,7 +3354,7 @@ public struct Fix42 {
 
     }
 
-    public enum CoveredOrUncovered : String {
+    public enum CoveredOrUncovered : String, CaseIterable {
 
         public static var tag: Int {
             203
@@ -3364,7 +3364,7 @@ public struct Fix42 {
         case Uncovered = "1"
     }
 
-    public enum CustomerOrFirm : String {
+    public enum CustomerOrFirm : String, CaseIterable {
 
         public static var tag: Int {
             204
@@ -3425,7 +3425,7 @@ public struct Fix42 {
 
     }
 
-    public enum NotifyBrokerOfCredit : String {
+    public enum NotifyBrokerOfCredit : String, CaseIterable {
 
         public static var tag: Int {
             208
@@ -3435,7 +3435,7 @@ public struct Fix42 {
         case DetailsShouldBeCommunicated = "Y"
     }
 
-    public enum AllocHandlInst : String {
+    public enum AllocHandlInst : String, CaseIterable {
 
         public static var tag: Int {
             209
@@ -3548,7 +3548,7 @@ public struct Fix42 {
 
     }
 
-    public enum RoutingType : String {
+    public enum RoutingType : String, CaseIterable {
 
         public static var tag: Int {
             216
@@ -3594,7 +3594,7 @@ public struct Fix42 {
 
     }
 
-    public enum Benchmark : String {
+    public enum Benchmark : String, CaseIterable {
 
         public static var tag: Int {
             219
@@ -3662,7 +3662,7 @@ public struct Fix42 {
 
     }
 
-    public enum SubscriptionRequestType : String {
+    public enum SubscriptionRequestType : String, CaseIterable {
 
         public static var tag: Int {
             263
@@ -3690,7 +3690,7 @@ public struct Fix42 {
 
     }
 
-    public enum MDUpdateType : String {
+    public enum MDUpdateType : String, CaseIterable {
 
         public static var tag: Int {
             265
@@ -3700,7 +3700,7 @@ public struct Fix42 {
         case IncrementalRefresh = "1"
     }
 
-    public enum AggregatedBook : String {
+    public enum AggregatedBook : String, CaseIterable {
 
         public static var tag: Int {
             266
@@ -3744,7 +3744,7 @@ public struct Fix42 {
 
     }
 
-    public enum MDEntryType : String {
+    public enum MDEntryType : String, CaseIterable {
 
         public static var tag: Int {
             269
@@ -3830,7 +3830,7 @@ public struct Fix42 {
 
     }
 
-    public enum TickDirection : String {
+    public enum TickDirection : String, CaseIterable {
 
         public static var tag: Int {
             274
@@ -3859,7 +3859,7 @@ public struct Fix42 {
 
     }
 
-    public enum QuoteCondition : String {
+    public enum QuoteCondition : String, CaseIterable {
 
         public static var tag: Int {
             276
@@ -3876,7 +3876,7 @@ public struct Fix42 {
         case NonFirm = "I"
     }
 
-    public enum TradeCondition : String {
+    public enum TradeCondition : String, CaseIterable {
 
         public static var tag: Int {
             277
@@ -3915,7 +3915,7 @@ public struct Fix42 {
 
     }
 
-    public enum MDUpdateAction : String {
+    public enum MDUpdateAction : String, CaseIterable {
 
         public static var tag: Int {
             279
@@ -3943,7 +3943,7 @@ public struct Fix42 {
 
     }
 
-    public enum MDReqRejReason : String {
+    public enum MDReqRejReason : String, CaseIterable {
 
         public static var tag: Int {
             281
@@ -4011,7 +4011,7 @@ public struct Fix42 {
 
     }
 
-    public enum DeleteReason : String {
+    public enum DeleteReason : String, CaseIterable {
 
         public static var tag: Int {
             285
@@ -4021,7 +4021,7 @@ public struct Fix42 {
         case Error = "1"
     }
 
-    public enum OpenCloseSettleFlag : String {
+    public enum OpenCloseSettleFlag : String, CaseIterable {
 
         public static var tag: Int {
             286
@@ -4100,7 +4100,7 @@ public struct Fix42 {
 
     }
 
-    public enum FinancialStatus : String {
+    public enum FinancialStatus : String, CaseIterable {
 
         public static var tag: Int {
             291
@@ -4109,7 +4109,7 @@ public struct Fix42 {
         case Bankrupt = "1"
     }
 
-    public enum CorporateAction : String {
+    public enum CorporateAction : String, CaseIterable {
 
         public static var tag: Int {
             292
@@ -4190,7 +4190,7 @@ public struct Fix42 {
 
     }
 
-    public enum QuoteAckStatus : String {
+    public enum QuoteAckStatus : String, CaseIterable {
 
         public static var tag: Int {
             297
@@ -4204,7 +4204,7 @@ public struct Fix42 {
         case Rejected = "5"
     }
 
-    public enum QuoteCancelType : String {
+    public enum QuoteCancelType : String, CaseIterable {
 
         public static var tag: Int {
             298
@@ -4233,7 +4233,7 @@ public struct Fix42 {
 
     }
 
-    public enum QuoteRejectReason : String {
+    public enum QuoteRejectReason : String, CaseIterable {
 
         public static var tag: Int {
             300
@@ -4250,7 +4250,7 @@ public struct Fix42 {
         case NotAuthorizedToQuoteSecurity = "9"
     }
 
-    public enum QuoteResponseLevel : String {
+    public enum QuoteResponseLevel : String, CaseIterable {
 
         public static var tag: Int {
             301
@@ -4278,7 +4278,7 @@ public struct Fix42 {
 
     }
 
-    public enum QuoteRequestType : String {
+    public enum QuoteRequestType : String, CaseIterable {
 
         public static var tag: Int {
             303
@@ -4577,7 +4577,7 @@ public struct Fix42 {
 
     }
 
-    public enum SecurityRequestType : String {
+    public enum SecurityRequestType : String, CaseIterable {
 
         public static var tag: Int {
             321
@@ -4606,7 +4606,7 @@ public struct Fix42 {
 
     }
 
-    public enum SecurityResponseType : String {
+    public enum SecurityResponseType : String, CaseIterable {
 
         public static var tag: Int {
             323
@@ -4637,7 +4637,7 @@ public struct Fix42 {
 
     }
 
-    public enum UnsolicitedIndicator : String {
+    public enum UnsolicitedIndicator : String, CaseIterable {
 
         public static var tag: Int {
             325
@@ -4647,7 +4647,7 @@ public struct Fix42 {
         case MessageIsBeingSentUnsolicited = "Y"
     }
 
-    public enum SecurityTradingStatus : String {
+    public enum SecurityTradingStatus : String, CaseIterable {
 
         public static var tag: Int {
             326
@@ -4674,7 +4674,7 @@ public struct Fix42 {
         case MarketOnCloseImbalanceBuy = "9"
     }
 
-    public enum HaltReason : String {
+    public enum HaltReason : String, CaseIterable {
 
         public static var tag: Int {
             327
@@ -4688,7 +4688,7 @@ public struct Fix42 {
         case EquipmentChangeover = "X"
     }
 
-    public enum InViewOfCommon : String {
+    public enum InViewOfCommon : String, CaseIterable {
 
         public static var tag: Int {
             328
@@ -4698,7 +4698,7 @@ public struct Fix42 {
         case HaltWasDueToCommonStockBeingHalted = "Y"
     }
 
-    public enum DueToRelated : String {
+    public enum DueToRelated : String, CaseIterable {
 
         public static var tag: Int {
             329
@@ -4776,7 +4776,7 @@ public struct Fix42 {
 
     }
 
-    public enum Adjustment : String {
+    public enum Adjustment : String, CaseIterable {
 
         public static var tag: Int {
             334
@@ -4838,7 +4838,7 @@ public struct Fix42 {
 
     }
 
-    public enum TradSesMethod : String {
+    public enum TradSesMethod : String, CaseIterable {
 
         public static var tag: Int {
             338
@@ -4849,7 +4849,7 @@ public struct Fix42 {
         case TwoParty = "3"
     }
 
-    public enum TradSesMode : String {
+    public enum TradSesMode : String, CaseIterable {
 
         public static var tag: Int {
             339
@@ -4860,7 +4860,7 @@ public struct Fix42 {
         case Production = "3"
     }
 
-    public enum TradSesStatus : String {
+    public enum TradSesStatus : String, CaseIterable {
 
         public static var tag: Int {
             340
@@ -4975,7 +4975,7 @@ public struct Fix42 {
 
     }
 
-    public enum MessageEncoding : String {
+    public enum MessageEncoding : String, CaseIterable {
 
         public static var tag: Int {
             347
@@ -5327,7 +5327,7 @@ public struct Fix42 {
 
     }
 
-    public enum QuoteEntryRejectReason : String {
+    public enum QuoteEntryRejectReason : String, CaseIterable {
 
         public static var tag: Int {
             368
@@ -5412,7 +5412,7 @@ public struct Fix42 {
 
     }
 
-    public enum SessionRejectReason : String {
+    public enum SessionRejectReason : String, CaseIterable {
 
         public static var tag: Int {
             373
@@ -5432,7 +5432,7 @@ public struct Fix42 {
         case CompIDProblem = "9"
     }
 
-    public enum BidRequestTransType : String {
+    public enum BidRequestTransType : String, CaseIterable {
 
         public static var tag: Int {
             374
@@ -5476,7 +5476,7 @@ public struct Fix42 {
 
     }
 
-    public enum SolicitedFlag : String {
+    public enum SolicitedFlag : String, CaseIterable {
 
         public static var tag: Int {
             377
@@ -5486,7 +5486,7 @@ public struct Fix42 {
         case WasSolicited = "Y"
     }
 
-    public enum ExecRestatementReason : String {
+    public enum ExecRestatementReason : String, CaseIterable {
 
         public static var tag: Int {
             378
@@ -5517,7 +5517,7 @@ public struct Fix42 {
 
     }
 
-    public enum BusinessRejectReason : String {
+    public enum BusinessRejectReason : String, CaseIterable {
 
         public static var tag: Int {
             380
@@ -5599,7 +5599,7 @@ public struct Fix42 {
 
     }
 
-    public enum MsgDirection : String {
+    public enum MsgDirection : String, CaseIterable {
 
         public static var tag: Int {
             385
@@ -5643,7 +5643,7 @@ public struct Fix42 {
 
     }
 
-    public enum DiscretionInst : String {
+    public enum DiscretionInst : String, CaseIterable {
 
         public static var tag: Int {
             388
@@ -5997,7 +5997,7 @@ public struct Fix42 {
 
     }
 
-    public enum LiquidityIndType : String {
+    public enum LiquidityIndType : String, CaseIterable {
 
         public static var tag: Int {
             409
@@ -6026,7 +6026,7 @@ public struct Fix42 {
 
     }
 
-    public enum ExchangeForPhysical : String {
+    public enum ExchangeForPhysical : String, CaseIterable {
 
         public static var tag: Int {
             411
@@ -6070,7 +6070,7 @@ public struct Fix42 {
 
     }
 
-    public enum ProgRptReqs : String {
+    public enum ProgRptReqs : String, CaseIterable {
 
         public static var tag: Int {
             414
@@ -6098,7 +6098,7 @@ public struct Fix42 {
 
     }
 
-    public enum IncTaxInd : String {
+    public enum IncTaxInd : String, CaseIterable {
 
         public static var tag: Int {
             416
@@ -6125,7 +6125,7 @@ public struct Fix42 {
 
     }
 
-    public enum TradeType : String {
+    public enum TradeType : String, CaseIterable {
 
         public static var tag: Int {
             418
@@ -6137,7 +6137,7 @@ public struct Fix42 {
         case RiskTrade = "R"
     }
 
-    public enum BasisPxType : String {
+    public enum BasisPxType : String, CaseIterable {
 
         public static var tag: Int {
             419
@@ -6209,7 +6209,7 @@ public struct Fix42 {
 
     }
 
-    public enum PriceType : String {
+    public enum PriceType : String, CaseIterable {
 
         public static var tag: Int {
             423
@@ -6271,7 +6271,7 @@ public struct Fix42 {
 
     }
 
-    public enum GTBookingInst : String {
+    public enum GTBookingInst : String, CaseIterable {
 
         public static var tag: Int {
             427
@@ -6316,7 +6316,7 @@ public struct Fix42 {
 
     }
 
-    public enum NetGrossInd : String {
+    public enum NetGrossInd : String, CaseIterable {
 
         public static var tag: Int {
             430
@@ -6360,7 +6360,7 @@ public struct Fix42 {
 
     }
 
-    public enum ListExecInstType : String {
+    public enum ListExecInstType : String, CaseIterable {
 
         public static var tag: Int {
             433
@@ -6370,7 +6370,7 @@ public struct Fix42 {
         case WaitForInstruction = "2"
     }
 
-    public enum CxlRejResponseTo : String {
+    public enum CxlRejResponseTo : String, CaseIterable {
 
         public static var tag: Int {
             434
@@ -6499,7 +6499,7 @@ public struct Fix42 {
 
     }
 
-    public enum MultiLegReportingType : String {
+    public enum MultiLegReportingType : String, CaseIterable {
 
         public static var tag: Int {
             442

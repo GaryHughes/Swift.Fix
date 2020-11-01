@@ -12,7 +12,7 @@ def generate_orchestration_fields(prefix, orchestration, outdir, namespace):
         for field in sorted_fields:
             try:
                 code_set = orchestration.code_sets[field.type]  
-                file.write('    public enum {} : String {{\n\n'.format(field.name))
+                file.write('    public enum {} : String, CaseIterable {{\n\n'.format(field.name))
                 file.write('        public static var tag: Int {\n')
                 file.write('            {}\n'.format(field.id))
                 file.write('        }\n\n')
