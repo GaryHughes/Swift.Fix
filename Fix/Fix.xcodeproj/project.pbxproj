@@ -35,6 +35,13 @@
 			remoteGlobalIDString = 9A2B1C7A19E7D968008E2646;
 			remoteInfo = DictionaryTests;
 		};
+		9A53EB5024DE38F800A413F5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A2B1CAF19EA4304008E2646 /* Dictionary.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A2B1C6E19E7D968008E2646;
+			remoteInfo = Dictionary;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -156,6 +163,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				9A53EB5124DE38F800A413F5 /* PBXTargetDependency */,
 			);
 			name = Fix;
 			productName = Fix;
@@ -280,6 +288,11 @@
 			isa = PBXTargetDependency;
 			target = 9A2B1C1919E7D8CF008E2646 /* Fix */;
 			targetProxy = 9A2B1C2719E7D8CF008E2646 /* PBXContainerItemProxy */;
+		};
+		9A53EB5124DE38F800A413F5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Dictionary;
+			targetProxy = 9A53EB5024DE38F800A413F5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

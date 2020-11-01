@@ -10,6 +10,13 @@
 		9A2B1C7519E7D968008E2646 /* Dictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A2B1C7419E7D968008E2646 /* Dictionary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9A2B1C7B19E7D968008E2646 /* Dictionary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2B1C6F19E7D968008E2646 /* Dictionary.framework */; };
 		9A2B1C8219E7D968008E2646 /* DictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2B1C8119E7D968008E2646 /* DictionaryTests.swift */; };
+		9A53EB5524DE394A00A413F5 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A53EB5424DE394A00A413F5 /* Field.swift */; };
+		9A53EB6424DE3CCF00A413F5 /* FIX_4_4_Fields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A53EB5E24DE3CCF00A413F5 /* FIX_4_4_Fields.swift */; };
+		9A53EB6524DE3CCF00A413F5 /* FIX_4_2_Fields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A53EB5F24DE3CCF00A413F5 /* FIX_4_2_Fields.swift */; };
+		9A53EB6624DE3CCF00A413F5 /* FIX_Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A53EB6024DE3CCF00A413F5 /* FIX_Messages.swift */; };
+		9A53EB6724DE3CCF00A413F5 /* FIX_4_2_Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A53EB6124DE3CCF00A413F5 /* FIX_4_2_Messages.swift */; };
+		9A53EB6824DE3CCF00A413F5 /* FIX_4_4_Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A53EB6224DE3CCF00A413F5 /* FIX_4_4_Messages.swift */; };
+		9A53EB6924DE3CCF00A413F5 /* FIX_Fields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A53EB6324DE3CCF00A413F5 /* FIX_Fields.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +44,13 @@
 		9A2B1C8019E7D968008E2646 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A2B1C8119E7D968008E2646 /* DictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryTests.swift; sourceTree = "<group>"; };
 		9A2B1CA919EA42FB008E2646 /* Lexicographer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Lexicographer.xcodeproj; path = ../Lexicographer/Lexicographer.xcodeproj; sourceTree = "<group>"; };
+		9A53EB5424DE394A00A413F5 /* Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
+		9A53EB5E24DE3CCF00A413F5 /* FIX_4_4_Fields.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FIX_4_4_Fields.swift; path = Generated/FIX_4_4_Fields.swift; sourceTree = "<group>"; };
+		9A53EB5F24DE3CCF00A413F5 /* FIX_4_2_Fields.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FIX_4_2_Fields.swift; path = Generated/FIX_4_2_Fields.swift; sourceTree = "<group>"; };
+		9A53EB6024DE3CCF00A413F5 /* FIX_Messages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FIX_Messages.swift; path = Generated/FIX_Messages.swift; sourceTree = "<group>"; };
+		9A53EB6124DE3CCF00A413F5 /* FIX_4_2_Messages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FIX_4_2_Messages.swift; path = Generated/FIX_4_2_Messages.swift; sourceTree = "<group>"; };
+		9A53EB6224DE3CCF00A413F5 /* FIX_4_4_Messages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FIX_4_4_Messages.swift; path = Generated/FIX_4_4_Messages.swift; sourceTree = "<group>"; };
+		9A53EB6324DE3CCF00A413F5 /* FIX_Fields.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FIX_Fields.swift; path = Generated/FIX_Fields.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +94,10 @@
 		9A2B1C7119E7D968008E2646 /* Dictionary */ = {
 			isa = PBXGroup;
 			children = (
+				9A6DC5E424DE3366006583D5 /* Generated */,
 				9A2B1C7419E7D968008E2646 /* Dictionary.h */,
 				9A2B1C7219E7D968008E2646 /* Supporting Files */,
+				9A53EB5424DE394A00A413F5 /* Field.swift */,
 			);
 			path = Dictionary;
 			sourceTree = "<group>";
@@ -119,6 +135,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		9A6DC5E424DE3366006583D5 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				9A53EB5F24DE3CCF00A413F5 /* FIX_4_2_Fields.swift */,
+				9A53EB6124DE3CCF00A413F5 /* FIX_4_2_Messages.swift */,
+				9A53EB5E24DE3CCF00A413F5 /* FIX_4_4_Fields.swift */,
+				9A53EB6224DE3CCF00A413F5 /* FIX_4_4_Messages.swift */,
+				9A53EB6324DE3CCF00A413F5 /* FIX_Fields.swift */,
+				9A53EB6024DE3CCF00A413F5 /* FIX_Messages.swift */,
+			);
+			name = Generated;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -137,6 +166,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9A2B1C8519E7D968008E2646 /* Build configuration list for PBXNativeTarget "Dictionary" */;
 			buildPhases = (
+				9A6DC5E524DE346C006583D5 /* ShellScript */,
 				9A2B1C6A19E7D968008E2646 /* Sources */,
 				9A2B1C6B19E7D968008E2646 /* Frameworks */,
 				9A2B1C6C19E7D968008E2646 /* Headers */,
@@ -180,6 +210,7 @@
 				TargetAttributes = {
 					9A2B1C6E19E7D968008E2646 = {
 						CreatedOnToolsVersion = 6.1;
+						LastSwiftMigration = 1160;
 					};
 					9A2B1C7919E7D968008E2646 = {
 						CreatedOnToolsVersion = 6.1;
@@ -238,11 +269,38 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9A6DC5E524DE346C006583D5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PROJECT_DIR}/../Lexicographer/lexicographer.py --prefix FIX_4_2_ --orchestration ../../orchestrations/FIX\\ Standard/FixRepository42.xml --outdir ${PROJECT_DIR}/Dictionary/Generated\n${PROJECT_DIR}/../Lexicographer/lexicographer.py --prefix FIX_4_4_ --orchestration ../../orchestrations/FIX\\ Standard/FixRepository44.xml --outdir ${PROJECT_DIR}/Dictionary/Generated\n${PROJECT_DIR}/../Lexicographer/lexicographer.py --prefix FIX_ --orchestration ../../orchestrations/FIX\\ Standard/OrchestraFIXLatest.xml --outdir ${PROJECT_DIR}/Dictionary/Generated\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9A2B1C6A19E7D968008E2646 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A53EB6924DE3CCF00A413F5 /* FIX_Fields.swift in Sources */,
+				9A53EB6724DE3CCF00A413F5 /* FIX_4_2_Messages.swift in Sources */,
+				9A53EB6824DE3CCF00A413F5 /* FIX_4_4_Messages.swift in Sources */,
+				9A53EB6524DE3CCF00A413F5 /* FIX_4_2_Fields.swift in Sources */,
+				9A53EB6424DE3CCF00A413F5 /* FIX_4_4_Fields.swift in Sources */,
+				9A53EB5524DE394A00A413F5 /* Field.swift in Sources */,
+				9A53EB6624DE3CCF00A413F5 /* FIX_Messages.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +433,7 @@
 		9A2B1C8619E7D968008E2646 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -387,12 +446,15 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.geh.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		9A2B1C8719E7D968008E2646 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -405,12 +467,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.geh.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
 		9A2B1C8919E7D968008E2646 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
@@ -424,12 +488,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.geh.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		9A2B1C8A19E7D968008E2646 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
@@ -439,6 +505,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.geh.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
