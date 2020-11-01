@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 import os
-from datetime import datetime, timedelta
 
 def generate_orchestration_enums(prefix, orchestration, outdir, namespace):
     filename = '{}Enums.swift'.format(prefix)
