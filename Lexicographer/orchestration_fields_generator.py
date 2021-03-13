@@ -6,7 +6,7 @@ def generate_orchestration_fields(prefix, orchestration, outdir, namespace):
     filename = '{}Fields.swift'.format(prefix)
     path = os.path.join(outdir, filename)
     print('regenerating ' + path)
-    sorted_fields = sorted(orchestration.fields.values(), key=lambda x: int(x.id))
+    sorted_fields = sorted(orchestration.fields_by_tag.values(), key=lambda x: int(x.id))
     with open(path, 'w') as file:
         file.write('public struct {} {{\n\n'.format(namespace))
         for field in sorted_fields:
