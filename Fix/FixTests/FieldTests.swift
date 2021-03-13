@@ -9,8 +9,8 @@ import Cocoa
 import XCTest
 import Fix
 
-class FieldTests: XCTestCase {
-    
+class FieldTests: XCTestCase
+{
     func testBooleanInitialisers()
     {
         XCTAssertEqual(Field(tag:0, value:true).value, "Y")
@@ -43,8 +43,4 @@ class FieldTests: XCTestCase {
         XCTAssertEqual(Field(tag:0, value:UInt64.min).value, "0")
         XCTAssertEqual(Field(tag:0, value:UInt64.max).value, "18446744073709551615")
     }
-    
-    
-    
-    
 }
