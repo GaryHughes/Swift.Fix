@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A0F0A2525FC8181008088AB /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F0A2325FC817A008088AB /* Field.swift */; };
 		9A2B1C2019E7D8CF008E2646 /* Fix.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A2B1C1F19E7D8CF008E2646 /* Fix.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9A2B1C2619E7D8CF008E2646 /* Fix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2B1C1A19E7D8CF008E2646 /* Fix.framework */; };
-		9A2B1C2D19E7D8CF008E2646 /* FixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2B1C2C19E7D8CF008E2646 /* FixTests.swift */; };
+		9A2B1C2D19E7D8CF008E2646 /* FieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2B1C2C19E7D8CF008E2646 /* FieldTests.swift */; };
 		9AEAF22919F1EE1B00E15D8D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEAF22819F1EE1B00E15D8D /* Message.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,12 +46,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9A0F0A2325FC817A008088AB /* Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
 		9A2B1C1A19E7D8CF008E2646 /* Fix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Fix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A2B1C1E19E7D8CF008E2646 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A2B1C1F19E7D8CF008E2646 /* Fix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Fix.h; sourceTree = "<group>"; };
 		9A2B1C2519E7D8CF008E2646 /* FixTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FixTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A2B1C2B19E7D8CF008E2646 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9A2B1C2C19E7D8CF008E2646 /* FixTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixTests.swift; sourceTree = "<group>"; };
+		9A2B1C2C19E7D8CF008E2646 /* FieldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldTests.swift; sourceTree = "<group>"; };
 		9A2B1CAF19EA4304008E2646 /* Dictionary.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Dictionary.xcodeproj; path = ../Dictionary/Dictionary.xcodeproj; sourceTree = "<group>"; };
 		9AEAF22819F1EE1B00E15D8D /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,6 +101,7 @@
 				9A2B1C1F19E7D8CF008E2646 /* Fix.h */,
 				9A2B1C1D19E7D8CF008E2646 /* Supporting Files */,
 				9AEAF22819F1EE1B00E15D8D /* Message.swift */,
+				9A0F0A2325FC817A008088AB /* Field.swift */,
 			);
 			path = Fix;
 			sourceTree = "<group>";
@@ -114,7 +117,7 @@
 		9A2B1C2919E7D8CF008E2646 /* FixTests */ = {
 			isa = PBXGroup;
 			children = (
-				9A2B1C2C19E7D8CF008E2646 /* FixTests.swift */,
+				9A2B1C2C19E7D8CF008E2646 /* FieldTests.swift */,
 				9A2B1C2A19E7D8CF008E2646 /* Supporting Files */,
 			);
 			path = FixTests;
@@ -269,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A0F0A2525FC8181008088AB /* Field.swift in Sources */,
 				9AEAF22919F1EE1B00E15D8D /* Message.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,7 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A2B1C2D19E7D8CF008E2646 /* FixTests.swift in Sources */,
+				9A2B1C2D19E7D8CF008E2646 /* FieldTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
