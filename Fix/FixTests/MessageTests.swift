@@ -30,7 +30,7 @@ class MessageTests: XCTestCase
         let two = "54=1\u{0001}60=20200114-08:12:59.397\u{0001}38=10000\u{0001}40=2\u{0001}44=20\u{0001}59=1\u{0001}10=021\u{0001}"
         let message = Message()
         let one_result = try message.decode(one.data(using: .utf8)!)
-        XCTAssertTrue(one_result.complete)
+        XCTAssertFalse(one_result.complete)
         XCTAssertEqual(one_result.consumed, one.count)
         let two_result = try message.decode(two.data(using: .utf8)!)
         XCTAssertTrue(two_result.complete)
@@ -44,7 +44,7 @@ class MessageTests: XCTestCase
         let two = "55=BHP.AX\u{0001}54=1\u{0001}60=20200114-08:12:59.397\u{0001}38=10000\u{0001}40=2\u{0001}44=20\u{0001}59=1\u{0001}10=021\u{0001}"
         let message = Message()
         let one_result = try message.decode(one.data(using: .utf8)!)
-        XCTAssertTrue(one_result.complete)
+        XCTAssertFalse(one_result.complete)
         XCTAssertEqual(one_result.consumed, one.count - "55=B".count)
         let two_result = try message.decode(two.data(using: .utf8)!)
         XCTAssertTrue(two_result.complete)

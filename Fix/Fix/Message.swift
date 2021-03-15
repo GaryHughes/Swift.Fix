@@ -5,17 +5,22 @@
 //  Created by Gary Hughes on 18/10/2014.
 //  Copyright (c) 2014 Gary Hughes. All rights reserved.
 //
-
 import Foundation
+import Dictionary
 
 public enum MessageError : Error {
     case checksumOutOfRange(ehecksum: Int)
     case fieldNotFound(tag: Int)
+    case invalidTag(tag: String)
+    case decodeError(message: String)
 }
+
+let valueSeparator: UInt8 = Array(String("=").utf8)[0]
+let fieldSeparator: UInt8 = Array(String("\u{001}").utf8)[0]
 
 public class Message
 {
-    public let fields = [Field]()
+    public var fields = [Field]()
     
     public init() {
         
@@ -28,10 +33,155 @@ public class Message
     // track completeness on subsequent calls so you can call it again after it has returned
     // complete=true and it will decode and store any fields it reads which may result in an
     // invalid message.
-    public func decode(_ buffer: Data) throws -> (consumed: Int, complete: Bool)
+    public func decode(_ data: Data) throws -> (consumed: Int, complete: Bool)
     {
+        func find (_ first: UnsafeRawPointer, _ last: UnsafeRawPointer, _ value: UInt8) -> UnsafeRawPointer? {
+            var current = first
+            while current <= last {
+                if current.load(as: UInt8.self) == value {
+                    return current
+                }
+                current = current + 1
+            }
+            return nil
+        }
         
-        return (consumed: 0, complete: false)
+        var complete = false
+        var consumed = 0
+        
+        try data.withUnsafeBytes() { buffer in
+            
+            guard let begin = buffer.baseAddress else { return }
+            var current = begin
+            let end = current + buffer.count
+            
+            defer { consumed = current - begin }
+            
+            while current < end {
+            
+                guard let equals = find(current, end, valueSeparator) else {
+                    break
+                }
+                
+                guard let tagString = String(bytesNoCopy: UnsafeMutableRawPointer(mutating: current), length: equals - current, encoding: .utf8, freeWhenDone: false) else {
+                    throw MessageError.decodeError(message: "failed to extract tag")
+                }
+                
+                guard let tag = Int(tagString) else {
+                    throw MessageError.invalidTag(tag: tagString)
+                }
+                
+                guard let delimiter = find(equals + 1, end, fieldSeparator) else {
+                    break
+                }
+                
+                guard let value = String(bytesNoCopy: UnsafeMutableRawPointer(mutating: equals + 1), length: delimiter - equals - 1, encoding: .utf8, freeWhenDone: false) else {
+                    throw MessageError.decodeError(message: "failed to extract value")
+                }
+                
+                let field = Field(tag: tag, value: value)
+                
+                fields.append(field)
+                
+                // Only update current when we have a complete field so the return value is correct.
+                // +1 to move past the delimiter to the start of the next tag.
+                current = delimiter + 1
+                
+                if tag == Fix.CheckSum.tag {
+                    complete = true
+                    break
+                }
+            }
+        }
+        
+        
+        /*
+         const auto* current = buffer.data();
+         const auto* checksum_current = buffer.data();
+         const auto* end = buffer.data() + buffer.size();
+         auto complete = false;
+
+         while (current != end)
+         {
+             const auto* equals = std::find(current, end, value_separator);
+
+             if (equals == end) {
+                 break;
+             }
+
+             int tag = 0;
+             
+             auto [ptr, ec] = std::from_chars(current, equals, tag);
+             
+             if (ec != std::errc()) {
+                 throw std::out_of_range(std::string(current, equals) + " is not a valid field tag");
+             }
+
+             if (FIX_5_0SP2::fields()[tag].is_data())
+             {
+                 if (m_fields.empty()) {
+                     throw std::runtime_error("parsed a data field with tag=" + std::to_string(tag) + " that was not preceeded by a length field");
+                 }
+
+                 int length = 0;
+
+                 try {
+                     length = std::stoi(m_fields.rbegin()->value());
+                 }
+                 catch (std::exception&) {
+                     throw std::runtime_error("parsed a data field with tag=" + std::to_string(tag) + " but the preceeding field value was not a valid numeric length");
+                 }
+
+                 if (equals + length + 1 >= end) { // NOLINT(cppcoreguidelines-pro-bounds-pointer-arithmetic)
+                     break;
+                 }
+
+                 std::string_view value(equals + 1, length); // NOLINT(cppcoreguidelines-pro-bounds-pointer-arithmetic)
+
+                 if (*(equals + length + 1) != field_separator) { // NOLINT(cppcoreguidelines-pro-bounds-pointer-arithmetic)
+                     throw std::runtime_error("parsed a data field wtih tag=" + std::to_string(tag) + " but the field did not have a trailing field separator");
+                 }
+
+                 m_fields.emplace_back(tag, value);
+                 // Only update current when we have a complete field so the return value is correct.
+                 // +1 for the field separator, +1 to move to the first character of the next tag.
+                 current = equals + length + 2; // // NOLINT(cppcoreguidelines-pro-bounds-pointer-arithmetic)
+             }
+             else
+             {
+                 const auto* delimiter = std::find(equals + 1, end, field_separator); // NOLINT(cppcoreguidelines-pro-bounds-pointer-arithmetic)
+
+                 if (delimiter == end) {
+                     break;
+                 }
+
+                 std::string_view value(equals + 1, std::distance(equals, delimiter) - 1); // NOLINT(cppcoreguidelines-pro-bounds-pointer-arithmetic)
+                 m_fields.emplace_back(tag, value);
+                 // Only update current when we have a complete field so the return value is correct.
+                 // +1 to move past the delimiter to the start of the next tag.
+                 current = delimiter + 1; // NOLINT(cppcoreguidelines-pro-bounds-pointer-arithmetic)
+             }
+
+             if (tag == FIX_5_0SP2::field::CheckSum::Tag) {
+                 complete = true;
+                 break;
+             }
+
+             // We only calculate the checksum up to the checksum field itself.
+             checksum_current = current;
+         }
+
+         m_decode_checksum += std::reduce(buffer.data(), checksum_current);
+
+         if (complete) {
+             m_decode_checksum %= 256;
+             m_decode_checksum_valid = true;
+         }
+
+         return { static_cast<size_t>(std::distance(&*buffer.begin(), current)), complete };
+         */
+        
+        return (consumed: consumed, complete: complete)
     }
     
     public func MsgType() throws -> String

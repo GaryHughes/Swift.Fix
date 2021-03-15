@@ -12,6 +12,12 @@ public struct Field
     public let tag: Int
     public let value: String
     
+    public init(tag: Int, value: String)
+    {
+        self.tag = tag
+        self.value = value
+    }
+    
     public init(tag: Int, value: Bool)
     {
         self.tag = tag
