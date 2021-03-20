@@ -16,7 +16,7 @@ public enum MessageError : Error {
 }
 
 let valueSeparator: UInt8 = Array(String("=").utf8)[0]
-let fieldSeparator: UInt8 = Array(String("\u{001}").utf8)[0]
+let fieldSeparator: UInt8 = 1
 
 public class Message
 {
@@ -71,6 +71,42 @@ public class Message
                     throw MessageError.invalidTag(tag: tagString)
                 }
                 
+                
+                /*
+                 if (FIX_5_0SP2::fields()[tag].is_data())
+                 {
+                     if (m_fields.empty()) {
+                         throw std::runtime_error("parsed a data field with tag=" + std::to_string(tag) + " that was not preceeded by a length field");
+                     }
+
+                     int length = 0;
+
+                     try {
+                         length = std::stoi(m_fields.rbegin()->value());
+                     }
+                     catch (std::exception&) {
+                         throw std::runtime_error("parsed a data field with tag=" + std::to_string(tag) + " but the preceeding field value was not a valid numeric length");
+                     }
+
+                     if (equals + length + 1 >= end) { // NOLINT(cppcoreguidelines-pro-bounds-pointer-arithmetic)
+                         break;
+                     }
+
+                     std::string_view value(equals + 1, length); // NOLINT(cppcoreguidelines-pro-bounds-pointer-arithmetic)
+
+                     if (*(equals + length + 1) != field_separator) { // NOLINT(cppcoreguidelines-pro-bounds-pointer-arithmetic)
+                         throw std::runtime_error("parsed a data field wtih tag=" + std::to_string(tag) + " but the field did not have a trailing field separator");
+                     }
+
+                     m_fields.emplace_back(tag, value);
+                     // Only update current when we have a complete field so the return value is correct.
+                     // +1 for the field separator, +1 to move to the first character of the next tag.
+                     current = equals + length + 2; // // NOLINT(cppcoreguidelines-pro-bounds-pointer-arithmetic)
+                 }
+                 else
+                 {
+                 */
+                
                 guard let delimiter = find(equals + 1, end, fieldSeparator) else {
                     break
                 }
@@ -91,94 +127,19 @@ public class Message
                     complete = true
                     break
                 }
+                
+                // We only calculate the checksum up to the checksum field itself.
+                // checksum_current = current;
             }
         }
         
-        
         /*
-         const auto* current = buffer.data();
-         const auto* checksum_current = buffer.data();
-         const auto* end = buffer.data() + buffer.size();
-         auto complete = false;
-
-         while (current != end)
-         {
-             const auto* equals = std::find(current, end, value_separator);
-
-             if (equals == end) {
-                 break;
-             }
-
-             int tag = 0;
-             
-             auto [ptr, ec] = std::from_chars(current, equals, tag);
-             
-             if (ec != std::errc()) {
-                 throw std::out_of_range(std::string(current, equals) + " is not a valid field tag");
-             }
-
-             if (FIX_5_0SP2::fields()[tag].is_data())
-             {
-                 if (m_fields.empty()) {
-                     throw std::runtime_error("parsed a data field with tag=" + std::to_string(tag) + " that was not preceeded by a length field");
-                 }
-
-                 int length = 0;
-
-                 try {
-                     length = std::stoi(m_fields.rbegin()->value());
-                 }
-                 catch (std::exception&) {
-                     throw std::runtime_error("parsed a data field with tag=" + std::to_string(tag) + " but the preceeding field value was not a valid numeric length");
-                 }
-
-                 if (equals + length + 1 >= end) { // NOLINT(cppcoreguidelines-pro-bounds-pointer-arithmetic)
-                     break;
-                 }
-
-                 std::string_view value(equals + 1, length); // NOLINT(cppcoreguidelines-pro-bounds-pointer-arithmetic)
-
-                 if (*(equals + length + 1) != field_separator) { // NOLINT(cppcoreguidelines-pro-bounds-pointer-arithmetic)
-                     throw std::runtime_error("parsed a data field wtih tag=" + std::to_string(tag) + " but the field did not have a trailing field separator");
-                 }
-
-                 m_fields.emplace_back(tag, value);
-                 // Only update current when we have a complete field so the return value is correct.
-                 // +1 for the field separator, +1 to move to the first character of the next tag.
-                 current = equals + length + 2; // // NOLINT(cppcoreguidelines-pro-bounds-pointer-arithmetic)
-             }
-             else
-             {
-                 const auto* delimiter = std::find(equals + 1, end, field_separator); // NOLINT(cppcoreguidelines-pro-bounds-pointer-arithmetic)
-
-                 if (delimiter == end) {
-                     break;
-                 }
-
-                 std::string_view value(equals + 1, std::distance(equals, delimiter) - 1); // NOLINT(cppcoreguidelines-pro-bounds-pointer-arithmetic)
-                 m_fields.emplace_back(tag, value);
-                 // Only update current when we have a complete field so the return value is correct.
-                 // +1 to move past the delimiter to the start of the next tag.
-                 current = delimiter + 1; // NOLINT(cppcoreguidelines-pro-bounds-pointer-arithmetic)
-             }
-
-             if (tag == FIX_5_0SP2::field::CheckSum::Tag) {
-                 complete = true;
-                 break;
-             }
-
-             // We only calculate the checksum up to the checksum field itself.
-             checksum_current = current;
-         }
-
          m_decode_checksum += std::reduce(buffer.data(), checksum_current);
 
          if (complete) {
              m_decode_checksum %= 256;
              m_decode_checksum_valid = true;
          }
-
-         return { static_cast<size_t>(std::distance(&*buffer.begin(), current)), complete };
          */
         
         return (consumed: consumed, complete: complete)
@@ -186,12 +147,36 @@ public class Message
     
     public func MsgType() throws -> String
     {
-        throw MessageError.fieldNotFound(tag: 0)
+        guard let field = fields.first(where: { $0.tag == Fix.MsgType.tag }) else {
+            throw MessageError.fieldNotFound(tag: 0)
+        }
+        return field.value
     }
     
     public func isAdmin() throws -> Bool
     {
-        return false
+        switch try MsgType() {
+        case Fix.Message.Logon.MsgType:
+            fallthrough
+        case Fix.Message.Heartbeat.MsgType:
+            fallthrough
+        case Fix.Message.TestRequest.MsgType:
+            fallthrough
+        case Fix.Message.ResendRequest.MsgType:
+            fallthrough
+        case Fix.Message.Reject.MsgType:
+            fallthrough
+        case Fix.Message.SequenceReset.MsgType:
+            fallthrough
+        case Fix.Message.Logout.MsgType:
+            fallthrough
+        case Fix.Message.Logon.MsgType:
+            fallthrough
+        case Fix.Message.XMLnonFIX.MsgType:
+            return true
+        default:
+            return false
+        }
     }
     
     public static func formatChecksum(_ checksum: Int) throws -> String

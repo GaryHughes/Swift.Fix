@@ -45,7 +45,7 @@ class MessageTests: XCTestCase
         let message = Message()
         let one_result = try message.decode(one.data(using: .utf8)!)
         XCTAssertFalse(one_result.complete)
-        XCTAssertEqual(one_result.consumed, one.count - "55=B".count)
+        XCTAssertEqual(one_result.consumed, one.count - ("55=B".count))
         let two_result = try message.decode(two.data(using: .utf8)!)
         XCTAssertTrue(two_result.complete)
         XCTAssertEqual(two_result.consumed, two.count)
